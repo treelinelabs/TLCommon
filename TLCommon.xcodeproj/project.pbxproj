@@ -12,6 +12,8 @@
 		0313024F1055709700189879 /* TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0313024E1055709700189879 /* TLCommon.h */; };
 		034040951055C375004B4909 /* TLSavedState.h in Headers */ = {isa = PBXBuildFile; fileRef = 034040931055C375004B4909 /* TLSavedState.h */; };
 		034040961055C375004B4909 /* TLSavedState.m in Sources */ = {isa = PBXBuildFile; fileRef = 034040941055C375004B4909 /* TLSavedState.m */; };
+		034041C810569BAA004B4909 /* TLCustomDrawnTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */; };
+		034041C910569BAA004B4909 /* TLCustomDrawnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 034041C710569BAA004B4909 /* TLCustomDrawnTableViewCell.m */; };
 		03D9DF18104BFEDA00B1BA77 /* UIViewController_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */; };
 		03D9DF19104BFEDA00B1BA77 /* UIViewController_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */; };
 		03FE415A10518C11003ACE50 /* UITabBarItem_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */; };
@@ -26,6 +28,8 @@
 		0313024E1055709700189879 /* TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCommon.h; sourceTree = "<group>"; };
 		034040931055C375004B4909 /* TLSavedState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSavedState.h; sourceTree = "<group>"; };
 		034040941055C375004B4909 /* TLSavedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSavedState.m; sourceTree = "<group>"; };
+		034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCustomDrawnTableViewCell.h; sourceTree = "<group>"; };
+		034041C710569BAA004B4909 /* TLCustomDrawnTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCustomDrawnTableViewCell.m; sourceTree = "<group>"; };
 		03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_TLCommon.h; sourceTree = "<group>"; };
 		03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewController_TLCommon.m; sourceTree = "<group>"; };
 		03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometry_TLCommon.h; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 				034040941055C375004B4909 /* TLSavedState.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		034041C510569B80004B4909 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */,
+				034041C710569BAA004B4909 /* TLCustomDrawnTableViewCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		034768DFFF38A50411DB9C8B /* Products */ = {
@@ -114,6 +127,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				034041C510569B80004B4909 /* Views */,
 				034040921055C35F004B4909 /* Models */,
 				03FE415C10518C87003ACE50 /* Controller extensions */,
 				03FE415710518BEF003ACE50 /* Model extensions */,
@@ -145,6 +159,7 @@
 				0313024C1055708A00189879 /* UIImage_TLCommon.h in Headers */,
 				0313024F1055709700189879 /* TLCommon.h in Headers */,
 				034040951055C375004B4909 /* TLSavedState.h in Headers */,
+				034041C810569BAA004B4909 /* TLCustomDrawnTableViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +210,7 @@
 				03FE415B10518C11003ACE50 /* UITabBarItem_TLCommon.m in Sources */,
 				0313024D1055708A00189879 /* UIImage_TLCommon.m in Sources */,
 				034040961055C375004B4909 /* TLSavedState.m in Sources */,
+				034041C910569BAA004B4909 /* TLCustomDrawnTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
