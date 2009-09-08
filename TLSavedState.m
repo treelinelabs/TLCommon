@@ -92,7 +92,7 @@ static TLSavedStateNotificationRecipient *notificationRecipient = nil;
 
 
 - (NSDictionary *)dictionaryRepresentation {
-  return [state copy];
+  return [[state copy] autorelease];
 }
 
 + (void)saveState {
