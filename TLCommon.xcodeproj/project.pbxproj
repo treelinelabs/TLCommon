@@ -33,6 +33,8 @@
 		0383494F105928F300BFBBC7 /* UIAlertView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0383494D105928F300BFBBC7 /* UIAlertView_TLCommon.m */; };
 		038349C31059375E00BFBBC7 /* NSData_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 038349C11059375E00BFBBC7 /* NSData_TLCommon.h */; };
 		038349C41059375E00BFBBC7 /* NSData_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 038349C21059375E00BFBBC7 /* NSData_TLCommon.m */; };
+		03834AB610594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03834AB410594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.h */; };
+		03834AB710594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03834AB510594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m */; };
 		03D9DF18104BFEDA00B1BA77 /* UIViewController_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */; };
 		03D9DF19104BFEDA00B1BA77 /* UIViewController_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */; };
 		03FE415A10518C11003ACE50 /* UITabBarItem_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */; };
@@ -68,6 +70,8 @@
 		0383494D105928F300BFBBC7 /* UIAlertView_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertView_TLCommon.m; sourceTree = "<group>"; };
 		038349C11059375E00BFBBC7 /* NSData_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSData_TLCommon.h; sourceTree = "<group>"; };
 		038349C21059375E00BFBBC7 /* NSData_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSData_TLCommon.m; sourceTree = "<group>"; };
+		03834AB410594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBarButtonItem_TLCommon.h; sourceTree = "<group>"; };
+		03834AB510594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBarButtonItem_TLCommon.m; sourceTree = "<group>"; };
 		03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_TLCommon.h; sourceTree = "<group>"; };
 		03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewController_TLCommon.m; sourceTree = "<group>"; };
 		03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometry_TLCommon.h; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				0340445110571BE0004B4909 /* NSDate_TLCommon.m */,
 				038349C11059375E00BFBBC7 /* NSData_TLCommon.h */,
 				038349C21059375E00BFBBC7 /* NSData_TLCommon.m */,
+				03834AB410594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.h */,
+				03834AB510594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m */,
 			);
 			name = "Model extensions";
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 				0340445210571BE0004B4909 /* NSDate_TLCommon.h in Headers */,
 				0383494E105928F300BFBBC7 /* UIAlertView_TLCommon.h in Headers */,
 				038349C31059375E00BFBBC7 /* NSData_TLCommon.h in Headers */,
+				03834AB610594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +302,7 @@
 				0340445310571BE0004B4909 /* NSDate_TLCommon.m in Sources */,
 				0383494F105928F300BFBBC7 /* UIAlertView_TLCommon.m in Sources */,
 				038349C41059375E00BFBBC7 /* NSData_TLCommon.m in Sources */,
+				03834AB710594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
