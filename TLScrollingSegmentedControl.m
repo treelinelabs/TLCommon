@@ -149,6 +149,10 @@
   return titleIndexFound;
 }
 
+- (NSString *)selectedTitle {
+  return [self.segmentTitles objectAtIndex:self.segmentedControl.selectedSegmentIndex];
+}
+
 - (void)dealloc {
   delegate = nil;
   

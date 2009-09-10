@@ -175,6 +175,14 @@
   NSError *requestError = nil;
   NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&requestError];
   
+  if([response isKindOfClass:[NSHTTPURLResponse class]]) {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    if([httpResponse statusCode] / 100 != 2) {
+      // not a 2xx response, fail by zeroing out the data, since it is just junk error text
+      responseData = nil;
+    }
+  }
+  
   id returnError = nil;
   if(requestError) {
     returnError = requestError;
@@ -205,7 +213,7 @@
   id dataField = [result objectForKey:kResultDictionaryKeyData];
   self.data = (dataField == [NSNull null]) ? nil : dataField;
   
-  if(self.error) {
+  if(self.error || !self.data) {
     // Report error
     if([self.delegate respondsToSelector:@selector(cacheDidFailToReceiveFreshData:)]) {
       [self.delegate cacheDidFailToReceiveFreshData:self];
