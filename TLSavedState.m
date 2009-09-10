@@ -6,6 +6,7 @@
 //
 
 #import "TLSavedState.h"
+#import "NSFileManager_TLCommon.h"
 
 @class TLSavedStateNotificationRecipient;
 
@@ -85,8 +86,7 @@ static TLSavedStateNotificationRecipient *notificationRecipient = nil;
 }
 
 + (NSString *)stateSavePath {
-  NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-  NSString *savePath = [documentsDirectory stringByAppendingPathComponent:@"tl_saved_state"];
+  NSString *savePath = [[NSFileManager applicationDocumentsDirectory] stringByAppendingPathComponent:@"tl_saved_state"];
   return savePath;
 }
 

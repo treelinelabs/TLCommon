@@ -14,6 +14,21 @@
 		034040961055C375004B4909 /* TLSavedState.m in Sources */ = {isa = PBXBuildFile; fileRef = 034040941055C375004B4909 /* TLSavedState.m */; };
 		034041C810569BAA004B4909 /* TLCustomDrawnTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */; };
 		034041C910569BAA004B4909 /* TLCustomDrawnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 034041C710569BAA004B4909 /* TLCustomDrawnTableViewCell.m */; };
+		034043511056F401004B4909 /* TLNonBlockingCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 0340434F1056F401004B4909 /* TLNonBlockingCache.h */; };
+		034043521056F401004B4909 /* TLNonBlockingCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 034043501056F401004B4909 /* TLNonBlockingCache.m */; };
+		034043571056F415004B4909 /* TLNonBlockingCacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 034043551056F415004B4909 /* TLNonBlockingCacheDelegate.h */; };
+		0340435A1056F6B7004B4909 /* NSString_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 034043581056F6B7004B4909 /* NSString_TLCommon.h */; };
+		0340435B1056F6B7004B4909 /* NSString_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 034043591056F6B7004B4909 /* NSString_TLCommon.m */; };
+		034043601056F72C004B4909 /* NSFileManager_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0340435E1056F72C004B4909 /* NSFileManager_TLCommon.h */; };
+		034043611056F72C004B4909 /* NSFileManager_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340435F1056F72C004B4909 /* NSFileManager_TLCommon.m */; };
+		034043DB10570F2E004B4909 /* TLScrollingSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 034043D910570F2E004B4909 /* TLScrollingSegmentedControl.h */; };
+		034043DC10570F2E004B4909 /* TLScrollingSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 034043DA10570F2E004B4909 /* TLScrollingSegmentedControl.m */; };
+		034043DE10570F4E004B4909 /* TLScrollingSegmentedControlDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 034043DD10570F4E004B4909 /* TLScrollingSegmentedControlDelegate.h */; };
+		034043E31057102D004B4909 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034043E21057102D004B4909 /* QuartzCore.framework */; };
+		0340444510571719004B4909 /* NSDictionary_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0340444310571719004B4909 /* NSDictionary_TLCommon.h */; };
+		0340444610571719004B4909 /* NSDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340444410571719004B4909 /* NSDictionary_TLCommon.m */; };
+		0340445210571BE0004B4909 /* NSDate_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0340445010571BE0004B4909 /* NSDate_TLCommon.h */; };
+		0340445310571BE0004B4909 /* NSDate_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340445110571BE0004B4909 /* NSDate_TLCommon.m */; };
 		03D9DF18104BFEDA00B1BA77 /* UIViewController_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */; };
 		03D9DF19104BFEDA00B1BA77 /* UIViewController_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */; };
 		03FE415A10518C11003ACE50 /* UITabBarItem_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */; };
@@ -30,6 +45,21 @@
 		034040941055C375004B4909 /* TLSavedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSavedState.m; sourceTree = "<group>"; };
 		034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCustomDrawnTableViewCell.h; sourceTree = "<group>"; };
 		034041C710569BAA004B4909 /* TLCustomDrawnTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLCustomDrawnTableViewCell.m; sourceTree = "<group>"; };
+		0340434F1056F401004B4909 /* TLNonBlockingCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNonBlockingCache.h; sourceTree = "<group>"; };
+		034043501056F401004B4909 /* TLNonBlockingCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNonBlockingCache.m; sourceTree = "<group>"; };
+		034043551056F415004B4909 /* TLNonBlockingCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNonBlockingCacheDelegate.h; sourceTree = "<group>"; };
+		034043581056F6B7004B4909 /* NSString_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_TLCommon.h; sourceTree = "<group>"; };
+		034043591056F6B7004B4909 /* NSString_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_TLCommon.m; sourceTree = "<group>"; };
+		0340435E1056F72C004B4909 /* NSFileManager_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFileManager_TLCommon.h; sourceTree = "<group>"; };
+		0340435F1056F72C004B4909 /* NSFileManager_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManager_TLCommon.m; sourceTree = "<group>"; };
+		034043D910570F2E004B4909 /* TLScrollingSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLScrollingSegmentedControl.h; sourceTree = "<group>"; };
+		034043DA10570F2E004B4909 /* TLScrollingSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLScrollingSegmentedControl.m; sourceTree = "<group>"; };
+		034043DD10570F4E004B4909 /* TLScrollingSegmentedControlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLScrollingSegmentedControlDelegate.h; sourceTree = "<group>"; };
+		034043E21057102D004B4909 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		0340444310571719004B4909 /* NSDictionary_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_TLCommon.h; sourceTree = "<group>"; };
+		0340444410571719004B4909 /* NSDictionary_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_TLCommon.m; sourceTree = "<group>"; };
+		0340445010571BE0004B4909 /* NSDate_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_TLCommon.h; sourceTree = "<group>"; };
+		0340445110571BE0004B4909 /* NSDate_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_TLCommon.m; sourceTree = "<group>"; };
 		03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_TLCommon.h; sourceTree = "<group>"; };
 		03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewController_TLCommon.m; sourceTree = "<group>"; };
 		03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometry_TLCommon.h; sourceTree = "<group>"; };
@@ -46,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				034043E31057102D004B4909 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +88,8 @@
 			children = (
 				034040931055C375004B4909 /* TLSavedState.h */,
 				034040941055C375004B4909 /* TLSavedState.m */,
+				0340434F1056F401004B4909 /* TLNonBlockingCache.h */,
+				034043501056F401004B4909 /* TLNonBlockingCache.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -66,8 +99,19 @@
 			children = (
 				034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */,
 				034041C710569BAA004B4909 /* TLCustomDrawnTableViewCell.m */,
+				034043D910570F2E004B4909 /* TLScrollingSegmentedControl.h */,
+				034043DA10570F2E004B4909 /* TLScrollingSegmentedControl.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		034043531056F407004B4909 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				034043551056F415004B4909 /* TLNonBlockingCacheDelegate.h */,
+				034043DD10570F4E004B4909 /* TLScrollingSegmentedControlDelegate.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		034768DFFF38A50411DB9C8B /* Products */ = {
@@ -92,6 +136,14 @@
 				03FE415910518C11003ACE50 /* UITabBarItem_TLCommon.m */,
 				0313024A1055708A00189879 /* UIImage_TLCommon.h */,
 				0313024B1055708A00189879 /* UIImage_TLCommon.m */,
+				034043581056F6B7004B4909 /* NSString_TLCommon.h */,
+				034043591056F6B7004B4909 /* NSString_TLCommon.m */,
+				0340435E1056F72C004B4909 /* NSFileManager_TLCommon.h */,
+				0340435F1056F72C004B4909 /* NSFileManager_TLCommon.m */,
+				0340444310571719004B4909 /* NSDictionary_TLCommon.h */,
+				0340444410571719004B4909 /* NSDictionary_TLCommon.m */,
+				0340445010571BE0004B4909 /* NSDate_TLCommon.h */,
+				0340445110571BE0004B4909 /* NSDate_TLCommon.m */,
 			);
 			name = "Model extensions";
 			sourceTree = "<group>";
@@ -120,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				034043E21057102D004B4909 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +180,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				034043531056F407004B4909 /* Protocols */,
 				034041C510569B80004B4909 /* Views */,
 				034040921055C35F004B4909 /* Models */,
 				03FE415C10518C87003ACE50 /* Controller extensions */,
@@ -160,6 +214,14 @@
 				0313024F1055709700189879 /* TLCommon.h in Headers */,
 				034040951055C375004B4909 /* TLSavedState.h in Headers */,
 				034041C810569BAA004B4909 /* TLCustomDrawnTableViewCell.h in Headers */,
+				034043511056F401004B4909 /* TLNonBlockingCache.h in Headers */,
+				034043571056F415004B4909 /* TLNonBlockingCacheDelegate.h in Headers */,
+				0340435A1056F6B7004B4909 /* NSString_TLCommon.h in Headers */,
+				034043601056F72C004B4909 /* NSFileManager_TLCommon.h in Headers */,
+				034043DB10570F2E004B4909 /* TLScrollingSegmentedControl.h in Headers */,
+				034043DE10570F4E004B4909 /* TLScrollingSegmentedControlDelegate.h in Headers */,
+				0340444510571719004B4909 /* NSDictionary_TLCommon.h in Headers */,
+				0340445210571BE0004B4909 /* NSDate_TLCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +273,12 @@
 				0313024D1055708A00189879 /* UIImage_TLCommon.m in Sources */,
 				034040961055C375004B4909 /* TLSavedState.m in Sources */,
 				034041C910569BAA004B4909 /* TLCustomDrawnTableViewCell.m in Sources */,
+				034043521056F401004B4909 /* TLNonBlockingCache.m in Sources */,
+				0340435B1056F6B7004B4909 /* NSString_TLCommon.m in Sources */,
+				034043611056F72C004B4909 /* NSFileManager_TLCommon.m in Sources */,
+				034043DC10570F2E004B4909 /* TLScrollingSegmentedControl.m in Sources */,
+				0340444610571719004B4909 /* NSDictionary_TLCommon.m in Sources */,
+				0340445310571BE0004B4909 /* NSDate_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
