@@ -18,6 +18,7 @@
 
 @interface TLScrollingSegmentedControl ()
 
+- (void)updateFog;
 - (void)segmentedControlValueChanged:(UISegmentedControl *)control;
 - (void)setFogColor:(UIColor *)newFogColor;
 
@@ -102,6 +103,7 @@
     [self.layer addSublayer:self.rightFog];
     
     [self setFogColor:kDefaultFogColor];
+    [self updateFog];
   }
   return self;
 }
@@ -176,12 +178,9 @@
   [super dealloc];
 }
 
-#pragma mark -
-#pragma mark UIScrollViewDelegate methods
-
-- (void)scrollViewDidScroll:(UIScrollView *)aScrollView {
-  CGFloat leftEdgeDistance = aScrollView.contentOffset.x;
-  CGFloat rightEdgeDistance = aScrollView.contentSize.width - aScrollView.contentOffset.x - aScrollView.bounds.size.width;
+- (void)updateFog {
+  CGFloat leftEdgeDistance = self.scrollView.contentOffset.x;
+  CGFloat rightEdgeDistance = self.scrollView.contentSize.width - self.scrollView.contentOffset.x - self.scrollView.bounds.size.width;
   CGFloat leftPercentFogDistance = ClampToUnit(1.0f - leftEdgeDistance / kFogWidth);
   CGFloat rightPercentFogDistance = ClampToUnit(1.0f - rightEdgeDistance / kFogWidth);
   [CATransaction begin];
@@ -190,7 +189,14 @@
                                       self.bounds.size.height / 2.0f);
   self.rightFog.position = CGPointMake(self.bounds.size.width - kFogWidth / 2.0f + rightPercentFogDistance * kFogWidth,
                                        self.bounds.size.height / 2.0f);
-  [CATransaction commit]; 
+  [CATransaction commit];   
+}
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)aScrollView {
+  [self updateFog];
 }
 
 @end
