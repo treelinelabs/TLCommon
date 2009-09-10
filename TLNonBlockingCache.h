@@ -30,6 +30,8 @@
   NSTimeInterval ttl;
   BOOL useStaleData;
   id<TLNonBlockingCacheDelegate> delegate;
+  BOOL cancelled;
+  BOOL loading;
 }
 
 - (id)initWithDomain:(NSString *)aDomain // rough category of item, will be used as directory name
@@ -39,6 +41,9 @@
         useStaleData:(BOOL)useStaleDataInsteadOfReturningNil
             delegate:(id<TLNonBlockingCacheDelegate>)aDelegate;
 
+- (void)cancel; // doesn't actually stop url from loading, but prevents loaded data from being saved and/or reported back to the delegate
+
++ (void)deleteCachedDataForDomain:(NSString *)aDomain name:(NSString *)aName;
 + (void)deleteExpiredFilesInDomain:(NSString *)aDomain usingTtl:(NSTimeInterval)expiry; // returns immediately, deletes on background thread
 
 @property(nonatomic, retain, readonly) NSString *domain;
@@ -46,5 +51,6 @@
 @property(nonatomic, retain, readonly) NSData *data;
 @property(nonatomic, retain, readonly) NSError *error;
 @property(nonatomic, assign, readwrite) id<TLNonBlockingCacheDelegate> delegate;
+@property(nonatomic, assign, readonly) BOOL loading;
 
 @end

@@ -22,13 +22,15 @@
 @interface TLNonBlockingCache ()
 
 - (NSString *)dataPath;
-+ (NSString *)pathForDomain:(NSString *)domain;
++ (NSString *)pathForDomain:(NSString *)aDomain;
++ (NSString *)pathForDomain:(NSString *)aDomain name:(NSString *)aName;
 + (BOOL)fileAtPath:(NSString *)path isExpired:(NSTimeInterval)ttl;
 - (void)fetchNewData;
 - (void)fetchNewDataBlocking:(NSURL *)dataURL;
 - (void)fetchDidCompleteWithResult:(NSDictionary *)result;
 + (void)deleteExpiredFilesBlockingWithDetails:(NSDictionary *)deleteDetails;
 
+@property(nonatomic, assign, readwrite) BOOL cancelled;
 @property(nonatomic, retain, readwrite) NSString *domain;
 @property(nonatomic, retain, readwrite) NSString *name;
 @property(nonatomic, retain, readwrite) NSURL *dataSource;
@@ -36,6 +38,7 @@
 @property(nonatomic, retain, readwrite) NSError *error;
 @property(nonatomic, assign, readwrite) NSTimeInterval ttl;
 @property(nonatomic, assign, readwrite) BOOL useStaleData;
+@property(nonatomic, assign, readwrite) BOOL loading;
 
 @end
 
@@ -52,6 +55,8 @@
 @synthesize ttl;
 @synthesize useStaleData;
 @synthesize delegate;
+@synthesize cancelled;
+@synthesize loading;
 
 + (void)deleteExpiredFilesInDomain:(NSString *)aDomain usingTtl:(NSTimeInterval)expiry {
   if(!aDomain) {
@@ -63,6 +68,18 @@
                            ttl, kDeleteDetailsKeyTTL,
                            nil];
   [self performSelectorInBackground:@selector(deleteExpiredFilesBlockingWithDetails:) withObject:details];
+}
+
++ (void)deleteCachedDataForDomain:(NSString *)aDomain name:(NSString *)aName {
+  NSError *error = nil;
+  NSString *path = [self pathForDomain:aDomain name:aName];
+  [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+  if(error) {
+    NSLog(@"Filed to clean up expired file %@, could not delete, error %@: %@",
+          path,
+          error,
+          error.userInfo);
+  }
 }
 
 + (void)deleteExpiredFilesBlockingWithDetails:(NSDictionary *)deleteDetails {
@@ -150,21 +167,25 @@
   return ([modificationDate timeIntervalSinceNow] < -expiryTtl);
 }
 
-+ (NSString *)pathForDomain:(NSString *)domain {
++ (NSString *)pathForDomain:(NSString *)aDomain {
   NSString *domainPath = [NSFileManager applicationDocumentsDirectory];
   domainPath = [domainPath stringByAppendingPathComponent:kCacheFolder];
-  domainPath = [domainPath stringByAppendingPathComponent:domain];
+  domainPath = [domainPath stringByAppendingPathComponent:aDomain];
   return domainPath;
 }
 
++ (NSString *)pathForDomain:(NSString *)aDomain name:(NSString *)aName {
+  NSString *domainPath = [self pathForDomain:aDomain];
+  return [domainPath stringByAppendingPathComponent:aName];
+}
+
 - (NSString *)dataPath {
-  NSString *dataPath = [[self class] pathForDomain:self.domain];
-  dataPath = [dataPath stringByAppendingPathComponent:self.name];
-  return dataPath;
+  return [[self class] pathForDomain:self.domain name:self.name];
 }
 
 - (void)fetchNewData {
   [self retain]; // stay alive until we're done!
+  self.loading = YES;
   [self performSelectorInBackground:@selector(fetchNewDataBlocking:) withObject:self.dataSource];
 }
 
@@ -206,7 +227,16 @@
   [pool release];
 }
 
+- (void)cancel {
+  self.cancelled = YES;
+}
+
 - (void)fetchDidCompleteWithResult:(NSDictionary *)result {
+  self.loading = NO;
+  if(self.cancelled) {
+    return;
+  }
+  
   id errorField = [result objectForKey:kResultDictionaryKeyError];
   self.error = (errorField == [NSNull null]) ? nil : (NSError *)errorField;
   
