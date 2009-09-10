@@ -13,7 +13,6 @@
 
 - (NSString *)queryString {
   NSMutableString *queryString = [NSMutableString string];
-  BOOL first = YES;
   for(NSString *key in self) {
     NSString *encodedKey = [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     id value = [self objectForKey:key];
@@ -42,11 +41,9 @@
        [[value description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
        ];
     }
-    if(first) {
-      [queryString appendString:@"&"];
-      first = NO;
-    }
+    [queryString appendString:@"&"];
   }
+  [queryString deleteCharactersInRange:NSMakeRange([queryString length] - 1, 1)]; // remove trailing &
   return queryString;
 }
 
