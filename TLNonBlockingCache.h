@@ -46,6 +46,8 @@
 + (void)deleteCachedDataForDomain:(NSString *)aDomain name:(NSString *)aName;
 + (void)deleteExpiredFilesInDomain:(NSString *)aDomain usingTtl:(NSTimeInterval)expiry; // returns immediately, deletes on background thread
 
++ (void)storeData:(NSData *)data forDomain:(NSString *)aDomain name:(NSString *)aName;
+
 @property(nonatomic, retain, readonly) NSString *domain;
 @property(nonatomic, retain, readonly) NSString *name;
 @property(nonatomic, retain, readonly) NSData *data;

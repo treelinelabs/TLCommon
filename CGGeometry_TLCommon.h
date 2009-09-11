@@ -3,7 +3,6 @@
 //  TLCommon
 //
 //  Created by Joshua Bleecher Snyder on 8/31/09.
-//  Copyright 2009 Treeline Labs. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

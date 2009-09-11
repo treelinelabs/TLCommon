@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030606B1105A83EC00A3E14E /* UIApplication_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 030606AF105A83EC00A3E14E /* UIApplication_TLCommon.h */; };
+		030606B2105A83EC00A3E14E /* UIApplication_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 030606B0105A83EC00A3E14E /* UIApplication_TLCommon.m */; };
+		0306078B105AA77600A3E14E /* BOOL_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0306078A105AA77600A3E14E /* BOOL_TLCommon.h */; };
+		03060796105AA7DE00A3E14E /* TLMersenneTwister.h in Headers */ = {isa = PBXBuildFile; fileRef = 03060794105AA7DE00A3E14E /* TLMersenneTwister.h */; };
+		03060797105AA7DE00A3E14E /* TLMersenneTwister.m in Sources */ = {isa = PBXBuildFile; fileRef = 03060795105AA7DE00A3E14E /* TLMersenneTwister.m */; };
 		0313024C1055708A00189879 /* UIImage_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0313024A1055708A00189879 /* UIImage_TLCommon.h */; };
 		0313024D1055708A00189879 /* UIImage_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0313024B1055708A00189879 /* UIImage_TLCommon.m */; };
 		0313024F1055709700189879 /* TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0313024E1055709700189879 /* TLCommon.h */; };
@@ -46,6 +51,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030606AF105A83EC00A3E14E /* UIApplication_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIApplication_TLCommon.h; sourceTree = "<group>"; };
+		030606B0105A83EC00A3E14E /* UIApplication_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplication_TLCommon.m; sourceTree = "<group>"; };
+		0306078A105AA77600A3E14E /* BOOL_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOOL_TLCommon.h; sourceTree = "<group>"; };
+		03060794105AA7DE00A3E14E /* TLMersenneTwister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLMersenneTwister.h; sourceTree = "<group>"; };
+		03060795105AA7DE00A3E14E /* TLMersenneTwister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLMersenneTwister.m; sourceTree = "<group>"; };
 		0313024A1055708A00189879 /* UIImage_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_TLCommon.h; sourceTree = "<group>"; };
 		0313024B1055708A00189879 /* UIImage_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_TLCommon.m; sourceTree = "<group>"; };
 		0313024E1055709700189879 /* TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCommon.h; sourceTree = "<group>"; };
@@ -99,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03060785105AA74E00A3E14E /* Simple inline functions */ = {
+			isa = PBXGroup;
+			children = (
+				03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */,
+				0306078A105AA77600A3E14E /* BOOL_TLCommon.h */,
+			);
+			name = "Simple inline functions";
+			sourceTree = "<group>";
+		};
 		034040921055C35F004B4909 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +125,8 @@
 				034040941055C375004B4909 /* TLSavedState.m */,
 				0340434F1056F401004B4909 /* TLNonBlockingCache.h */,
 				034043501056F401004B4909 /* TLNonBlockingCache.m */,
+				03060794105AA7DE00A3E14E /* TLMersenneTwister.h */,
+				03060795105AA7DE00A3E14E /* TLMersenneTwister.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -168,6 +189,8 @@
 				038349C21059375E00BFBBC7 /* NSData_TLCommon.m */,
 				03834AB410594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.h */,
 				03834AB510594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m */,
+				030606AF105A83EC00A3E14E /* UIApplication_TLCommon.h */,
+				030606B0105A83EC00A3E14E /* UIApplication_TLCommon.m */,
 			);
 			name = "Model extensions";
 			sourceTree = "<group>";
@@ -204,13 +227,13 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				03060785105AA74E00A3E14E /* Simple inline functions */,
 				034043531056F407004B4909 /* Protocols */,
 				034041C510569B80004B4909 /* Views */,
 				034040921055C35F004B4909 /* Models */,
 				03FE415C10518C87003ACE50 /* Controller extensions */,
 				03FE415710518BEF003ACE50 /* Model extensions */,
 				03FE415610518BBC003ACE50 /* View extensions */,
-				03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */,
 				0313024E1055709700189879 /* TLCommon.h */,
 			);
 			name = Classes;
@@ -250,6 +273,9 @@
 				038349C31059375E00BFBBC7 /* NSData_TLCommon.h in Headers */,
 				03834AB610594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.h in Headers */,
 				03834B33105976FB00BFBBC7 /* TLModalActivityIndicatorView.h in Headers */,
+				030606B1105A83EC00A3E14E /* UIApplication_TLCommon.h in Headers */,
+				0306078B105AA77600A3E14E /* BOOL_TLCommon.h in Headers */,
+				03060796105AA7DE00A3E14E /* TLMersenneTwister.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +337,8 @@
 				038349C41059375E00BFBBC7 /* NSData_TLCommon.m in Sources */,
 				03834AB710594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m in Sources */,
 				03834B34105976FB00BFBBC7 /* TLModalActivityIndicatorView.m in Sources */,
+				030606B2105A83EC00A3E14E /* UIApplication_TLCommon.m in Sources */,
+				03060797105AA7DE00A3E14E /* TLMersenneTwister.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 #import "TLNonBlockingCache.h"
 #import "TLNonBlockingCacheDelegate.h"
 #import "NSFileManager_TLCommon.h"
+#import "UIApplication_TLCommon.h"
 
 #define kCacheFolder @"TLNonBlockingCache"
 
@@ -80,6 +81,11 @@
           error,
           error.userInfo);
   }
+}
+
++ (void)storeData:(NSData *)data forDomain:(NSString *)aDomain name:(NSString *)aName {
+  NSString *path = [self pathForDomain:aDomain name:aName];
+  [data writeToFile:path atomically:YES];
 }
 
 + (void)deleteExpiredFilesBlockingWithDetails:(NSDictionary *)deleteDetails {
@@ -186,6 +192,7 @@
 - (void)fetchNewData {
   [self retain]; // stay alive until we're done!
   self.loading = YES;
+  [[UIApplication sharedApplication] didStartNetworkRequest];
   [self performSelectorInBackground:@selector(fetchNewDataBlocking:) withObject:self.dataSource];
 }
 
@@ -232,6 +239,7 @@
 }
 
 - (void)fetchDidCompleteWithResult:(NSDictionary *)result {
+  [[UIApplication sharedApplication] didStopNetworkRequest];
   self.loading = NO;
   if(self.cancelled) {
     return;

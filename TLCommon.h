@@ -16,3 +16,6 @@
 #import "NSData_TLCommon.h"
 #import "UIBarButtonItem_TLCommon.h"
 #import "TLModalActivityIndicatorView.h"
+#import "UIApplication_TLCommon.h"
+#import "BOOL_TLCommon.h"
+#import "TLMersenneTwister.h"
