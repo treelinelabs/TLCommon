@@ -11,6 +11,8 @@
 @private
   UIView *customView;
   NSSet *keyPathsRequiringRedisplay;
+  UIColor *cellColor;
+  UIColor *selectedCellColor;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil;
@@ -18,5 +20,7 @@
 - (void)drawContentsInRect:(CGRect)rect; // subclasses should override this
 
 @property(nonatomic, assign, readonly) UIView *customView;
+@property(nonatomic, retain, readwrite) UIColor *cellColor;
+@property(nonatomic, retain, readwrite) UIColor *selectedCellColor;
 
 @end

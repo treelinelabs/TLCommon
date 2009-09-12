@@ -35,6 +35,25 @@
 }
 
 - (void)drawRect:(CGRect)rect {
+  CGContextRef context = UIGraphicsGetCurrentContext();
+  CGContextSaveGState(context);
+  if(self.parentCell.selected || self.parentCell.highlighted) {
+    // Paint a white background first to show through, so any alpha does something
+    if(self.parentCell.selectedCellColor) {
+      [[UIColor whiteColor] setFill];
+      UIRectFill(rect);
+      [self.parentCell.selectedCellColor setFill];
+      UIRectFillUsingBlendMode(rect, kCGBlendModeMultiply);      
+    }
+  } else {
+    if(self.parentCell.cellColor) {
+      [[UIColor whiteColor] setFill];
+      UIRectFill(rect);
+      [self.parentCell.cellColor setFill];
+      UIRectFillUsingBlendMode(rect, kCGBlendModeMultiply);      
+    }
+  }
+  CGContextRestoreGState(context);
   [self.parentCell drawContentsInRect:rect];
 }
 
@@ -46,6 +65,8 @@
 @implementation TLCustomDrawnTableViewCell
 
 @synthesize customView;
+@synthesize cellColor;
+@synthesize selectedCellColor;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil {
   if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -83,7 +104,7 @@
 }
 
 - (void)drawContentsInRect:(CGRect)rect {
-  // subclasses override this
+  // subclasses override this  
 }
 
 - (void)dealloc {
@@ -92,6 +113,38 @@
   }
   [keyPathsRequiringRedisplay release], keyPathsRequiringRedisplay = nil;
   [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Overridden setters
+
+- (void)setCellColor:(UIColor *)newCellColor {
+  if(!self.backgroundView) {
+    self.backgroundView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+  }
+  if(!newCellColor) {
+    self.backgroundView = nil;
+  }
+  [newCellColor retain];
+  [cellColor release];
+  cellColor = newCellColor;
+  self.backgroundView.backgroundColor = cellColor;
+  [self setNeedsDisplay];
+}
+
+
+- (void)setSelectedCellColor:(UIColor *)newSelectedCellColor {
+  if(!self.selectedBackgroundView) {
+    self.selectedBackgroundView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];    
+  }
+  if(!newSelectedCellColor) {
+    self.selectedBackgroundView = nil;
+  }
+  [newSelectedCellColor retain];
+  [selectedCellColor release];
+  selectedCellColor = newSelectedCellColor;
+  self.selectedBackgroundView.backgroundColor = selectedCellColor;
+  [self setNeedsDisplay];
 }
 
 @end
