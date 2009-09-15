@@ -20,8 +20,9 @@
       for(id obj in value) {
         [queryString appendFormat:@"%@=%@",
          encodedKey,
-         [[value description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+         [[obj description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
          ];
+        [queryString appendString:@"&"];
       }
     } else if([value isKindOfClass:[NSDictionary class]]) {
       for(NSString *subkey in value) {
@@ -30,18 +31,20 @@
          [subkey stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
          [[[value objectForKey:subkey] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
          ];
+        [queryString appendString:@"&"];
       }
     } else if([value isKindOfClass:[NSNull class]]) {
       [queryString appendFormat:@"%@=",
        encodedKey
        ];
+      [queryString appendString:@"&"];
     } else {
       [queryString appendFormat:@"%@=%@",
        encodedKey,
        [[value description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
        ];
+      [queryString appendString:@"&"];
     }
-    [queryString appendString:@"&"];
   }
   [queryString deleteCharactersInRange:NSMakeRange([queryString length] - 1, 1)]; // remove trailing &
   return queryString;
