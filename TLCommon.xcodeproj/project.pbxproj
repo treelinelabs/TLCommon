@@ -46,6 +46,9 @@
 		03D9DF19104BFEDA00B1BA77 /* UIViewController_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */; };
 		03E13CE6105FBF8400D7D936 /* UITableView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03E13CE4105FBF8400D7D936 /* UITableView_TLCommon.h */; };
 		03E13CE7105FBF8400D7D936 /* UITableView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E13CE5105FBF8400D7D936 /* UITableView_TLCommon.m */; };
+		03E14201106135B100D7D936 /* CLLocation_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03E141FF106135B100D7D936 /* CLLocation_TLCommon.h */; };
+		03E14202106135B100D7D936 /* CLLocation_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E14200106135B100D7D936 /* CLLocation_TLCommon.m */; };
+		03E142061061362E00D7D936 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E142051061362E00D7D936 /* CoreLocation.framework */; };
 		03FE415A10518C11003ACE50 /* UITabBarItem_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */; };
 		03FE415B10518C11003ACE50 /* UITabBarItem_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE415910518C11003ACE50 /* UITabBarItem_TLCommon.m */; };
 		AA747D9F0F9514B9006C5449 /* TLCommon_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TLCommon_Prefix.pch */; };
@@ -93,6 +96,9 @@
 		03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometry_TLCommon.h; sourceTree = "<group>"; };
 		03E13CE4105FBF8400D7D936 /* UITableView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableView_TLCommon.h; sourceTree = "<group>"; };
 		03E13CE5105FBF8400D7D936 /* UITableView_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableView_TLCommon.m; sourceTree = "<group>"; };
+		03E141FF106135B100D7D936 /* CLLocation_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLocation_TLCommon.h; sourceTree = "<group>"; };
+		03E14200106135B100D7D936 /* CLLocation_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLocation_TLCommon.m; sourceTree = "<group>"; };
+		03E142051061362E00D7D936 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITabBarItem_TLCommon.h; sourceTree = "<group>"; };
 		03FE415910518C11003ACE50 /* UITabBarItem_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITabBarItem_TLCommon.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TLCommon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCommon_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -107,6 +113,7 @@
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 				034043E31057102D004B4909 /* QuartzCore.framework in Frameworks */,
+				03E142061061362E00D7D936 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +204,8 @@
 				03834AB510594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m */,
 				030606AF105A83EC00A3E14E /* UIApplication_TLCommon.h */,
 				030606B0105A83EC00A3E14E /* UIApplication_TLCommon.m */,
+				03E141FF106135B100D7D936 /* CLLocation_TLCommon.h */,
+				03E14200106135B100D7D936 /* CLLocation_TLCommon.m */,
 			);
 			name = "Model extensions";
 			sourceTree = "<group>";
@@ -226,6 +235,7 @@
 			children = (
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
 				034043E21057102D004B4909 /* QuartzCore.framework */,
+				03E142051061362E00D7D936 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -283,6 +293,7 @@
 				0306078B105AA77600A3E14E /* BOOL_TLCommon.h in Headers */,
 				03060796105AA7DE00A3E14E /* TLMersenneTwister.h in Headers */,
 				03E13CE6105FBF8400D7D936 /* UITableView_TLCommon.h in Headers */,
+				03E14201106135B100D7D936 /* CLLocation_TLCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +358,7 @@
 				030606B2105A83EC00A3E14E /* UIApplication_TLCommon.m in Sources */,
 				03060797105AA7DE00A3E14E /* TLMersenneTwister.m in Sources */,
 				03E13CE7105FBF8400D7D936 /* UITableView_TLCommon.m in Sources */,
+				03E14202106135B100D7D936 /* CLLocation_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,3 +20,4 @@
 #import "BOOL_TLCommon.h"
 #import "TLMersenneTwister.h"
 #import "UITableView_TLCommon.h"
+#import "CLLocation_TLCommon.h"
