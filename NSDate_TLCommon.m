@@ -11,7 +11,7 @@
 
 + (NSString *)unixTimestamp {
   NSDate *now = [NSDate date];
-  return [NSString stringWithFormat:@"%f", [now timeIntervalSinceReferenceDate]];
+  return [NSString stringWithFormat:@"%f", [now timeIntervalSince1970]];
 }
 
 @end

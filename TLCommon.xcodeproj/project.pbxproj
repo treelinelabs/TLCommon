@@ -42,6 +42,10 @@
 		03834AB710594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03834AB510594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m */; };
 		03834B33105976FB00BFBBC7 /* TLModalActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03834B31105976FB00BFBBC7 /* TLModalActivityIndicatorView.h */; };
 		03834B34105976FB00BFBBC7 /* TLModalActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03834B32105976FB00BFBBC7 /* TLModalActivityIndicatorView.m */; };
+		03C62F1210627062006537EF /* NSMutableDictionary_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */; };
+		03C62F1310627062006537EF /* NSMutableDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */; };
+		03C62F411062812E006537EF /* UIActivityIndicatorView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C62F3F1062812E006537EF /* UIActivityIndicatorView_TLCommon.h */; };
+		03C62F421062812E006537EF /* UIActivityIndicatorView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C62F401062812E006537EF /* UIActivityIndicatorView_TLCommon.m */; };
 		03D9DF18104BFEDA00B1BA77 /* UIViewController_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */; };
 		03D9DF19104BFEDA00B1BA77 /* UIViewController_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */; };
 		03E13CE6105FBF8400D7D936 /* UITableView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03E13CE4105FBF8400D7D936 /* UITableView_TLCommon.h */; };
@@ -91,6 +95,10 @@
 		03834AB510594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBarButtonItem_TLCommon.m; sourceTree = "<group>"; };
 		03834B31105976FB00BFBBC7 /* TLModalActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLModalActivityIndicatorView.h; sourceTree = "<group>"; };
 		03834B32105976FB00BFBBC7 /* TLModalActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLModalActivityIndicatorView.m; sourceTree = "<group>"; };
+		03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableDictionary_TLCommon.h; sourceTree = "<group>"; };
+		03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableDictionary_TLCommon.m; sourceTree = "<group>"; };
+		03C62F3F1062812E006537EF /* UIActivityIndicatorView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIActivityIndicatorView_TLCommon.h; sourceTree = "<group>"; };
+		03C62F401062812E006537EF /* UIActivityIndicatorView_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIActivityIndicatorView_TLCommon.m; sourceTree = "<group>"; };
 		03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_TLCommon.h; sourceTree = "<group>"; };
 		03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewController_TLCommon.m; sourceTree = "<group>"; };
 		03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometry_TLCommon.h; sourceTree = "<group>"; };
@@ -179,6 +187,8 @@
 				0383494D105928F300BFBBC7 /* UIAlertView_TLCommon.m */,
 				03E13CE4105FBF8400D7D936 /* UITableView_TLCommon.h */,
 				03E13CE5105FBF8400D7D936 /* UITableView_TLCommon.m */,
+				03C62F3F1062812E006537EF /* UIActivityIndicatorView_TLCommon.h */,
+				03C62F401062812E006537EF /* UIActivityIndicatorView_TLCommon.m */,
 			);
 			name = "View extensions";
 			sourceTree = "<group>";
@@ -206,6 +216,8 @@
 				030606B0105A83EC00A3E14E /* UIApplication_TLCommon.m */,
 				03E141FF106135B100D7D936 /* CLLocation_TLCommon.h */,
 				03E14200106135B100D7D936 /* CLLocation_TLCommon.m */,
+				03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */,
+				03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */,
 			);
 			name = "Model extensions";
 			sourceTree = "<group>";
@@ -294,6 +306,8 @@
 				03060796105AA7DE00A3E14E /* TLMersenneTwister.h in Headers */,
 				03E13CE6105FBF8400D7D936 /* UITableView_TLCommon.h in Headers */,
 				03E14201106135B100D7D936 /* CLLocation_TLCommon.h in Headers */,
+				03C62F1210627062006537EF /* NSMutableDictionary_TLCommon.h in Headers */,
+				03C62F411062812E006537EF /* UIActivityIndicatorView_TLCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +373,8 @@
 				03060797105AA7DE00A3E14E /* TLMersenneTwister.m in Sources */,
 				03E13CE7105FBF8400D7D936 /* UITableView_TLCommon.m in Sources */,
 				03E14202106135B100D7D936 /* CLLocation_TLCommon.m in Sources */,
+				03C62F1310627062006537EF /* NSMutableDictionary_TLCommon.m in Sources */,
+				03C62F421062812E006537EF /* UIActivityIndicatorView_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

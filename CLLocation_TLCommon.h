@@ -11,5 +11,6 @@
 
 + (CLLocation *)locationZero; // location at (0,0)
 - (BOOL)isLocationZero; // is within a small epsilon of (0,0)
++ (CLLocation *)locationWithLatitude:(CLLocationDegrees)lat longitude:(CLLocationDegrees)lng;
 
 @end

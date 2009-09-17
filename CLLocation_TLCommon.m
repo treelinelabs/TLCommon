@@ -12,11 +12,16 @@
 @implementation CLLocation (TLCommon)
 
 + (CLLocation *)locationZero {
-  return [[[CLLocation alloc] initWithLatitude:0.0f longitude:0.0f] autorelease];
+  return [self locationWithLatitude:0.0f longitude:0.0f];
 }
 
 - (BOOL)isLocationZero {
   return ([self getDistanceFrom:[[self class] locationZero]] < kZeroComparisonEpsilon);
 }
+
++ (CLLocation *)locationWithLatitude:(CLLocationDegrees)lat longitude:(CLLocationDegrees)lng {
+  return [[[self alloc] initWithLatitude:lat longitude:lng] autorelease];
+}
+
 
 @end

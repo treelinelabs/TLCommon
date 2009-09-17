@@ -109,7 +109,7 @@
 
 - (void)dealloc {
   for(NSString *keyPath in keyPathsRequiringRedisplay) {
-    [self removeObserver:self forKeyPath:keyPath];   
+    [self removeObserver:self forKeyPath:keyPath];
   }
   [keyPathsRequiringRedisplay release], keyPathsRequiringRedisplay = nil;
   [super dealloc];
