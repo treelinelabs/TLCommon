@@ -48,6 +48,8 @@
 		03C62F421062812E006537EF /* UIActivityIndicatorView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C62F401062812E006537EF /* UIActivityIndicatorView_TLCommon.m */; };
 		03D9DF18104BFEDA00B1BA77 /* UIViewController_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */; };
 		03D9DF19104BFEDA00B1BA77 /* UIViewController_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */; };
+		03E0624D106A470F00875DD4 /* TLRand.h in Headers */ = {isa = PBXBuildFile; fileRef = 03E0624B106A470F00875DD4 /* TLRand.h */; };
+		03E0624E106A470F00875DD4 /* TLRand.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E0624C106A470F00875DD4 /* TLRand.m */; };
 		03E13CE6105FBF8400D7D936 /* UITableView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03E13CE4105FBF8400D7D936 /* UITableView_TLCommon.h */; };
 		03E13CE7105FBF8400D7D936 /* UITableView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E13CE5105FBF8400D7D936 /* UITableView_TLCommon.m */; };
 		03E14201106135B100D7D936 /* CLLocation_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03E141FF106135B100D7D936 /* CLLocation_TLCommon.h */; };
@@ -102,6 +104,8 @@
 		03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_TLCommon.h; sourceTree = "<group>"; };
 		03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewController_TLCommon.m; sourceTree = "<group>"; };
 		03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometry_TLCommon.h; sourceTree = "<group>"; };
+		03E0624B106A470F00875DD4 /* TLRand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLRand.h; sourceTree = "<group>"; };
+		03E0624C106A470F00875DD4 /* TLRand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLRand.m; sourceTree = "<group>"; };
 		03E13CE4105FBF8400D7D936 /* UITableView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableView_TLCommon.h; sourceTree = "<group>"; };
 		03E13CE5105FBF8400D7D936 /* UITableView_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableView_TLCommon.m; sourceTree = "<group>"; };
 		03E141FF106135B100D7D936 /* CLLocation_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLocation_TLCommon.h; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				034043501056F401004B4909 /* TLNonBlockingCache.m */,
 				03060794105AA7DE00A3E14E /* TLMersenneTwister.h */,
 				03060795105AA7DE00A3E14E /* TLMersenneTwister.m */,
+				03E0624B106A470F00875DD4 /* TLRand.h */,
+				03E0624C106A470F00875DD4 /* TLRand.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 				03E14201106135B100D7D936 /* CLLocation_TLCommon.h in Headers */,
 				03C62F1210627062006537EF /* NSMutableDictionary_TLCommon.h in Headers */,
 				03C62F411062812E006537EF /* UIActivityIndicatorView_TLCommon.h in Headers */,
+				03E0624D106A470F00875DD4 /* TLRand.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +382,7 @@
 				03E14202106135B100D7D936 /* CLLocation_TLCommon.m in Sources */,
 				03C62F1310627062006537EF /* NSMutableDictionary_TLCommon.m in Sources */,
 				03C62F421062812E006537EF /* UIActivityIndicatorView_TLCommon.m in Sources */,
+				03E0624E106A470F00875DD4 /* TLRand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

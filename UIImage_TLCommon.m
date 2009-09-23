@@ -19,4 +19,13 @@
   return [[self class] imageWithContentsOfFile:imagePath];
 }
 
+// from https://devforums.apple.com/message/75921#75921
+- (UIImage *)imageScaledToSize:(CGSize)size {
+  UIGraphicsBeginImageContext(size);
+  [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+  UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  return scaledImage;
+}
+
 @end

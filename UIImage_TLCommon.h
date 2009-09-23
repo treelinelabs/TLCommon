@@ -16,4 +16,6 @@
 // Uses imageWithContentsOfFile: under the hood, not imageNamed:
 + (UIImage *)imageWithName:(NSString *)fileName extension:(NSString *)fileExtension;
 
+- (UIImage *)imageScaledToSize:(CGSize)size;
+
 @end
