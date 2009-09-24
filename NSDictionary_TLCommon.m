@@ -25,10 +25,10 @@
         [queryString appendString:@"&"];
       }
     } else if([value isKindOfClass:[NSDictionary class]]) {
-      for(NSString *subkey in value) {
+      for(id subkey in value) {
         [queryString appendFormat:@"%@%5B%@%5D=%@",
          encodedKey,
-         [subkey stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+         [[subkey description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
          [[[value objectForKey:subkey] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
          ];
         [queryString appendString:@"&"];
