@@ -15,6 +15,8 @@
 		0313024C1055708A00189879 /* UIImage_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0313024A1055708A00189879 /* UIImage_TLCommon.h */; };
 		0313024D1055708A00189879 /* UIImage_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0313024B1055708A00189879 /* UIImage_TLCommon.m */; };
 		0313024F1055709700189879 /* TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0313024E1055709700189879 /* TLCommon.h */; };
+		033FBD821070F89800BD4D83 /* CGContext_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 033FBD801070F89800BD4D83 /* CGContext_TLCommon.h */; };
+		033FBD831070F89800BD4D83 /* CGContext_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 033FBD811070F89800BD4D83 /* CGContext_TLCommon.m */; };
 		034040951055C375004B4909 /* TLSavedState.h in Headers */ = {isa = PBXBuildFile; fileRef = 034040931055C375004B4909 /* TLSavedState.h */; };
 		034040961055C375004B4909 /* TLSavedState.m in Sources */ = {isa = PBXBuildFile; fileRef = 034040941055C375004B4909 /* TLSavedState.m */; };
 		034041C810569BAA004B4909 /* TLCustomDrawnTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */; };
@@ -70,6 +72,8 @@
 		0313024A1055708A00189879 /* UIImage_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_TLCommon.h; sourceTree = "<group>"; };
 		0313024B1055708A00189879 /* UIImage_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_TLCommon.m; sourceTree = "<group>"; };
 		0313024E1055709700189879 /* TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCommon.h; sourceTree = "<group>"; };
+		033FBD801070F89800BD4D83 /* CGContext_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGContext_TLCommon.h; sourceTree = "<group>"; };
+		033FBD811070F89800BD4D83 /* CGContext_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGContext_TLCommon.m; sourceTree = "<group>"; };
 		034040931055C375004B4909 /* TLSavedState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSavedState.h; sourceTree = "<group>"; };
 		034040941055C375004B4909 /* TLSavedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSavedState.m; sourceTree = "<group>"; };
 		034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCustomDrawnTableViewCell.h; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				03E14200106135B100D7D936 /* CLLocation_TLCommon.m */,
 				03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */,
 				03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */,
+				033FBD801070F89800BD4D83 /* CGContext_TLCommon.h */,
+				033FBD811070F89800BD4D83 /* CGContext_TLCommon.m */,
 			);
 			name = "Model extensions";
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				03C62F1210627062006537EF /* NSMutableDictionary_TLCommon.h in Headers */,
 				03C62F411062812E006537EF /* UIActivityIndicatorView_TLCommon.h in Headers */,
 				03E0624D106A470F00875DD4 /* TLRand.h in Headers */,
+				033FBD821070F89800BD4D83 /* CGContext_TLCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +390,7 @@
 				03C62F1310627062006537EF /* NSMutableDictionary_TLCommon.m in Sources */,
 				03C62F421062812E006537EF /* UIActivityIndicatorView_TLCommon.m in Sources */,
 				03E0624E106A470F00875DD4 /* TLRand.m in Sources */,
+				033FBD831070F89800BD4D83 /* CGContext_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
