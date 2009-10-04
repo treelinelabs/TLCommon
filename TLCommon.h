@@ -25,3 +25,4 @@
 #import "UIActivityIndicatorView_TLCommon.h"
 #import "TLRand.h"
 #import "CGContext_TLCommon.h"
+#import "UIColor_TLCommon.h"

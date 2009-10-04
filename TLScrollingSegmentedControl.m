@@ -67,6 +67,7 @@
     
     self.segmentedControl = [[[UISegmentedControl alloc] initWithItems:self.segmentTitles] autorelease];
     self.segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    self.segmentedControl.frame = CGRectZeroWithWidthAndHeight(self.segmentedControl.frame.size.width, frame.size.height);
     [self.segmentedControl addTarget:self
                               action:@selector(segmentedControlValueChanged:)
                     forControlEvents:UIControlEventValueChanged];

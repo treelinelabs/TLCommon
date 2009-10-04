@@ -23,7 +23,7 @@
 - (NSString *)selectedTitle;
 - (BOOL)setSelectedTitle:(NSString *)title animated:(BOOL)animated;
 - (void)setTintColor:(UIColor *)tintColor;
-+ (CGFloat)recommendedHeight; // if you make this view have a different height than this, it'll be ugly!
++ (CGFloat)recommendedHeight; // if you make this view have a different height than this, it may be ugly!
 
 @property(nonatomic, assign, readwrite) id<TLScrollingSegmentedControlDelegate> delegate;
 

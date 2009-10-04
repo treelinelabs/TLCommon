@@ -44,6 +44,8 @@
 		03834AB710594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03834AB510594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m */; };
 		03834B33105976FB00BFBBC7 /* TLModalActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03834B31105976FB00BFBBC7 /* TLModalActivityIndicatorView.h */; };
 		03834B34105976FB00BFBBC7 /* TLModalActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03834B32105976FB00BFBBC7 /* TLModalActivityIndicatorView.m */; };
+		038800D51078D6B100AF568C /* UIColor_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 038800D31078D6B100AF568C /* UIColor_TLCommon.h */; };
+		038800D61078D6B100AF568C /* UIColor_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 038800D41078D6B100AF568C /* UIColor_TLCommon.m */; };
 		03C62F1210627062006537EF /* NSMutableDictionary_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */; };
 		03C62F1310627062006537EF /* NSMutableDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */; };
 		03C62F411062812E006537EF /* UIActivityIndicatorView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C62F3F1062812E006537EF /* UIActivityIndicatorView_TLCommon.h */; };
@@ -101,6 +103,8 @@
 		03834AB510594DFB00BFBBC7 /* UIBarButtonItem_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBarButtonItem_TLCommon.m; sourceTree = "<group>"; };
 		03834B31105976FB00BFBBC7 /* TLModalActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLModalActivityIndicatorView.h; sourceTree = "<group>"; };
 		03834B32105976FB00BFBBC7 /* TLModalActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLModalActivityIndicatorView.m; sourceTree = "<group>"; };
+		038800D31078D6B100AF568C /* UIColor_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColor_TLCommon.h; sourceTree = "<group>"; };
+		038800D41078D6B100AF568C /* UIColor_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor_TLCommon.m; sourceTree = "<group>"; };
 		03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableDictionary_TLCommon.h; sourceTree = "<group>"; };
 		03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableDictionary_TLCommon.m; sourceTree = "<group>"; };
 		03C62F3F1062812E006537EF /* UIActivityIndicatorView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIActivityIndicatorView_TLCommon.h; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 				03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */,
 				033FBD801070F89800BD4D83 /* CGContext_TLCommon.h */,
 				033FBD811070F89800BD4D83 /* CGContext_TLCommon.m */,
+				038800D31078D6B100AF568C /* UIColor_TLCommon.h */,
+				038800D41078D6B100AF568C /* UIColor_TLCommon.m */,
 			);
 			name = "Model extensions";
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 				03C62F411062812E006537EF /* UIActivityIndicatorView_TLCommon.h in Headers */,
 				03E0624D106A470F00875DD4 /* TLRand.h in Headers */,
 				033FBD821070F89800BD4D83 /* CGContext_TLCommon.h in Headers */,
+				038800D51078D6B100AF568C /* UIColor_TLCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +398,7 @@
 				03C62F421062812E006537EF /* UIActivityIndicatorView_TLCommon.m in Sources */,
 				03E0624E106A470F00875DD4 /* TLRand.m in Sources */,
 				033FBD831070F89800BD4D83 /* CGContext_TLCommon.m in Sources */,
+				038800D61078D6B100AF568C /* UIColor_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
