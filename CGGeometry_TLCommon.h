@@ -60,3 +60,21 @@ static inline CGFloat DistanceBetweenPoints(CGPoint p1, CGPoint p2) {
 static inline CGPoint CenterOfRect(CGRect rect) {
   return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
 }
+
+static inline double AngleBetweenPoints(CGPoint p, CGPoint q) {
+  CGPoint deltaVector = CGPointMake(p.x - q.x, p.y - q.y);
+  double angle = atan(deltaVector.y / deltaVector.x) + (deltaVector.x < 0 ? M_PI : 0);
+  return angle;
+}
+
+static inline CGPoint MidpointBetweenPoints(CGPoint p, CGPoint q) {
+  return CGPointMake((p.x + q.x) / 2.0f, (p.y + q.y) / 2.0f);
+}
+
+static inline CGPoint PointMinusPoint(CGPoint p, CGPoint q) {
+  return CGPointMake(p.x - q.x, p.y - q.y);
+}
+
+static inline CGPoint PointPlusPoint(CGPoint p, CGPoint q) {
+  return CGPointMake(p.x + q.x, p.y + q.y);
+}

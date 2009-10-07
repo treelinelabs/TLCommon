@@ -25,4 +25,14 @@
           ];
 }
 
+- (NSString *)stringByURLEncodingAllCharacters {
+  NSString *encodedString = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                (CFStringRef)self,
+                                                                                NULL,
+                                                                                (CFStringRef)@"&()<>@,;:\\\"/[]?=",
+                                                                                kCFStringEncodingUTF8);
+  [encodedString autorelease];
+  return encodedString;
+}
+
 @end

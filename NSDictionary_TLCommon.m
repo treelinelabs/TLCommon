@@ -6,21 +6,20 @@
 //
 
 #import "NSDictionary_TLCommon.h"
-
-
+#import "NSString_TLCommon.h"
 
 @implementation NSDictionary (TLCommon)
 
 - (NSString *)queryString {
   NSMutableString *queryString = [NSMutableString string];
-  for(NSString *key in self) {
-    NSString *encodedKey = [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  for(id key in self) {
+    NSString *encodedKey = [[key description] stringByURLEncodingAllCharacters];
     id value = [self objectForKey:key];
     if([value isKindOfClass:[NSArray class]]) {
       for(id obj in value) {
         [queryString appendFormat:@"%@=%@",
          encodedKey,
-         [[obj description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+         [[obj description] stringByURLEncodingAllCharacters]
          ];
         [queryString appendString:@"&"];
       }
@@ -28,8 +27,8 @@
       for(id subkey in value) {
         [queryString appendFormat:@"%@%5B%@%5D=%@",
          encodedKey,
-         [[subkey description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-         [[[value objectForKey:subkey] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+         [[subkey description] stringByURLEncodingAllCharacters],
+         [[[value objectForKey:subkey] description] stringByURLEncodingAllCharacters]
          ];
         [queryString appendString:@"&"];
       }
@@ -41,7 +40,7 @@
     } else {
       [queryString appendFormat:@"%@=%@",
        encodedKey,
-       [[value description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+       [[value description] stringByURLEncodingAllCharacters]
        ];
       [queryString appendString:@"&"];
     }

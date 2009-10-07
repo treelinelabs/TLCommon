@@ -11,5 +11,6 @@
 @interface NSString (TLCommon)
 
 - (NSString *)md5;
+- (NSString *)stringByURLEncodingAllCharacters; // including &, %, ?, =, and other url "safe" characters
 
 @end
