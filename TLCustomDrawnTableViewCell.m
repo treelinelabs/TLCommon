@@ -65,15 +65,13 @@
 @implementation TLCustomDrawnTableViewCell
 
 @synthesize customView;
-@synthesize cellColor;
-@synthesize selectedCellColor;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil {
   if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
     CGRect customViewFrame = CGRectZeroWithSize(self.contentView.bounds.size);
     customView = [[[TLCustomDrawnTableViewCellCustomView alloc] initWithFrame:customViewFrame] autorelease];
     ((TLCustomDrawnTableViewCellCustomView *)customView).parentCell = self;
-    [self.contentView addSubview:customView];
+    [self.contentView addSubview:self.customView];
     keyPathsRequiringRedisplay = [redisplayRequiringKeyPathsOrNil retain];
     for(NSString *keyPath in keyPathsRequiringRedisplay) {
       [self addObserver:self forKeyPath:keyPath options:0 context:NULL];   
@@ -84,23 +82,23 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
   if((self == object) && [keyPathsRequiringRedisplay containsObject:keyPath]) {
-    [customView setNeedsDisplay];
+    [self.customView setNeedsDisplay];
   }
 }
 
 - (void)didTransitionToState:(UITableViewCellStateMask)state {
   [super didTransitionToState:state];
-  [customView setNeedsDisplay];
+  [self.customView setNeedsDisplay];
 }
 
 - (void)willTransitionToState:(UITableViewCellStateMask)state {
   [super willTransitionToState:state];
-  [customView setNeedsDisplay];
+  [self.customView setNeedsDisplay];
 }
 
 - (void)setNeedsDisplay {
 	[super setNeedsDisplay];
-	[customView setNeedsDisplay];
+	[self.customView setNeedsDisplay];
 }
 
 - (void)drawContentsInRect:(CGRect)rect {
@@ -112,41 +110,7 @@
     [self removeObserver:self forKeyPath:keyPath];
   }
   [keyPathsRequiringRedisplay release], keyPathsRequiringRedisplay = nil;
-  [cellColor release], cellColor = nil;
-  [selectedCellColor release], selectedCellColor = nil;
   [super dealloc];
-}
-
-#pragma mark -
-#pragma mark Overridden setters
-
-- (void)setCellColor:(UIColor *)newCellColor {
-  if(!self.backgroundView) {
-    self.backgroundView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
-  }
-  if(!newCellColor) {
-    self.backgroundView = nil;
-  }
-  [newCellColor retain];
-  [cellColor release];
-  cellColor = newCellColor;
-  self.backgroundView.backgroundColor = cellColor;
-  [self setNeedsDisplay];
-}
-
-
-- (void)setSelectedCellColor:(UIColor *)newSelectedCellColor {
-  if(!self.selectedBackgroundView) {
-    self.selectedBackgroundView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];    
-  }
-  if(!newSelectedCellColor) {
-    self.selectedBackgroundView = nil;
-  }
-  [newSelectedCellColor retain];
-  [selectedCellColor release];
-  selectedCellColor = newSelectedCellColor;
-  self.selectedBackgroundView.backgroundColor = selectedCellColor;
-  [self setNeedsDisplay];
 }
 
 @end
