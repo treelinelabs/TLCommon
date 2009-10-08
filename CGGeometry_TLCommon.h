@@ -47,6 +47,22 @@ static inline CGSize CGSizeMakeSquare(CGFloat widthAndHeight) {
   return CGSizeMake(widthAndHeight, widthAndHeight);
 }
 
+static inline CGRect CGRectByAddingXOffset(CGRect originalRect, CGFloat xOffset) {
+  return CGRectWithXYAndSize(originalRect.origin.x + xOffset, originalRect.origin.y, originalRect.size);
+}
+
+static inline CGRect CGRectByAddingYOffset(CGRect originalRect, CGFloat yOffset) {
+  return CGRectWithXYAndSize(originalRect.origin.x, originalRect.origin.y + yOffset, originalRect.size);
+}
+
+static inline CGSize CGSizeByAddingHeight(CGSize originalSize, CGFloat extraHeight) {
+  return CGSizeMake(originalSize.width, originalSize.height + extraHeight);
+}
+
+static inline CGSize CGSizeByAddingWidth(CGSize originalSize, CGFloat extraWidth) {
+  return CGSizeMake(originalSize.width + extraWidth, originalSize.height);
+}
+
 static inline CGFloat SquaredDistanceBetweenPoints(CGPoint p1, CGPoint p2) {
   CGFloat deltaX = p1.x - p2.x;
   CGFloat deltaY = p1.y - p2.y;
@@ -77,4 +93,8 @@ static inline CGPoint PointMinusPoint(CGPoint p, CGPoint q) {
 
 static inline CGPoint PointPlusPoint(CGPoint p, CGPoint q) {
   return CGPointMake(p.x + q.x, p.y + q.y);
+}
+
+static inline CGFloat OffsetToCenterFloatInFloat(CGFloat smallerValue, CGFloat largerValue) {
+  return (largerValue - smallerValue) / 2.0f;
 }
