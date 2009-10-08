@@ -36,6 +36,8 @@
 		0340444610571719004B4909 /* NSDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340444410571719004B4909 /* NSDictionary_TLCommon.m */; };
 		0340445210571BE0004B4909 /* NSDate_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0340445010571BE0004B4909 /* NSDate_TLCommon.h */; };
 		0340445310571BE0004B4909 /* NSDate_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340445110571BE0004B4909 /* NSDate_TLCommon.m */; };
+		037C7C37107D83E50009B2FE /* TLTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 037C7C35107D83E50009B2FE /* TLTableViewCell.h */; };
+		037C7C38107D83E50009B2FE /* TLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 037C7C36107D83E50009B2FE /* TLTableViewCell.m */; };
 		0383494E105928F300BFBBC7 /* UIAlertView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0383494C105928F300BFBBC7 /* UIAlertView_TLCommon.h */; };
 		0383494F105928F300BFBBC7 /* UIAlertView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0383494D105928F300BFBBC7 /* UIAlertView_TLCommon.m */; };
 		038349C31059375E00BFBBC7 /* NSData_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 038349C11059375E00BFBBC7 /* NSData_TLCommon.h */; };
@@ -95,6 +97,8 @@
 		0340444410571719004B4909 /* NSDictionary_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_TLCommon.m; sourceTree = "<group>"; };
 		0340445010571BE0004B4909 /* NSDate_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_TLCommon.h; sourceTree = "<group>"; };
 		0340445110571BE0004B4909 /* NSDate_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_TLCommon.m; sourceTree = "<group>"; };
+		037C7C35107D83E50009B2FE /* TLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTableViewCell.h; sourceTree = "<group>"; };
+		037C7C36107D83E50009B2FE /* TLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTableViewCell.m; sourceTree = "<group>"; };
 		0383494C105928F300BFBBC7 /* UIAlertView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertView_TLCommon.h; sourceTree = "<group>"; };
 		0383494D105928F300BFBBC7 /* UIAlertView_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertView_TLCommon.m; sourceTree = "<group>"; };
 		038349C11059375E00BFBBC7 /* NSData_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSData_TLCommon.h; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 		034041C510569B80004B4909 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				037C7C35107D83E50009B2FE /* TLTableViewCell.h */,
+				037C7C36107D83E50009B2FE /* TLTableViewCell.m */,
 				034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */,
 				034041C710569BAA004B4909 /* TLCustomDrawnTableViewCell.m */,
 				034043D910570F2E004B4909 /* TLScrollingSegmentedControl.h */,
@@ -329,6 +335,7 @@
 				03E0624D106A470F00875DD4 /* TLRand.h in Headers */,
 				033FBD821070F89800BD4D83 /* CGContext_TLCommon.h in Headers */,
 				038800D51078D6B100AF568C /* UIColor_TLCommon.h in Headers */,
+				037C7C37107D83E50009B2FE /* TLTableViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +406,7 @@
 				03E0624E106A470F00875DD4 /* TLRand.m in Sources */,
 				033FBD831070F89800BD4D83 /* CGContext_TLCommon.m in Sources */,
 				038800D61078D6B100AF568C /* UIColor_TLCommon.m in Sources */,
+				037C7C38107D83E50009B2FE /* TLTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

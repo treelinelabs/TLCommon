@@ -112,6 +112,8 @@
     [self removeObserver:self forKeyPath:keyPath];
   }
   [keyPathsRequiringRedisplay release], keyPathsRequiringRedisplay = nil;
+  [cellColor release], cellColor = nil;
+  [selectedCellColor release], selectedCellColor = nil;
   [super dealloc];
 }
 

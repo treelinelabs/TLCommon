@@ -26,3 +26,4 @@
 #import "TLRand.h"
 #import "CGContext_TLCommon.h"
 #import "UIColor_TLCommon.h"
+#import "TLTableViewCell.h"

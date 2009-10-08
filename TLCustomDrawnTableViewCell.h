@@ -15,7 +15,9 @@
   UIColor *selectedCellColor;
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil;
+- (id)initWithStyle:(UITableViewCellStyle)style
+    reuseIdentifier:(NSString *)reuseIdentifier
+keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil;
 
 - (void)drawContentsInRect:(CGRect)rect; // subclasses should override this
 
