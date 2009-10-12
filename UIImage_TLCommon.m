@@ -6,7 +6,7 @@
 //
 
 #import "UIImage_TLCommon.h"
-
+#import "CGGeometry_TLCommon.h"
 
 @implementation UIImage (TLCommon)
 
@@ -19,10 +19,10 @@
   return [[self class] imageWithContentsOfFile:imagePath];
 }
 
-// from https://devforums.apple.com/message/75921#75921
+// modified from https://devforums.apple.com/message/75921#75921
 - (UIImage *)imageScaledToSize:(CGSize)size {
   UIGraphicsBeginImageContext(size);
-  [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+  [self drawInRect:CGRectZeroWithSize(size)];
   UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
   UIGraphicsEndImageContext();
   return scaledImage;

@@ -7,6 +7,7 @@
 
 #import "TLCustomDrawnTableViewCell.h"
 #import "CGGeometry_TLCommon.h"
+#import "CGContext_TLCommon.h"
 
 #pragma mark -
 
@@ -112,5 +113,74 @@
   [keyPathsRequiringRedisplay release], keyPathsRequiringRedisplay = nil;
   [super dealloc];
 }
+
+#pragma mark -
+#pragma mark Drawing utilities for subclasses' use
+
+- (CGFloat)drawLeftImage:(UIImage *)image
+                    size:(CGSize)size
+             leftPadding:(CGFloat)leftPadding
+            rightPadding:(CGFloat)rightPadding
+            cornerRadius:(CGFloat)cornerRadius
+             contentMode:(UIViewContentMode)contentMode {
+
+  // Calculate two rects: The image drawing rect, and
+  // the clipping rect.
+  
+  CGRect clippingRect = CGRectWithXYAndSize(leftPadding,
+                                            OffsetToCenterFloatInFloat(size.height, self.customView.bounds.size.height),
+                                            size);
+  
+
+  // some handy precalculations
+  CGFloat destinationAspectRatio = size.width / size.height;
+  CGFloat imageAspectRatio = image.size.width / image.size.height;
+
+  CGSize imageDrawingSize = CGSizeZero;  
+  switch(contentMode) {
+    case UIViewContentModeScaleToFill:;
+      imageDrawingSize = size;
+      break;
+    case UIViewContentModeScaleAspectFit:;
+      CGFloat fitScalingFactor = 1;
+      if(destinationAspectRatio > imageAspectRatio) {
+        fitScalingFactor = size.height / image.size.height;
+      } else {
+        fitScalingFactor = size.width / image.size.width;
+      }
+      imageDrawingSize = ScaledSize(image.size, fitScalingFactor);
+      break;
+    case UIViewContentModeScaleAspectFill:;
+      CGFloat fillScalingFactor = 1;
+      if(destinationAspectRatio > imageAspectRatio) {
+        fillScalingFactor = size.width / image.size.width;
+      } else {
+        fillScalingFactor = size.height / image.size.height;
+      }
+      imageDrawingSize = ScaledSize(image.size, fillScalingFactor);
+      break;
+    default:
+      NSLog(@"Content mode %i not supported!", contentMode);
+      break;
+  }
+  
+  // Now that we have the size, pick a drawing rect that centers the drawn image size in its clipping rect
+  CGRect imageDrawingRect = CenteredRectInRectWithSize(clippingRect, imageDrawingSize);
+  
+  // Set up the rounded corners and draw!
+
+  CGContextRef context = UIGraphicsGetCurrentContext();
+  CGContextSaveGState(context);
+  CGContextBeginPath(context);
+  CGContextAddRoundedRectToPath(context, clippingRect, cornerRadius, cornerRadius);
+  CGContextClosePath(context);
+  CGContextClip(context);
+  [image drawInRect:imageDrawingRect];
+  CGContextRestoreGState(context);
+
+  return CGRectGetMaxX(clippingRect) + rightPadding;
+}
+
+
 
 @end

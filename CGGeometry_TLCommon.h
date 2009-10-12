@@ -55,6 +55,14 @@ static inline CGRect CGRectByAddingYOffset(CGRect originalRect, CGFloat yOffset)
   return CGRectWithXYAndSize(originalRect.origin.x, originalRect.origin.y + yOffset, originalRect.size);
 }
 
+static inline CGRect CGRectByAddingWidth(CGRect originalRect, CGFloat additionalWidth) {
+  return CGRectMake(originalRect.origin.x, originalRect.origin.y, originalRect.size.width + additionalWidth, originalRect.size.height);
+}
+
+static inline CGRect CGRectByAddingHeight(CGRect originalRect, CGFloat additionalHeight) {
+  return CGRectMake(originalRect.origin.x, originalRect.origin.y, originalRect.size.width, originalRect.size.height + additionalHeight);
+}
+
 static inline CGSize CGSizeByAddingHeight(CGSize originalSize, CGFloat extraHeight) {
   return CGSizeMake(originalSize.width, originalSize.height + extraHeight);
 }
@@ -97,4 +105,14 @@ static inline CGPoint PointPlusPoint(CGPoint p, CGPoint q) {
 
 static inline CGFloat OffsetToCenterFloatInFloat(CGFloat smallerValue, CGFloat largerValue) {
   return (largerValue - smallerValue) / 2.0f;
+}
+
+static inline CGRect CenteredRectInRectWithSize(CGRect rectToCenterIn, CGSize sizeOfCenteredRect) {
+  return CGRectWithXYAndSize(rectToCenterIn.origin.x + OffsetToCenterFloatInFloat(sizeOfCenteredRect.width, rectToCenterIn.size.width),
+                             rectToCenterIn.origin.y + OffsetToCenterFloatInFloat(sizeOfCenteredRect.height, rectToCenterIn.size.height),
+                             sizeOfCenteredRect);
+}
+
+static inline CGSize ScaledSize(CGSize originalSize, CGFloat scalingFactor) {
+  return CGSizeMake(originalSize.width * scalingFactor, originalSize.height * scalingFactor);
 }

@@ -27,3 +27,5 @@
 #import "CGContext_TLCommon.h"
 #import "UIColor_TLCommon.h"
 #import "TLTableViewCell.h"
+#import "UIImageView_TLCommon.h"
+#import "UIFont_TLCommon.h"

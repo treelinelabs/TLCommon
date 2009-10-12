@@ -255,24 +255,38 @@
   self.error = (errorField == [NSNull null]) ? nil : (NSError *)errorField;
   
   id dataField = [result objectForKey:kResultDictionaryKeyData];
-  self.data = (dataField == [NSNull null]) ? nil : dataField;
+  NSData *receivedData = (dataField == [NSNull null]) ? nil : dataField;
   
-  if(self.error || !self.data) {
+  if(self.error || !receivedData) {
     // Report error
     if([self.delegate respondsToSelector:@selector(cacheDidFailToReceiveFreshData:)]) {
       [self.delegate cacheDidFailToReceiveFreshData:self];
     }
   } else {
-    // Save new data and report success
-    // Make sure the directory exists
-    [[NSFileManager defaultManager] createDirectoryAtPath:[[self class] pathForDomain:self.domain]
-                              withIntermediateDirectories:YES
-                                               attributes:nil
-                                                    error:NULL];
-    // Write the data
-    [self.data writeToFile:[self dataPath] atomically:YES];
-    if([self.delegate respondsToSelector:@selector(cacheDidReceiveFreshData:)]) {
-      [self.delegate cacheDidReceiveFreshData:self];
+    BOOL shouldStoreData = YES;
+    // We've got data -- verify it now
+    if([self.delegate respondsToSelector:@selector(cache:shouldStoreData:)]) {
+      shouldStoreData = [self.delegate cache:self
+                                  shouldStoreData:self.data];
+    }
+    if(shouldStoreData) {
+      self.data = receivedData;
+      // Save new data and report success
+      // Make sure the directory exists
+      [[NSFileManager defaultManager] createDirectoryAtPath:[[self class] pathForDomain:self.domain]
+                                withIntermediateDirectories:YES
+                                                 attributes:nil
+                                                      error:NULL];
+      // Write the data
+      [self.data writeToFile:[self dataPath] atomically:YES];
+      if([self.delegate respondsToSelector:@selector(cacheDidReceiveFreshData:)]) {
+        [self.delegate cacheDidReceiveFreshData:self];
+      }
+    } else {
+      // Report error
+      if([self.delegate respondsToSelector:@selector(cacheDidFailToReceiveFreshData:)]) {
+        [self.delegate cacheDidFailToReceiveFreshData:self];
+      }        
     }
   }
   [self release]; // matches retain in fetchNewData
