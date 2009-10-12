@@ -167,6 +167,13 @@
   // Now that we have the size, pick a drawing rect that centers the drawn image size in its clipping rect
   CGRect imageDrawingRect = CenteredRectInRectWithSize(clippingRect, imageDrawingSize);
   
+  if(contentMode == UIViewContentModeScaleAspectFit) {
+    // reduce clipping rect to actual image drawing rect, so that the rounded corners do their thing;
+    // in the other modes, we've scaled the image up to meet the clipping rect, so the clipping rect
+    // doesn't need to be modified.
+    clippingRect = imageDrawingRect;
+  }
+  
   // Set up the rounded corners and draw!
 
   CGContextRef context = UIGraphicsGetCurrentContext();

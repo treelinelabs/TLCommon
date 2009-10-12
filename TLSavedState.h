@@ -18,4 +18,7 @@
 + (void)setValue:(id)value forKey:(NSString *)key;
 - (NSDictionary *)dictionaryRepresentation;
 
+// returns YES the first time this is ever called for a particular key, and NO every subsequent time
++ (BOOL)firstTimeForEvent:(NSString *)keyRepresentingEvent;
+
 @end

@@ -85,11 +85,19 @@ static TLSavedStateNotificationRecipient *notificationRecipient = nil;
   [state setObject:value forKey:key];
 }
 
++ (BOOL)firstTimeForEvent:(NSString *)keyRepresentingEvent {
+  NSString *mangledKey = [@"TLSavedStateInternal_FirstTime_" stringByAppendingString:keyRepresentingEvent];
+  BOOL firstTime = ![[self valueForKey:mangledKey] boolValue];
+  if(firstTime) {
+    [self setValue:[NSNumber numberWithBool:YES] forKey:mangledKey];
+  }
+  return firstTime;
+}
+
 + (NSString *)stateSavePath {
   NSString *savePath = [[NSFileManager applicationDocumentsDirectory] stringByAppendingPathComponent:@"tl_saved_state"];
   return savePath;
 }
-
 
 - (NSDictionary *)dictionaryRepresentation {
   return [[state copy] autorelease];
