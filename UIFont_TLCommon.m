@@ -11,8 +11,20 @@
 
 @implementation UIFont (TLCommon)
 
++ (UIFont *)helveticaWithSize:(CGFloat)size {
+  return [UIFont fontWithName:@"Helvetica" size:size];  
+}
+
 + (UIFont *)helveticaBoldWithSize:(CGFloat)size {
   return [UIFont fontWithName:@"Helvetica-Bold" size:size];
+}
+
++ (UIFont *)helveticaItalicWithSize:(CGFloat)size {
+  return [UIFont fontWithName:@"Helvetica-Oblique" size:size];
+}
+
++ (UIFont *)helveticaBoldItalicWithSize:(CGFloat)size {
+  return [UIFont fontWithName:@"Helvetica-BoldOblique" size:size];
 }
 
 @end
