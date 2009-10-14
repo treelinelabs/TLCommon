@@ -257,6 +257,7 @@
   id dataField = [result objectForKey:kResultDictionaryKeyData];
   NSData *receivedData = (dataField == [NSNull null]) ? nil : dataField;
   
+  [[self retain] autorelease];
   if(self.error || !receivedData) {
     // Report error
     if([self.delegate respondsToSelector:@selector(cacheDidFailToReceiveFreshData:)]) {
@@ -267,7 +268,7 @@
     // We've got data -- verify it now
     if([self.delegate respondsToSelector:@selector(cache:shouldStoreData:)]) {
       shouldStoreData = [self.delegate cache:self
-                                  shouldStoreData:self.data];
+                             shouldStoreData:receivedData];
     }
     if(shouldStoreData) {
       self.data = receivedData;
@@ -290,6 +291,15 @@
     }
   }
   [self release]; // matches retain in fetchNewData
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"<%@ %p: %@-%@ (%@)>",
+          NSStringFromClass([self class]),
+          self,
+          self.domain,
+          self.name,
+          self.dataSource];
 }
 
 - (void)dealloc {

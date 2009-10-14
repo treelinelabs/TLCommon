@@ -116,3 +116,17 @@ static inline CGRect CenteredRectInRectWithSize(CGRect rectToCenterIn, CGSize si
 static inline CGSize ScaledSize(CGSize originalSize, CGFloat scalingFactor) {
   return CGSizeMake(originalSize.width * scalingFactor, originalSize.height * scalingFactor);
 }
+
+static inline CGRect CGRectRoundedToNearestPixel(CGRect rect) {
+  return CGRectMake(roundf(rect.origin.x),
+                    roundf(rect.origin.y),
+                    roundf(rect.size.width),
+                    roundf(rect.size.height));
+}
+
+static inline CGRect CGRectFlooredToNearestPixel(CGRect rect) {
+  return CGRectMake(floorf(rect.origin.x),
+                    floorf(rect.origin.y),
+                    floorf(rect.size.width),
+                    floorf(rect.size.height));
+}
