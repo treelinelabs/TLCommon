@@ -44,13 +44,22 @@
   return NSStringFromClass(self);
 }
           
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected
+           animated:(BOOL)animated {
   [super setSelected:selected animated:animated];
   UIColor *color = selected ? self.selectedCellColor : self.cellColor;
+  if(!selected) {
+    // this is a bit of a hack -- well, more than a bit
+    // but w/o it the accessory area of the cell looks hideous
+    // b/c it fades slowly but the rest of the cell immediately
+    // snaps back to a non-selected appearance. i wish i knew
+    // how to fix this. advice, dear github wanderer?
+    self.selectedBackgroundView = nil;    
+  }
   if(color) {
     self.textLabel.backgroundColor = color;
     self.detailTextLabel.backgroundColor = color;
-    self.contentView.backgroundColor = color;      
+    self.contentView.backgroundColor = color;
   }
 }
 
