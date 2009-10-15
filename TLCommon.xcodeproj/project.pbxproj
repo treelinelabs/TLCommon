@@ -54,6 +54,8 @@
 		038800D61078D6B100AF568C /* UIColor_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 038800D41078D6B100AF568C /* UIColor_TLCommon.m */; };
 		0395E19E1086669C00F6F0F8 /* TLDrawnText.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395E19C1086669C00F6F0F8 /* TLDrawnText.h */; };
 		0395E19F1086669C00F6F0F8 /* TLDrawnText.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395E19D1086669C00F6F0F8 /* TLDrawnText.m */; };
+		0395E593108768A400F6F0F8 /* UITableViewCell_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395E591108768A400F6F0F8 /* UITableViewCell_TLCommon.h */; };
+		0395E594108768A400F6F0F8 /* UITableViewCell_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395E592108768A400F6F0F8 /* UITableViewCell_TLCommon.m */; };
 		03C62F1210627062006537EF /* NSMutableDictionary_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */; };
 		03C62F1310627062006537EF /* NSMutableDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */; };
 		03C62F411062812E006537EF /* UIActivityIndicatorView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C62F3F1062812E006537EF /* UIActivityIndicatorView_TLCommon.h */; };
@@ -123,6 +125,8 @@
 		038800D41078D6B100AF568C /* UIColor_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor_TLCommon.m; sourceTree = "<group>"; };
 		0395E19C1086669C00F6F0F8 /* TLDrawnText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDrawnText.h; sourceTree = "<group>"; };
 		0395E19D1086669C00F6F0F8 /* TLDrawnText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDrawnText.m; sourceTree = "<group>"; };
+		0395E591108768A400F6F0F8 /* UITableViewCell_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCell_TLCommon.h; sourceTree = "<group>"; };
+		0395E592108768A400F6F0F8 /* UITableViewCell_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewCell_TLCommon.m; sourceTree = "<group>"; };
 		03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableDictionary_TLCommon.h; sourceTree = "<group>"; };
 		03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableDictionary_TLCommon.m; sourceTree = "<group>"; };
 		03C62F3F1062812E006537EF /* UIActivityIndicatorView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIActivityIndicatorView_TLCommon.h; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				03C62F401062812E006537EF /* UIActivityIndicatorView_TLCommon.m */,
 				0370D65E1082047F002A46BB /* UIImageView_TLCommon.h */,
 				0370D65F1082047F002A46BB /* UIImageView_TLCommon.m */,
+				0395E591108768A400F6F0F8 /* UITableViewCell_TLCommon.h */,
+				0395E592108768A400F6F0F8 /* UITableViewCell_TLCommon.m */,
 			);
 			name = "View extensions";
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 				03DE4776108255EF00BE3F59 /* UIFont_TLCommon.h in Headers */,
 				03233F241084D2DF00743A22 /* NSMutableArray_TLCommon.h in Headers */,
 				0395E19E1086669C00F6F0F8 /* TLDrawnText.h in Headers */,
+				0395E593108768A400F6F0F8 /* UITableViewCell_TLCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +446,7 @@
 				03DE4777108255EF00BE3F59 /* UIFont_TLCommon.m in Sources */,
 				03233F251084D2DF00743A22 /* NSMutableArray_TLCommon.m in Sources */,
 				0395E19F1086669C00F6F0F8 /* TLDrawnText.m in Sources */,
+				0395E594108768A400F6F0F8 /* UITableViewCell_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

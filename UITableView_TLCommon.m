@@ -14,4 +14,10 @@
               withRowAnimation:animation];
 }
 
+- (void)reloadRowAtIndexPath:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation {
+  [self reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+              withRowAnimation:animation];  
+}
+
+
 @end
