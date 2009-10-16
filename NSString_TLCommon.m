@@ -29,7 +29,7 @@
   NSString *encodedString = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
                                                                                 (CFStringRef)self,
                                                                                 NULL,
-                                                                                (CFStringRef)@"&()<>@,;:\\\"/[]?=+",
+                                                                                (CFStringRef)@"&()<>@,;:\\\"/[]?=+$|^~`{}",
                                                                                 kCFStringEncodingUTF8);
   [encodedString autorelease];
   return encodedString;

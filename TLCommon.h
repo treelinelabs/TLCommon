@@ -32,3 +32,4 @@
 #import "NSMutableArray_TLCommon.h"
 #import "TLDrawnText.h"
 #import "UITableViewCell_TLCommon.h"
+#import "NSMutableString_TLCommon.h"

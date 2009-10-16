@@ -56,6 +56,8 @@
 		0395E19F1086669C00F6F0F8 /* TLDrawnText.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395E19D1086669C00F6F0F8 /* TLDrawnText.m */; };
 		0395E593108768A400F6F0F8 /* UITableViewCell_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395E591108768A400F6F0F8 /* UITableViewCell_TLCommon.h */; };
 		0395E594108768A400F6F0F8 /* UITableViewCell_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395E592108768A400F6F0F8 /* UITableViewCell_TLCommon.m */; };
+		0395EC9D108932B600F6F0F8 /* NSMutableString_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0395EC9B108932B600F6F0F8 /* NSMutableString_TLCommon.h */; };
+		0395EC9E108932B600F6F0F8 /* NSMutableString_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395EC9C108932B600F6F0F8 /* NSMutableString_TLCommon.m */; };
 		03C62F1210627062006537EF /* NSMutableDictionary_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */; };
 		03C62F1310627062006537EF /* NSMutableDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */; };
 		03C62F411062812E006537EF /* UIActivityIndicatorView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C62F3F1062812E006537EF /* UIActivityIndicatorView_TLCommon.h */; };
@@ -127,6 +129,8 @@
 		0395E19D1086669C00F6F0F8 /* TLDrawnText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDrawnText.m; sourceTree = "<group>"; };
 		0395E591108768A400F6F0F8 /* UITableViewCell_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCell_TLCommon.h; sourceTree = "<group>"; };
 		0395E592108768A400F6F0F8 /* UITableViewCell_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewCell_TLCommon.m; sourceTree = "<group>"; };
+		0395EC9B108932B600F6F0F8 /* NSMutableString_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableString_TLCommon.h; sourceTree = "<group>"; };
+		0395EC9C108932B600F6F0F8 /* NSMutableString_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableString_TLCommon.m; sourceTree = "<group>"; };
 		03C62F1010627062006537EF /* NSMutableDictionary_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableDictionary_TLCommon.h; sourceTree = "<group>"; };
 		03C62F1110627062006537EF /* NSMutableDictionary_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableDictionary_TLCommon.m; sourceTree = "<group>"; };
 		03C62F3F1062812E006537EF /* UIActivityIndicatorView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIActivityIndicatorView_TLCommon.h; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 				03DE4775108255EF00BE3F59 /* UIFont_TLCommon.m */,
 				03233F221084D2DF00743A22 /* NSMutableArray_TLCommon.h */,
 				03233F231084D2DF00743A22 /* NSMutableArray_TLCommon.m */,
+				0395EC9B108932B600F6F0F8 /* NSMutableString_TLCommon.h */,
+				0395EC9C108932B600F6F0F8 /* NSMutableString_TLCommon.m */,
 			);
 			name = "Model extensions";
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				03233F241084D2DF00743A22 /* NSMutableArray_TLCommon.h in Headers */,
 				0395E19E1086669C00F6F0F8 /* TLDrawnText.h in Headers */,
 				0395E593108768A400F6F0F8 /* UITableViewCell_TLCommon.h in Headers */,
+				0395EC9D108932B600F6F0F8 /* NSMutableString_TLCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +454,7 @@
 				03233F251084D2DF00743A22 /* NSMutableArray_TLCommon.m in Sources */,
 				0395E19F1086669C00F6F0F8 /* TLDrawnText.m in Sources */,
 				0395E594108768A400F6F0F8 /* UITableViewCell_TLCommon.m in Sources */,
+				0395EC9E108932B600F6F0F8 /* NSMutableString_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

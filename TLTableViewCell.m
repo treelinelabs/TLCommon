@@ -35,7 +35,7 @@
                             reuseIdentifier:(NSString *)reuseIdentifier {
   TLTableViewCell *cell = (TLTableViewCell *)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
   if(!cell) {
-    cell = [[[TLTableViewCell alloc] initWithStyle:style reuseIdentifier:reuseIdentifier] autorelease];
+    cell = [[[self alloc] initWithStyle:style reuseIdentifier:reuseIdentifier] autorelease];
   }
   return cell;
 }
