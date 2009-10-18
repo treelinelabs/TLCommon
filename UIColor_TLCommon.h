@@ -10,5 +10,6 @@
 @interface UIColor (TLCommon)
 
 + (UIColor *)colorWithCSSRed:(NSUInteger)red255 green:(NSUInteger)green255 blue:(NSUInteger)blue255;
++ (UIColor *)colorWithCSSString:(NSString *)cssColorString;
 
 @end
