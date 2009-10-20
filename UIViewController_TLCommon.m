@@ -10,4 +10,28 @@
 
 @implementation UIViewController (TLCommon)
 
++ (UIViewController *)viewController {
+  return [[[self alloc] initWithNibName:nil bundle:nil] autorelease];
+}
+
+- (UINavigationController *)navigationControllerWithSelfAsRootViewController {
+  return [[[UINavigationController alloc] initWithRootViewController:self] autorelease];
+}
+
+- (void)dismissAnimated {
+  [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)dismissNotAnimated {
+  [self dismissModalViewControllerAnimated:NO];
+}
+
+- (void)popAnimated {
+  [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)popNotAnimated {
+  [self.navigationController popViewControllerAnimated:NO];
+}
+
 @end

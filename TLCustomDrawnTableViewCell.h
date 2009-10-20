@@ -14,6 +14,13 @@
   NSSet *keyPathsRequiringRedisplay;
 }
 
++ (TLCustomDrawnTableViewCell *)tableViewCellDequeuedIfPossibleFromTableView:(UITableView *)tableView
+                                                  keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil;
+
++ (TLCustomDrawnTableViewCell *)tableViewCellDequeuedIfPossibleFromTableView:(UITableView *)tableView
+                                                             reuseIdentifier:(NSString *)reuseIdentifier
+                                                  keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil;
+  
 - (id)initWithStyle:(UITableViewCellStyle)style
     reuseIdentifier:(NSString *)reuseIdentifier
 keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil;

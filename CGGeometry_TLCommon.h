@@ -63,6 +63,10 @@ static inline CGRect CGRectByAddingHeight(CGRect originalRect, CGFloat additiona
   return CGRectMake(originalRect.origin.x, originalRect.origin.y, originalRect.size.width, originalRect.size.height + additionalHeight);
 }
 
+static inline CGRect CGRectByAddingWidthAndHeight(CGRect originalRect, CGFloat additionalWidth, CGFloat additionalHeight) {
+  return CGRectMake(originalRect.origin.x, originalRect.origin.y, originalRect.size.width + additionalWidth, originalRect.size.height + additionalHeight);
+}
+
 static inline CGSize CGSizeByAddingHeight(CGSize originalSize, CGFloat extraHeight) {
   return CGSizeMake(originalSize.width, originalSize.height + extraHeight);
 }

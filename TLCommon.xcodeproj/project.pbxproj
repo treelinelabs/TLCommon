@@ -38,6 +38,8 @@
 		0340444610571719004B4909 /* NSDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340444410571719004B4909 /* NSDictionary_TLCommon.m */; };
 		0340445210571BE0004B4909 /* NSDate_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0340445010571BE0004B4909 /* NSDate_TLCommon.h */; };
 		0340445310571BE0004B4909 /* NSDate_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340445110571BE0004B4909 /* NSDate_TLCommon.m */; };
+		03509434108B756500DE1475 /* TLLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03509432108B756500DE1475 /* TLLoadingView.h */; };
+		03509435108B756500DE1475 /* TLLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03509433108B756500DE1475 /* TLLoadingView.m */; };
 		0370D6601082047F002A46BB /* UIImageView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0370D65E1082047F002A46BB /* UIImageView_TLCommon.h */; };
 		0370D6611082047F002A46BB /* UIImageView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0370D65F1082047F002A46BB /* UIImageView_TLCommon.m */; };
 		037C7C37107D83E50009B2FE /* TLTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 037C7C35107D83E50009B2FE /* TLTableViewCell.h */; };
@@ -111,6 +113,8 @@
 		0340444410571719004B4909 /* NSDictionary_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_TLCommon.m; sourceTree = "<group>"; };
 		0340445010571BE0004B4909 /* NSDate_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_TLCommon.h; sourceTree = "<group>"; };
 		0340445110571BE0004B4909 /* NSDate_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_TLCommon.m; sourceTree = "<group>"; };
+		03509432108B756500DE1475 /* TLLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLLoadingView.h; sourceTree = "<group>"; };
+		03509433108B756500DE1475 /* TLLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLLoadingView.m; sourceTree = "<group>"; };
 		0370D65E1082047F002A46BB /* UIImageView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageView_TLCommon.h; sourceTree = "<group>"; };
 		0370D65F1082047F002A46BB /* UIImageView_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageView_TLCommon.m; sourceTree = "<group>"; };
 		037C7C35107D83E50009B2FE /* TLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTableViewCell.h; sourceTree = "<group>"; };
@@ -197,14 +201,13 @@
 		034041C510569B80004B4909 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				037C7C35107D83E50009B2FE /* TLTableViewCell.h */,
-				037C7C36107D83E50009B2FE /* TLTableViewCell.m */,
-				034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */,
-				034041C710569BAA004B4909 /* TLCustomDrawnTableViewCell.m */,
+				03509431108B754600DE1475 /* Table view cells */,
 				034043D910570F2E004B4909 /* TLScrollingSegmentedControl.h */,
 				034043DA10570F2E004B4909 /* TLScrollingSegmentedControl.m */,
 				03834B31105976FB00BFBBC7 /* TLModalActivityIndicatorView.h */,
 				03834B32105976FB00BFBBC7 /* TLModalActivityIndicatorView.m */,
+				03509432108B756500DE1475 /* TLLoadingView.h */,
+				03509433108B756500DE1475 /* TLLoadingView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -224,6 +227,17 @@
 				D2AAC07E0554694100DB518D /* libTLCommon.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		03509431108B754600DE1475 /* Table view cells */ = {
+			isa = PBXGroup;
+			children = (
+				037C7C35107D83E50009B2FE /* TLTableViewCell.h */,
+				037C7C36107D83E50009B2FE /* TLTableViewCell.m */,
+				034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */,
+				034041C710569BAA004B4909 /* TLCustomDrawnTableViewCell.m */,
+			);
+			name = "Table view cells";
 			sourceTree = "<group>";
 		};
 		03FE415610518BBC003ACE50 /* View extensions */ = {
@@ -378,6 +392,7 @@
 				0395E19E1086669C00F6F0F8 /* TLDrawnText.h in Headers */,
 				0395E593108768A400F6F0F8 /* UITableViewCell_TLCommon.h in Headers */,
 				0395EC9D108932B600F6F0F8 /* NSMutableString_TLCommon.h in Headers */,
+				03509434108B756500DE1475 /* TLLoadingView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +470,7 @@
 				0395E19F1086669C00F6F0F8 /* TLDrawnText.m in Sources */,
 				0395E594108768A400F6F0F8 /* UITableViewCell_TLCommon.m in Sources */,
 				0395EC9E108932B600F6F0F8 /* NSMutableString_TLCommon.m in Sources */,
+				03509435108B756500DE1475 /* TLLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

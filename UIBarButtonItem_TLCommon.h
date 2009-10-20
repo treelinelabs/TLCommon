@@ -10,6 +10,7 @@
 
 @interface UIBarButtonItem (TLCommon)
 
++ (UIBarButtonItem *)spinnerBarButtonItem;
 + (UIBarButtonItem *)barButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action;
 
 @end

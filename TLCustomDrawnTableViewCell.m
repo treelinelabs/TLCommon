@@ -67,6 +67,41 @@
 
 @synthesize customView;
 
++ (TLTableViewCell *)tableViewCellWithStyle:(UITableViewCellStyle)style
+            dequeuedIfPossibleFromTableView:(UITableView *)tableView {
+  return [self tableViewCellDequeuedIfPossibleFromTableView:tableView
+                                            reuseIdentifier:[self defaultReuseIdentifier]
+                                 keyPathsRequiringRedisplay:nil];
+}
+
++ (TLTableViewCell *)tableViewCellWithStyle:(UITableViewCellStyle)style
+            dequeuedIfPossibleFromTableView:(UITableView *)tableView
+                            reuseIdentifier:(NSString *)reuseIdentifier {
+  return [self tableViewCellDequeuedIfPossibleFromTableView:tableView
+                                            reuseIdentifier:reuseIdentifier
+                                 keyPathsRequiringRedisplay:nil];
+}
+
++ (TLCustomDrawnTableViewCell *)tableViewCellDequeuedIfPossibleFromTableView:(UITableView *)tableView
+                                                  keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil {
+  return [self tableViewCellDequeuedIfPossibleFromTableView:tableView
+                                            reuseIdentifier:[self defaultReuseIdentifier]
+                                 keyPathsRequiringRedisplay:redisplayRequiringKeyPathsOrNil];
+}
+
++ (TLCustomDrawnTableViewCell *)tableViewCellDequeuedIfPossibleFromTableView:(UITableView *)tableView
+                                                             reuseIdentifier:(NSString *)reuseIdentifier
+                                                  keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil {
+  TLCustomDrawnTableViewCell *cell = (TLCustomDrawnTableViewCell *)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+  if(!cell) {
+    cell = [[[self alloc] initWithStyle:UITableViewCellStyleDefault
+                        reuseIdentifier:reuseIdentifier
+             keyPathsRequiringRedisplay:redisplayRequiringKeyPathsOrNil]
+            autorelease];
+  }
+  return cell;  
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier keyPathsRequiringRedisplay:(NSSet *)redisplayRequiringKeyPathsOrNil {
   if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
     CGRect customViewFrame = CGRectZeroWithSize(self.contentView.bounds.size);
