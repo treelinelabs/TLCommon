@@ -165,7 +165,7 @@
   CGRect clippingRect = CGRectWithXYAndSize(leftPadding,
                                             OffsetToCenterFloatInFloat(size.height, self.customView.bounds.size.height),
                                             size);
-  
+  clippingRect = CGRectRoundedToNearestPixel(clippingRect);
 
   // some handy precalculations
   CGFloat destinationAspectRatio = size.width / size.height;
@@ -194,13 +194,14 @@
       }
       imageDrawingSize = ScaledSize(image.size, fillScalingFactor);
       break;
-    default:
+    default:;
       NSLog(@"Content mode %i not supported!", contentMode);
       break;
   }
   
   // Now that we have the size, pick a drawing rect that centers the drawn image size in its clipping rect
   CGRect imageDrawingRect = CenteredRectInRectWithSize(clippingRect, imageDrawingSize);
+  imageDrawingRect = CGRectRoundedToNearestPixel(imageDrawingRect);
   
   if(contentMode == UIViewContentModeScaleAspectFit) {
     // reduce clipping rect to actual image drawing rect, so that the rounded corners do their thing;

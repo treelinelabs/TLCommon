@@ -44,7 +44,10 @@
 // they will be handled internally. they should set the render rect to include
 // the total width of the space available for text (including the insets)
 // this uses the renderRect to decide where to render.
-- (void)render;
+//
+// Returns the actual rect containing just the rendered text,
+// including insets, text alignment, etc.
+- (CGRect)render;
 
 // sets the renderRect for a number of texts, according to their drawn text sizes and
 // preferred padding. variadic to avoid requiring nsarray construction.
@@ -52,7 +55,12 @@
 // and thus should not allocate space on the heap. with a careful
 // use of static TLDrawnTexts, the entire rendering process should be able to take
 // place solely with stack storage.
-+ (void)layoutInRect:(CGRect)containingRect canOverflowBottomOfRect:(BOOL)rectCanBeMadeBigger texts:(TLDrawnText *)firstText, ... NS_REQUIRES_NIL_TERMINATION;
+//
+// The resulting renderRects are as wide as the containingRect. The actual location
+// of the drawn text, including insets and text alignment, is returned from -render.
+//
+// Returns the total height of the laid out text and buffers.
++ (CGFloat)layoutInRect:(CGRect)containingRect canOverflowBottomOfRect:(BOOL)rectCanBeMadeBigger texts:(TLDrawnText *)firstText, ... NS_REQUIRES_NIL_TERMINATION;
 
 @property(nonatomic, retain, readwrite) NSString *text;
 @property(nonatomic, retain, readwrite) UIFont *font;
