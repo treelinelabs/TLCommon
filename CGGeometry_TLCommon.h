@@ -55,6 +55,10 @@ static inline CGRect CGRectByAddingYOffset(CGRect originalRect, CGFloat yOffset)
   return CGRectWithXYAndSize(originalRect.origin.x, originalRect.origin.y + yOffset, originalRect.size);
 }
 
+static inline CGRect CGRectByAddingXAndYOffset(CGRect originalRect, CGFloat xOffset, CGFloat yOffset) {
+  return CGRectWithXYAndSize(originalRect.origin.x + xOffset, originalRect.origin.y + yOffset, originalRect.size);
+}
+
 static inline CGRect CGRectByAddingWidth(CGRect originalRect, CGFloat additionalWidth) {
   return CGRectMake(originalRect.origin.x, originalRect.origin.y, originalRect.size.width + additionalWidth, originalRect.size.height);
 }

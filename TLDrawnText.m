@@ -7,12 +7,13 @@
 
 #import "TLDrawnText.h"
 #import "CGGeometry_TLCommon.h"
-
-#define kVeryTallText 1024.0f
+#import "CGContext_TLCommon.h"
+#import "NSString_TLCommon.h"
 
 #pragma mark -
 
 @interface TLDrawnText ()
+
 
 @end
 
@@ -48,16 +49,21 @@
 - (CGSize)sizeWithWidth:(CGFloat)totalWidthIncludingSpaceForInsets {
   CGFloat widthAfterRemovingInsets = totalWidthIncludingSpaceForInsets - self.leftInset - self.rightInset;
   CGSize textRenderSize = [self.text sizeWithFont:self.font
-                                constrainedToSize:CGSizeMake(widthAfterRemovingInsets, kVeryTallText)
+                                constrainedToSize:CGSizeMake(widthAfterRemovingInsets, CGFLOAT_MAX)
                                     lineBreakMode:self.lineBreakMode];
   return CGSizeByAddingWidth(textRenderSize, self.leftInset + self.rightInset);
 }
 
-- (CGRect)render {
+- (CGRect)insetAdjustedRenderRect {
   CGRect textRenderRect = CGRectMake(self.renderRect.origin.x + self.leftInset,
                                      self.renderRect.origin.y,
                                      self.renderRect.size.width - self.leftInset - self.rightInset,
                                      self.renderRect.size.height);
+  return textRenderRect;
+}
+
+- (CGRect)render {
+  CGRect textRenderRect = [self insetAdjustedRenderRect];
   [self.textColor setFill];
   CGSize renderedTextSize = [self.text drawInRect:textRenderRect
                                          withFont:self.font
@@ -82,7 +88,6 @@
   
   return renderedTextRect;
 }
-
 
 + (CGFloat)layoutInRect:(CGRect)containingRect canOverflowBottomOfRect:(BOOL)rectCanBeMadeBigger texts:(TLDrawnText *)firstText, ... {
   va_list texts;

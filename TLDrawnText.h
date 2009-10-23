@@ -60,7 +60,12 @@
 // of the drawn text, including insets and text alignment, is returned from -render.
 //
 // Returns the total height of the laid out text and buffers.
-+ (CGFloat)layoutInRect:(CGRect)containingRect canOverflowBottomOfRect:(BOOL)rectCanBeMadeBigger texts:(TLDrawnText *)firstText, ... NS_REQUIRES_NIL_TERMINATION;
++ (CGFloat)layoutInRect:(CGRect)containingRect
+canOverflowBottomOfRect:(BOOL)rectCanBeMadeBigger
+                  texts:(TLDrawnText *)firstText, ... NS_REQUIRES_NIL_TERMINATION;
+
+// self.renderRect but adjusted for text insets
+- (CGRect)insetAdjustedRenderRect;
 
 @property(nonatomic, retain, readwrite) NSString *text;
 @property(nonatomic, retain, readwrite) UIFont *font;

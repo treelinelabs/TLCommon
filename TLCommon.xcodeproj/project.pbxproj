@@ -40,6 +40,7 @@
 		0340445310571BE0004B4909 /* NSDate_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340445110571BE0004B4909 /* NSDate_TLCommon.m */; };
 		03509434108B756500DE1475 /* TLLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03509432108B756500DE1475 /* TLLoadingView.h */; };
 		03509435108B756500DE1475 /* TLLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03509433108B756500DE1475 /* TLLoadingView.m */; };
+		0354CF4210911EC400A24522 /* TLMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0354CF4110911EC400A24522 /* TLMacros.h */; };
 		0370D6601082047F002A46BB /* UIImageView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0370D65E1082047F002A46BB /* UIImageView_TLCommon.h */; };
 		0370D6611082047F002A46BB /* UIImageView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0370D65F1082047F002A46BB /* UIImageView_TLCommon.m */; };
 		037C7C37107D83E50009B2FE /* TLTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 037C7C35107D83E50009B2FE /* TLTableViewCell.h */; };
@@ -115,6 +116,7 @@
 		0340445110571BE0004B4909 /* NSDate_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_TLCommon.m; sourceTree = "<group>"; };
 		03509432108B756500DE1475 /* TLLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLLoadingView.h; sourceTree = "<group>"; };
 		03509433108B756500DE1475 /* TLLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLLoadingView.m; sourceTree = "<group>"; };
+		0354CF4110911EC400A24522 /* TLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLMacros.h; sourceTree = "<group>"; };
 		0370D65E1082047F002A46BB /* UIImageView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageView_TLCommon.h; sourceTree = "<group>"; };
 		0370D65F1082047F002A46BB /* UIImageView_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageView_TLCommon.m; sourceTree = "<group>"; };
 		037C7C35107D83E50009B2FE /* TLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTableViewCell.h; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */,
 				0306078A105AA77600A3E14E /* BOOL_TLCommon.h */,
+				0354CF4110911EC400A24522 /* TLMacros.h */,
 			);
 			name = "Simple inline functions";
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				0395E593108768A400F6F0F8 /* UITableViewCell_TLCommon.h in Headers */,
 				0395EC9D108932B600F6F0F8 /* NSMutableString_TLCommon.h in Headers */,
 				03509434108B756500DE1475 /* TLLoadingView.h in Headers */,
+				0354CF4210911EC400A24522 /* TLMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
