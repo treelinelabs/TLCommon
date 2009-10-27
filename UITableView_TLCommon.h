@@ -13,4 +13,6 @@
 - (void)reloadRowAtRow:(NSUInteger)row section:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation;
 - (void)reloadRowAtIndexPath:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation;
 
+- (void)deleteRowsInRowRange:(NSRange)rowRange section:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation;
+
 @end

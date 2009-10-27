@@ -19,5 +19,14 @@
               withRowAnimation:animation];  
 }
 
+- (void)deleteRowsInRowRange:(NSRange)rowRange section:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation {
+  // there's got to be a better way...
+  NSMutableArray *indexPathsToDelete = [NSMutableArray arrayWithCapacity:rowRange.length];
+  for(NSUInteger i = 0; i < rowRange.length; i++) {
+    NSIndexPath *indexPathToDelete = [NSIndexPath indexPathForRow:rowRange.location + i inSection:section];
+    [indexPathsToDelete addObject:indexPathToDelete];
+  }
+  [self deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:animation];
+}
 
 @end

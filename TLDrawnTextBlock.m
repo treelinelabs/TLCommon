@@ -108,26 +108,31 @@
   for(NSArray *line in self.lines) {
     CGFloat maxFontHeight = [self maxFontHeightInLine:line];
     CGFloat runningXOffset = 0.0f;
+    // first pass: lay out the line and calculate the total width
     for(TLDrawnTextFragment *fragment in line) {
       CGFloat fragmentWidth = [fragment width];
-      CGFloat textAlignmentXOffset = 0;
-      switch(textAlignment) {
-        case UITextAlignmentLeft:;
-          textAlignmentXOffset = 0;
-          break;
-        case UITextAlignmentCenter:;
-          textAlignmentXOffset = self.lineWidth - fragmentWidth;
-          break;
-        case UITextAlignmentRight:;
-          textAlignmentXOffset = floorf(OffsetToCenterFloatInFloat(fragmentWidth, self.lineWidth));
-          break;
-      }
-      fragment.renderRect = CGRectMake(point.x + runningXOffset + textAlignmentXOffset,
+      fragment.renderRect = CGRectMake(point.x + runningXOffset,
                                        point.y + runningYOffset + OffsetToCenterFloatInFloat([fragment.style.font leading], maxFontHeight),
                                        fragmentWidth,
                                        maxFontHeight);
-      [fragment render];
       runningXOffset += fragmentWidth;
+    }
+    // second pass: move the whole line around to get the overall text alignment correct and then actually render
+    CGFloat textAlignmentXOffset = 0;
+    switch(textAlignment) {
+      case UITextAlignmentLeft:;
+        textAlignmentXOffset = 0;
+        break;
+      case UITextAlignmentRight:;
+        textAlignmentXOffset = self.lineWidth - runningXOffset;
+        break;
+      case UITextAlignmentCenter:;
+        textAlignmentXOffset = floorf(OffsetToCenterFloatInFloat(runningXOffset, self.lineWidth));
+        break;
+    }
+    for(TLDrawnTextFragment *fragment in line) {
+      fragment.renderRect = CGRectByAddingXOffset(fragment.renderRect, textAlignmentXOffset);
+      [fragment render];
     }
     runningYOffset += maxFontHeight;
   }
