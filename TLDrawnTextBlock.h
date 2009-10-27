@@ -12,11 +12,12 @@
 @interface TLDrawnTextBlock : NSObject {
 @private
   NSMutableArray *lines; // each of these is an array of TLDrawnTextFragments
+  CGFloat lineWidth;
   NSMutableDictionary *originalFragmentForNewFragment;
   NSMutableDictionary *newFragmentsForOriginalFragment;
 }
 
-+ (TLDrawnTextBlock *)blockWithFragments:(NSArray *)textFragments width:(CGFloat)lineWidth;
++ (TLDrawnTextBlock *)blockWithFragments:(NSArray *)textFragments lineWidth:(CGFloat)width;
 - (CGFloat)height;
 
 - (NSArray *)siblingFragmentsForFragment:(TLDrawnTextFragment *)fragment;

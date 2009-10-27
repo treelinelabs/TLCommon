@@ -8,6 +8,7 @@
 #import "TLCustomDrawnTableViewCell.h"
 #import "CGGeometry_TLCommon.h"
 #import "CGContext_TLCommon.h"
+#import "TLMacros.h"
 
 #pragma mark -
 
@@ -195,7 +196,7 @@
       imageDrawingSize = ScaledSize(image.size, fillScalingFactor);
       break;
     default:;
-      NSLog(@"Content mode %i not supported!", contentMode);
+      TLDebugLog(@"Content mode %i not supported!", contentMode);
       break;
   }
   

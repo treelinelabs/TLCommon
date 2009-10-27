@@ -77,7 +77,7 @@
   [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
   if(error) {
 /*
-    NSLog(@"Filed to clean up expired file %@, could not delete, error %@: %@",
+    TLDebugLog(@"Filed to clean up expired file %@, could not delete, error %@: %@",
           path,
           error,
           error.userInfo);
@@ -101,7 +101,7 @@
   if(error) {
     // Something went wrong, just log and bail
     /*
-    NSLog(@"Failed to clean up expired files in %@, could not read directory contents, error %@: %@",
+    TLDebugLog(@"Failed to clean up expired files in %@, could not read directory contents, error %@: %@",
           domainPath,
           error,
           error.userInfo);
@@ -115,7 +115,7 @@
         [fileManager removeItemAtPath:completePath error:&error];
         if(error) {
           /*
-          NSLog(@"Filed to clean up expired file %@, could not delete, error %@: %@",
+          TLDebugLog(@"Filed to clean up expired file %@, could not delete, error %@: %@",
                 completePath,
                 error,
                 error.userInfo);

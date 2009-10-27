@@ -76,6 +76,9 @@
 }
 
 - (NSUInteger)lengthOfLongestPrefixThatRendersOnOneLineOfWidth:(CGFloat)lineWidth usingFont:(UIFont *)font {
+  if(lineWidth <= 0) {
+    return 0;
+  }
   CGFloat lineHeight = [font leading];
   CGSize unboundedTextSize = CGSizeMake(lineWidth, CGFLOAT_MAX);
   
@@ -121,11 +124,38 @@
   }
 }
 
+- (NSArray *)rangesOfComponentsPrefixed:(NSString *)prefix
+         whenSeparatedByCharactersInSet:(NSCharacterSet *)separators
+                                options:(NSStringCompareOptions)stringCompareOptions {
+  NSMutableArray *wordRanges = [NSMutableArray array];
+  NSUInteger length = [self length];
+  BOOL doneFindingWords = NO;
+  NSUInteger indexOfLastCharacterOfLastFoundWord = 0;
+  while(!doneFindingWords) {
+    NSRange wordRange = [self rangeOfString:prefix
+                                    options:stringCompareOptions
+                                      range:NSMakeRange(indexOfLastCharacterOfLastFoundWord, length - indexOfLastCharacterOfLastFoundWord)];
+    // TODO: Check to make sure the scheme is at the beginning or prefixed w/ whitespace
+    if(wordRange.location != NSNotFound) {
+      // there's a word beginning at wordRange.location; now find its end
+      NSRange wordEndingWhiteSpaceRange = [self rangeOfCharacterFromSet:separators
+                                                                options:NSLiteralSearch
+                                                                  range:NSMakeRange(wordRange.location, length - wordRange.location)];
+      NSUInteger endOfWordIndex = (wordEndingWhiteSpaceRange.location == NSNotFound) ? length : wordEndingWhiteSpaceRange.location;
+      NSRange completeWordRange = NSMakeRange(wordRange.location, endOfWordIndex - wordRange.location);
+      [wordRanges addObject:[NSValue valueWithRange:completeWordRange]];
+      indexOfLastCharacterOfLastFoundWord = NSMaxRange(wordEndingWhiteSpaceRange);
+    } else {
+      doneFindingWords = YES;
+    }
+  }
+  return wordRanges;
+}
 
 /************************ INTEND TO DELETE *******************************/
 
 
-
+/*
 
 - (NSArray *)componentsByRenderingOntoSeparateLinesWithFont:(UIFont *)font
                                                   lineWidth:(CGFloat)lineWidth {
@@ -149,7 +179,7 @@
       // bad news -- we can't even fit the first character on this line.
       // our line width must be pathologically short.
       // bail ungloriously with what we actually have managed to render so far.
-      NSLog(@"%@ componentsByRenderingOntoSeparateLinesWithFont:%@ lineWidth:%f stuck at string %@, bailing out!", self, font, lineWidth, remainingString);
+      TLDebugLog(@"%@ componentsByRenderingOntoSeparateLinesWithFont:%@ lineWidth:%f stuck at string %@, bailing out!", self, font, lineWidth, remainingString);
       return components;
     }
     NSUInteger max = [remainingString length]; // i'd like to intelligently reduce this to some maximum reasonable value (e.g. line width / max glyph width), but that looks unreasonably hard
@@ -317,33 +347,6 @@
   }
 }
 
-- (NSArray *)rangesOfComponentsPrefixed:(NSString *)prefix
-         whenSeparatedByCharactersInSet:(NSCharacterSet *)separators
-                                options:(NSStringCompareOptions)stringCompareOptions {
-  NSMutableArray *wordRanges = [NSMutableArray array];
-  NSUInteger length = [self length];
-  BOOL doneFindingWords = NO;
-  NSUInteger indexOfLastCharacterOfLastFoundWord = 0;
-  while(!doneFindingWords) {
-    NSRange wordRange = [self rangeOfString:prefix
-                                    options:stringCompareOptions
-                                      range:NSMakeRange(indexOfLastCharacterOfLastFoundWord, length - indexOfLastCharacterOfLastFoundWord)];
-    // TODO: Check to make sure the scheme is at the beginning or prefixed w/ whitespace
-    if(wordRange.location != NSNotFound) {
-      // there's a word beginning at wordRange.location; now find its end
-      NSRange wordEndingWhiteSpaceRange = [self rangeOfCharacterFromSet:separators
-                                                                options:NSLiteralSearch
-                                                                  range:NSMakeRange(wordRange.location, length - wordRange.location)];
-      NSUInteger endOfWordIndex = (wordEndingWhiteSpaceRange.location == NSNotFound) ? length : wordEndingWhiteSpaceRange.location;
-      NSRange completeWordRange = NSMakeRange(wordRange.location, endOfWordIndex - wordRange.location);
-      [wordRanges addObject:[NSValue valueWithRange:completeWordRange]];
-      indexOfLastCharacterOfLastFoundWord = NSMaxRange(wordEndingWhiteSpaceRange);
-    } else {
-      doneFindingWords = YES;
-    }
-  }
-  return wordRanges;
-}
-
+*/
 
 @end

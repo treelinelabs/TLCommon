@@ -20,6 +20,17 @@
   return [[[self alloc] init] autorelease];
 }
 
+- (NSString *)description {
+  return [NSString stringWithFormat:@"<%@ %p: %@ %f, (%@), (%@), %f>",
+          NSStringFromClass([self class]),
+          self,
+          [self.font fontName],
+          [self.font pointSize],
+          self.textColor,
+          self.backgroundColor,
+          self.backgroundCornerRadius];
+}
+
 - (void)dealloc {
   [font release];
   font = nil;

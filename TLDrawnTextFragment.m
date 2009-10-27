@@ -86,6 +86,9 @@
   return fragments;
 }
 
+- (NSString *)description {
+  return [NSString stringWithFormat:@"<%@ %p: '%@', %@, %@>", NSStringFromClass([self class]), self, self.text, self.style, [NSValue valueWithCGRect:self.renderRect]];
+}
 
 - (void)dealloc {
   [text release];

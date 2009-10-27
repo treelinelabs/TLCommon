@@ -10,6 +10,7 @@
 #import "TLDrawnTextStyle.h"
 #import "NSString_TLCommon.h"
 #import "CGGeometry_TLCommon.h"
+#import "TLMacros.h"
 
 #pragma mark -
 
@@ -20,6 +21,7 @@
 @property(nonatomic, retain, readwrite) NSMutableArray *lines;
 @property(nonatomic, retain, readwrite) NSMutableDictionary *originalFragmentForNewFragment;
 @property(nonatomic, retain, readwrite) NSMutableDictionary *newFragmentsForOriginalFragment;
+@property(nonatomic, assign, readwrite) CGFloat lineWidth;
 
 @end
 
@@ -29,6 +31,7 @@
 @implementation TLDrawnTextBlock
 
 @synthesize lines;
+@synthesize lineWidth;
 @synthesize originalFragmentForNewFragment;
 @synthesize newFragmentsForOriginalFragment;
 
@@ -41,30 +44,42 @@
   return self;
 }
 
-
-+ (TLDrawnTextBlock *)blockWithFragments:(NSArray *)textFragments width:(CGFloat)lineWidth {
++ (TLDrawnTextBlock *)blockWithFragments:(NSArray *)textFragments lineWidth:(CGFloat)width {
   TLDrawnTextBlock *block = [[[TLDrawnTextBlock alloc] init] autorelease];
-
+  block.lineWidth = width;
+  
   NSMutableArray *currentLine = [NSMutableArray array];
-  CGFloat currentLineWidth = lineWidth;  
+  CGFloat currentLineWidth = block.lineWidth;  
   for(TLDrawnTextFragment *fragment in textFragments) {
-    NSArray *subfragments = [fragment subfragmentsRenderableOnLinesOfWidth:lineWidth firstLineWidth:currentLineWidth];
-    for(TLDrawnTextFragment *subfragment in subfragments) {
+    TLDebugLog(@"fragment %@", fragment);
+    NSArray *subfragments = [fragment subfragmentsRenderableOnLinesOfWidth:block.lineWidth firstLineWidth:currentLineWidth];
+    TLDebugLog(@"subfragments %@", subfragments);
+    NSUInteger numberOfSubfragments = [subfragments count];
+    for(NSUInteger i = 0; i < numberOfSubfragments; i++) {
+      TLDrawnTextFragment *subfragment = [subfragments objectAtIndex:i];
       if(![subfragment isKindOfClass:[NSNull class]]) {
-        [currentLine addObject:currentLine];
-//        [block.originalFragmentForNewFragment setObject:fragment forKey:subfragment];
+        [currentLine addObject:subfragment];
+        currentLineWidth -= [subfragment width];
+        [block.originalFragmentForNewFragment setObject:fragment forKey:[NSValue valueWithPointer:subfragment]];
       }
-      [block.lines addObject:currentLine];
-      currentLine = [NSMutableArray array];
+      if(i < numberOfSubfragments - 1) {
+        // on the last line, wait for the first line of the next round to make a new line,
+        // so they can share
+        [block.lines addObject:currentLine];
+        currentLine = [NSMutableArray array];
+        currentLineWidth = block.lineWidth;
+      }
     }
-//    [block.newFragmentsForOriginalFragment setObject:subfragments forKey:fragment];
-    currentLineWidth = lineWidth - [[subfragments lastObject] width];
+    [block.newFragmentsForOriginalFragment setObject:subfragments forKey:[NSValue valueWithPointer:fragment]];
   }
+  // pick up the very last line which would otherwise be forgotten
+  [block.lines addObject:currentLine];
+  currentLine = [NSMutableArray array];
 
   // triming trailing whitespace on all lines
-  NSLog(@"lines %@", block.lines);
+  TLDebugLog(@"lines %@", block.lines);
   for(NSArray *line in block.lines) {
-    NSLog(@"line %@", line);
+    TLDebugLog(@"line %@", line);
     TLDrawnTextFragment *lastFragment = [line lastObject];
     lastFragment.text = [lastFragment.text stringByTrimmingSuffixCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
   }
@@ -95,7 +110,19 @@
     CGFloat runningXOffset = 0.0f;
     for(TLDrawnTextFragment *fragment in line) {
       CGFloat fragmentWidth = [fragment width];
-      fragment.renderRect = CGRectMake(point.x + runningXOffset,
+      CGFloat textAlignmentXOffset = 0;
+      switch(textAlignment) {
+        case UITextAlignmentLeft:;
+          textAlignmentXOffset = 0;
+          break;
+        case UITextAlignmentCenter:;
+          textAlignmentXOffset = self.lineWidth - fragmentWidth;
+          break;
+        case UITextAlignmentRight:;
+          textAlignmentXOffset = floorf(OffsetToCenterFloatInFloat(fragmentWidth, self.lineWidth));
+          break;
+      }
+      fragment.renderRect = CGRectMake(point.x + runningXOffset + textAlignmentXOffset,
                                        point.y + runningYOffset + OffsetToCenterFloatInFloat([fragment.style.font leading], maxFontHeight),
                                        fragmentWidth,
                                        maxFontHeight);
@@ -107,15 +134,25 @@
 }
 
 - (TLDrawnTextFragment *)fragmentAtPoint:(CGPoint)pointWithinTextBlock {
-  return nil;  
+  // ick...do an exhaustive search
+  for(NSArray *line in self.lines) {
+    for(TLDrawnTextFragment *fragment in line) {
+      if(CGRectContainsPoint(fragment.renderRect, pointWithinTextBlock)) {
+        return fragment;
+      }
+    }
+  }  
+  return nil;
 }
 
 - (NSArray *)siblingFragmentsForFragment:(TLDrawnTextFragment *)fragment {
-  return nil;
+  TLDrawnTextFragment *originalFragment = [self originalFragmentForFragment:fragment];
+  NSArray *newFragments = [self.newFragmentsForOriginalFragment objectForKey:[NSValue valueWithPointer:originalFragment]];
+  return newFragments;
 }
 
 - (TLDrawnTextFragment *)originalFragmentForFragment:(TLDrawnTextFragment *)fragment {
-  return nil;
+  return [self.originalFragmentForNewFragment objectForKey:[NSValue valueWithPointer:fragment]];
 }
 
 
