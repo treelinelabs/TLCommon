@@ -19,6 +19,16 @@
   return spinnerBarButtonItem;
 }
 
++ (UIBarButtonItem *)flexibleSpaceBarButtonItem {
+  return [self barButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+}
+
++ (UIBarButtonItem *)fixedSpaceBarButtonItemWithWidth:(CGFloat)spaceWidth {
+  UIBarButtonItem *fixedSpace = [self barButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+  fixedSpace.width = spaceWidth;
+  return fixedSpace;
+}
+
 + (UIBarButtonItem *)barButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action {
   return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:target action:action] autorelease];
 }

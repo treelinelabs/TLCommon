@@ -11,6 +11,8 @@
 @interface UIBarButtonItem (TLCommon)
 
 + (UIBarButtonItem *)spinnerBarButtonItem;
++ (UIBarButtonItem *)flexibleSpaceBarButtonItem;
++ (UIBarButtonItem *)fixedSpaceBarButtonItemWithWidth:(CGFloat)spaceWidth;
 + (UIBarButtonItem *)barButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action;
 
 @end

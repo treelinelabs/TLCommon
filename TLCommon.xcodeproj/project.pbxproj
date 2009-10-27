@@ -73,6 +73,10 @@
 		03C62F421062812E006537EF /* UIActivityIndicatorView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C62F401062812E006537EF /* UIActivityIndicatorView_TLCommon.m */; };
 		03D9DF18104BFEDA00B1BA77 /* UIViewController_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */; };
 		03D9DF19104BFEDA00B1BA77 /* UIViewController_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */; };
+		03DA9B9310978AC3005A34B2 /* TLWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DA9B9110978AC3005A34B2 /* TLWebViewController.h */; };
+		03DA9B9410978AC3005A34B2 /* TLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA9B9210978AC3005A34B2 /* TLWebViewController.m */; };
+		03DA9B9E10978E19005A34B2 /* UIWebView_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DA9B9C10978E19005A34B2 /* UIWebView_TLCommon.h */; };
+		03DA9B9F10978E19005A34B2 /* UIWebView_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA9B9D10978E19005A34B2 /* UIWebView_TLCommon.m */; };
 		03DE4776108255EF00BE3F59 /* UIFont_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DE4774108255EF00BE3F59 /* UIFont_TLCommon.h */; };
 		03DE4777108255EF00BE3F59 /* UIFont_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DE4775108255EF00BE3F59 /* UIFont_TLCommon.m */; };
 		03E0624D106A470F00875DD4 /* TLRand.h in Headers */ = {isa = PBXBuildFile; fileRef = 03E0624B106A470F00875DD4 /* TLRand.h */; };
@@ -156,6 +160,10 @@
 		03D9DF16104BFEDA00B1BA77 /* UIViewController_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_TLCommon.h; sourceTree = "<group>"; };
 		03D9DF17104BFEDA00B1BA77 /* UIViewController_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewController_TLCommon.m; sourceTree = "<group>"; };
 		03D9DF28104C03B900B1BA77 /* CGGeometry_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometry_TLCommon.h; sourceTree = "<group>"; };
+		03DA9B9110978AC3005A34B2 /* TLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLWebViewController.h; sourceTree = "<group>"; };
+		03DA9B9210978AC3005A34B2 /* TLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLWebViewController.m; sourceTree = "<group>"; };
+		03DA9B9C10978E19005A34B2 /* UIWebView_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWebView_TLCommon.h; sourceTree = "<group>"; };
+		03DA9B9D10978E19005A34B2 /* UIWebView_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWebView_TLCommon.m; sourceTree = "<group>"; };
 		03DE4774108255EF00BE3F59 /* UIFont_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFont_TLCommon.h; sourceTree = "<group>"; };
 		03DE4775108255EF00BE3F59 /* UIFont_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFont_TLCommon.m; sourceTree = "<group>"; };
 		03E0624B106A470F00875DD4 /* TLRand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLRand.h; sourceTree = "<group>"; };
@@ -269,6 +277,15 @@
 			name = "Table view cells";
 			sourceTree = "<group>";
 		};
+		03DA9B8810978A68005A34B2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				03DA9B9110978AC3005A34B2 /* TLWebViewController.h */,
+				03DA9B9210978AC3005A34B2 /* TLWebViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		03FE415610518BBC003ACE50 /* View extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +299,8 @@
 				0370D65F1082047F002A46BB /* UIImageView_TLCommon.m */,
 				0395E591108768A400F6F0F8 /* UITableViewCell_TLCommon.h */,
 				0395E592108768A400F6F0F8 /* UITableViewCell_TLCommon.m */,
+				03DA9B9C10978E19005A34B2 /* UIWebView_TLCommon.h */,
+				03DA9B9D10978E19005A34B2 /* UIWebView_TLCommon.m */,
 			);
 			name = "View extensions";
 			sourceTree = "<group>";
@@ -361,6 +380,7 @@
 				03060785105AA74E00A3E14E /* Simple inline functions */,
 				034043531056F407004B4909 /* Protocols */,
 				034041C510569B80004B4909 /* Views */,
+				03DA9B8810978A68005A34B2 /* Controllers */,
 				034040921055C35F004B4909 /* Models */,
 				03FE415C10518C87003ACE50 /* Controller extensions */,
 				03FE415710518BEF003ACE50 /* Model extensions */,
@@ -426,6 +446,8 @@
 				03166A6F1096274200C628BB /* TLDrawnTextFragment.h in Headers */,
 				03166A731096277A00C628BB /* TLDrawnTextStyle.h in Headers */,
 				03166A77109628AB00C628BB /* TLDrawnTextBlock.h in Headers */,
+				03DA9B9310978AC3005A34B2 /* TLWebViewController.h in Headers */,
+				03DA9B9E10978E19005A34B2 /* UIWebView_TLCommon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +529,8 @@
 				03166A701096274200C628BB /* TLDrawnTextFragment.m in Sources */,
 				03166A741096277A00C628BB /* TLDrawnTextStyle.m in Sources */,
 				03166A78109628AB00C628BB /* TLDrawnTextBlock.m in Sources */,
+				03DA9B9410978AC3005A34B2 /* TLWebViewController.m in Sources */,
+				03DA9B9F10978E19005A34B2 /* UIWebView_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

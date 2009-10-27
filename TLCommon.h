@@ -38,3 +38,5 @@
 #import "TLDrawnTextStyle.h"
 #import "TLDrawnTextFragment.h"
 #import "TLDrawnTextBlock.h"
+#import "UIWebView_TLCommon.h"
+#import "TLWebViewController.h"
