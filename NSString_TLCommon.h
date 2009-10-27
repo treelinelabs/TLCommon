@@ -15,14 +15,31 @@
 - (NSString *)md5;
 - (NSString *)stringByURLEncodingAllCharacters; // including &, %, ?, =, and other url "safe" characters
 
+// returns the range of the receiver containing the string arrived at by trimming characters from the beginning
+- (NSRange)rangeOfSubstringByTrimmingPrefixCharactersInSet:(NSCharacterSet *)set;
+// like stringByTrimmingCharactersInSet, but only chops from the beginning, not the end
+- (NSString *)stringByTrimmingPrefixCharactersInSet:(NSCharacterSet *)set;
+
+// returns the range of the receiver containing the string arrived at by trimming characters from the beginning
+- (NSRange)rangeOfSubstringByTrimmingSuffixCharactersInSet:(NSCharacterSet *)set;
 // like stringByTrimmingCharactersInSet, but only chops from the end, not the beginning
-- (NSString *)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)set;
+- (NSString *)stringByTrimmingSuffixCharactersInSet:(NSCharacterSet *)set;
+
+// range containing entire string
+- (NSRange)completeRange;
+
+- (NSUInteger)lengthOfLongestPrefixThatRendersOnOneLineOfWidth:(CGFloat)lineWidth usingFont:(UIFont *)font;
+
+/****************************************/
+
 
 // Breaks a string up into an array of substrings such that, if rendered using the given font, line width,
 // and line break mode UILineBreakModeWordWrap, each substring would be rendered on a separate line.
 //
 // KNOWN ISSUE: When a single word is long enough to cover an entire line, the break point
 // chosen by this method as the breaking point is sometimes off by a character or two.
+// Workaround: Break up the line into multiple lines using this method, and then draw
+// one line at a time, rather than the whole thing at once, using drawComponents:inRect:withFont:alignment:.
 - (NSArray *)componentsByRenderingOntoSeparateLinesWithFont:(UIFont *)font
                                                   lineWidth:(CGFloat)lineWidth;
 
@@ -49,7 +66,9 @@
 // which contains an NSValue with the rect containing the rendered substring, and kSubstringRenderingSubstringKey
 // which contains the actual part of the substring rendered there.
 //
-// KNOWN ISSUE: There are some issues around whitespace and UITextAlignmentCenter.
+// KNOWN ISSUE: There are some issues around whitespace on non-first lines when using UITextAlignmentCenter.
+// Workaround: Break up the line into multiple lines using componentsByRenderingOntoSeparateLinesWithFont:lineWidth:, and then draw
+// one line at a time, rather than the whole thing at once, using drawComponents:inRect:withFont:alignment:.
 - (NSArray *)rectsForSubstringInRange:(NSRange)substringRange
                      renderedWithFont:(UIFont *)font
                             lineWidth:(CGFloat)lineWidth
@@ -62,10 +81,16 @@
                             lineWidth:(CGFloat)lineWidth
                         textAlignment:(UITextAlignment)textAlignment;
 
-// Returns an array of NSValues containing NSRanges corresponding to all words (demarcated
-// by characters from [NSCharacterSet whitespaceAndNewlineCharacterSet] with the given prefix
-// present as substrings of the receiver.
-- (NSArray *)rangesOfWordsPrefixed:(NSString *)prefix
-                           options:(NSStringCompareOptions)stringCompareOptions;
++ (void)drawComponents:(NSArray *)components
+                inRect:(CGRect)rect
+              withFont:(UIFont *)font
+             alignment:(UITextAlignment)alignment;
+
+// Returns an array of NSValues containing NSRanges corresponding to all components (demarcated
+// by characters from separators with the given prefix
+// present as substrings of the receiver, using stringCompareOptions when analyzing prefixes.
+- (NSArray *)rangesOfComponentsPrefixed:(NSString *)prefix
+         whenSeparatedByCharactersInSet:(NSCharacterSet *)separators
+                                options:(NSStringCompareOptions)stringCompareOptions;
 
 @end

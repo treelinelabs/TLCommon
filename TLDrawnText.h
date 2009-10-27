@@ -23,7 +23,7 @@
   
   CGFloat minimumBottomPadding;
   BOOL flexibleBottomPadding;
-  
+
   // insets -- internal
   // these are used internally to calculate sizes and render
   CGFloat leftInset;
@@ -47,6 +47,8 @@
 //
 // Returns the actual rect containing just the rendered text,
 // including insets, text alignment, etc.
+//
+// KNOWN ISSUE: Returned rect is only fully accurate for UITextAlignmentLeft.
 - (CGRect)render;
 
 // sets the renderRect for a number of texts, according to their drawn text sizes and

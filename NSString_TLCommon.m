@@ -36,19 +36,96 @@
   return encodedString;
 }
 
-- (NSString *)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)set {
+
+- (NSRange)rangeOfSubstringByTrimmingPrefixCharactersInSet:(NSCharacterSet *)set {
+  NSCharacterSet *untrimmedCharacterSet = [set invertedSet];
+  NSRange nonTrimmedCharacterRange = [self rangeOfCharacterFromSet:untrimmedCharacterSet
+                                                           options:NSLiteralSearch | NSAnchoredSearch];
+  NSRange trimmedRange;
+  if(nonTrimmedCharacterRange.location == NSNotFound) {
+    trimmedRange = [self completeRange];
+  } else {
+    trimmedRange = NSMakeRange(nonTrimmedCharacterRange.location, [self length] - nonTrimmedCharacterRange.location);
+  }
+  return trimmedRange;
+}
+
+- (NSString *)stringByTrimmingPrefixCharactersInSet:(NSCharacterSet *)set {
+  return [self substringWithRange:[self rangeOfSubstringByTrimmingPrefixCharactersInSet:set]];
+}
+
+- (NSRange)rangeOfSubstringByTrimmingSuffixCharactersInSet:(NSCharacterSet *)set {
   NSCharacterSet *untrimmedCharacterSet = [set invertedSet];
   NSRange nonTrimmedCharacterRange = [self rangeOfCharacterFromSet:untrimmedCharacterSet
                                                            options:NSLiteralSearch | NSBackwardsSearch | NSAnchoredSearch];
-  NSString *trimmedString = nil;
+  NSRange trimmedRange;
   if(nonTrimmedCharacterRange.location == NSNotFound) {
-    trimmedString = self;
+    trimmedRange = [self completeRange];
   } else {
-    NSRange trimmedRange = NSMakeRange(0, nonTrimmedCharacterRange.location + 1); // add back in the chopped character
-    trimmedString = [self substringWithRange:trimmedRange];
+    trimmedRange = NSMakeRange(0, nonTrimmedCharacterRange.location + 1); // add back in the chopped character
   }
-  return trimmedString;
+  return trimmedRange;
 }
+
+- (NSString *)stringByTrimmingSuffixCharactersInSet:(NSCharacterSet *)set {
+  return [self substringWithRange:[self rangeOfSubstringByTrimmingSuffixCharactersInSet:set]];
+}
+
+- (NSRange)completeRange {
+  return NSMakeRange(0, [self length]);
+}
+
+- (NSUInteger)lengthOfLongestPrefixThatRendersOnOneLineOfWidth:(CGFloat)lineWidth usingFont:(UIFont *)font {
+  CGFloat lineHeight = [font leading];
+  CGSize unboundedTextSize = CGSizeMake(lineWidth, CGFLOAT_MAX);
+  
+  NSMutableCharacterSet *wordWrappingCharacterSet = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
+  [wordWrappingCharacterSet addCharactersInString:@"-"];
+  
+  NSUInteger min = 0;
+
+  NSUInteger max = [self length]; // i'd like to intelligently reduce this to some maximum reasonable value (e.g. line width / max glyph width), but that looks unreasonably hard
+
+  // because this is a common case, check to see whether it all fits on one line, in which case we're done
+  CGSize renderedMaxSize = [self sizeWithFont:font constrainedToSize:unboundedTextSize]; // don't use the simpler sizeWithFont:, because otherwise I'd have to separately handle newline characters; this just works
+  if(renderedMaxSize.height <= lineHeight) {
+    return max;
+  }
+
+  while(YES) {
+    // TODO: Make an intelligent guess here rather then just splitting down the middle
+    NSUInteger current = (min >> 1) + (max >> 1) + (1 & min & max); // no overflows here! not that it matters...
+    NSString *substring = [self substringToIndex:current];
+    CGSize renderedSize = [substring sizeWithFont:font constrainedToSize:unboundedTextSize];
+    if(renderedSize.height > lineHeight) {
+      max = current;
+    } else {
+      min = current;
+    }
+    if(max - min <= 1) {
+      // we've found the exact spot at which it changes from 1 line to 2 -- min is on 1 line, max is on 2
+      // now we find the previous word wrapping character to this spot, since that's where the break
+      // actually occurs.
+      NSRange rangeOfWordWrappingCharacter = [self rangeOfCharacterFromSet:wordWrappingCharacterSet
+                                                                   options:NSBackwardsSearch | NSLiteralSearch
+                                                                     range:NSMakeRange(0, max)];
+      NSUInteger divisionPoint = 0;
+      if(rangeOfWordWrappingCharacter.location != NSNotFound) {
+        divisionPoint = NSMaxRange(rangeOfWordWrappingCharacter);
+      } else {
+        // remaining string has no word breaks at all, so take the whole thing up to the cracking point
+        divisionPoint = min;
+      }
+      return divisionPoint;
+    }
+  }
+}
+
+
+/************************ INTEND TO DELETE *******************************/
+
+
+
 
 - (NSArray *)componentsByRenderingOntoSeparateLinesWithFont:(UIFont *)font
                                                   lineWidth:(CGFloat)lineWidth {
@@ -133,7 +210,11 @@
       trimmedRange = NSIntersectionRange(fullRangeOfTrimmedString, substringRange);
       break;
     case UITextAlignmentCenter:;
-      // for a *single line*, which is all we're discussing here, center-aligning text leaves whitespace
+      // for a *single line*, which is all we're discussing here, center-aligning text eats trailing whitespace, but leaves
+      // leading whitespace intact
+      trimmedString = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+      fullRangeOfTrimmedString = NSMakeRange(0, [trimmedString length]);
+      trimmedRange = NSIntersectionRange(fullRangeOfTrimmedString, substringRange);
       break;
   }
 
@@ -141,8 +222,8 @@
   CGFloat width = 0;
 
   if(trimmedRange.length > 0) {
-    CGSize sizeUpToSubstring = [[trimmedString substringToIndex:substringRange.location] sizeWithFont:font];;
-    CGSize sizeIncludingSubstring = [[trimmedString substringToIndex:NSMaxRange(substringRange)] sizeWithFont:font];
+    CGSize sizeUpToSubstring = [[trimmedString substringToIndex:trimmedRange.location] sizeWithFont:font];;
+    CGSize sizeIncludingSubstring = [[trimmedString substringToIndex:NSMaxRange(trimmedRange)] sizeWithFont:font];
     width = sizeIncludingSubstring.width - sizeUpToSubstring.width;
     switch(textAlignment) {
       case UITextAlignmentLeft:;
@@ -192,21 +273,10 @@
     NSRange intersectionRange = NSIntersectionRange(adjustedSubstringRange, NSMakeRange(0, lineLength));
     if(intersectionRange.length > 0) {
       // part of the string is in this line
-      NSString *stringForRenderRect = nil;
-      NSRange rangeForRenderRect = NSMakeRange(0, 0);
-      if(textAlignment == UITextAlignmentCenter && i + 1 < numberOfLines) {
-        // when rendering centered text, the layout system eats trailing whitespace
-        // iff it is not the last line; mimic that behavior here
-        stringForRenderRect = [line stringByTrimmingTrailingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        rangeForRenderRect = NSIntersectionRange(NSMakeRange(0, [stringForRenderRect length]), intersectionRange);
-      } else {
-        stringForRenderRect = line;
-        rangeForRenderRect = intersectionRange;
-      }
-      CGRect renderRect = [stringForRenderRect rectForSubstringInRange:rangeForRenderRect
-                                                      renderedWithFont:font
-                                                             lineWidth:lineWidth
-                                                         textAlignment:textAlignment];
+      CGRect renderRect = [line rectForSubstringInRange:intersectionRange
+                                       renderedWithFont:font
+                                              lineWidth:lineWidth
+                                          textAlignment:textAlignment];
       // adjust render rect for what line number we're on
       renderRect = CGRectByAddingYOffset(renderRect, lineHeight * (float)i);
       NSString *substring = [line substringWithRange:intersectionRange];
@@ -232,7 +302,24 @@
   return rects;
 }
 
-- (NSArray *)rangesOfWordsPrefixed:(NSString *)prefix options:(NSStringCompareOptions)stringCompareOptions {
++ (void)drawComponents:(NSArray *)components
+                inRect:(CGRect)rect
+              withFont:(UIFont *)font
+             alignment:(UITextAlignment)alignment {
+  NSUInteger lineNumber = 0;
+  for(NSString *line in components) {
+    CGRect lineRect = CGRectByAddingYOffset(rect, (float)lineNumber * [font leading]);
+    [line drawInRect:lineRect
+            withFont:font
+       lineBreakMode:UILineBreakModeClip
+           alignment:alignment];
+    lineNumber++;
+  }
+}
+
+- (NSArray *)rangesOfComponentsPrefixed:(NSString *)prefix
+         whenSeparatedByCharactersInSet:(NSCharacterSet *)separators
+                                options:(NSStringCompareOptions)stringCompareOptions {
   NSMutableArray *wordRanges = [NSMutableArray array];
   NSUInteger length = [self length];
   BOOL doneFindingWords = NO;
@@ -244,7 +331,7 @@
     // TODO: Check to make sure the scheme is at the beginning or prefixed w/ whitespace
     if(wordRange.location != NSNotFound) {
       // there's a word beginning at wordRange.location; now find its end
-      NSRange wordEndingWhiteSpaceRange = [self rangeOfCharacterFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]
+      NSRange wordEndingWhiteSpaceRange = [self rangeOfCharacterFromSet:separators
                                                                 options:NSLiteralSearch
                                                                   range:NSMakeRange(wordRange.location, length - wordRange.location)];
       NSUInteger endOfWordIndex = (wordEndingWhiteSpaceRange.location == NSNotFound) ? length : wordEndingWhiteSpaceRange.location;

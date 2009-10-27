@@ -35,3 +35,6 @@
 #import "NSMutableString_TLCommon.h"
 #import "TLLoadingView.h"
 #import "TLMacros.h"
+#import "TLDrawnTextStyle.h"
+#import "TLDrawnTextFragment.h"
+#import "TLDrawnTextBlock.h"
