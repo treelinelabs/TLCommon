@@ -1,5 +1,5 @@
 //
-//  TLDrawnTextFragment.h
+//  TLStyledTextFragment.h
 //  TLCommon
 //
 //  Created by Joshua Bleecher Snyder on 10/26/09.
@@ -7,17 +7,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class TLDrawnTextStyle;
+@class TLStyledTextStyle;
 
-@interface TLDrawnTextFragment : NSObject {
+@interface TLStyledTextFragment : NSObject {
 @private
   NSString *text;
-  TLDrawnTextStyle *style;
+  TLStyledTextStyle *style;
   
   CGRect renderRect;
 }
 
-+ (TLDrawnTextFragment *)fragment;
++ (TLStyledTextFragment *)fragment;
 
 - (void)render;
 - (CGFloat)width;
@@ -25,7 +25,7 @@
                                    firstLineWidth:(CGFloat)firstLineWidth;
 
 @property(nonatomic, retain, readwrite) NSString *text;
-@property(nonatomic, retain, readwrite) TLDrawnTextStyle *style;
+@property(nonatomic, retain, readwrite) TLStyledTextStyle *style;
 @property(nonatomic, assign, readwrite) CGRect renderRect;
 
 @end

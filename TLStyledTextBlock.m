@@ -1,20 +1,20 @@
 //
-//  TLDrawnTextBlock.m
+//  TLStyledTextBlock.m
 //  TLCommon
 //
 //  Created by Joshua Bleecher Snyder on 10/26/09.
 //
 
-#import "TLDrawnTextBlock.h"
-#import "TLDrawnTextFragment.h"
-#import "TLDrawnTextStyle.h"
+#import "TLStyledTextBlock.h"
+#import "TLStyledTextFragment.h"
+#import "TLStyledTextStyle.h"
 #import "NSString_TLCommon.h"
 #import "CGGeometry_TLCommon.h"
 #import "TLMacros.h"
 
 #pragma mark -
 
-@interface TLDrawnTextBlock ()
+@interface TLStyledTextBlock ()
 
 - (CGFloat)maxFontHeightInLine:(NSArray *)line;
 
@@ -28,7 +28,7 @@
 
 #pragma mark -
 
-@implementation TLDrawnTextBlock
+@implementation TLStyledTextBlock
 
 @synthesize lines;
 @synthesize lineWidth;
@@ -44,19 +44,19 @@
   return self;
 }
 
-+ (TLDrawnTextBlock *)blockWithFragments:(NSArray *)textFragments lineWidth:(CGFloat)width {
-  TLDrawnTextBlock *block = [[[TLDrawnTextBlock alloc] init] autorelease];
++ (TLStyledTextBlock *)blockWithFragments:(NSArray *)textFragments lineWidth:(CGFloat)width {
+  TLStyledTextBlock *block = [[[TLStyledTextBlock alloc] init] autorelease];
   block.lineWidth = width;
   
   NSMutableArray *currentLine = [NSMutableArray array];
   CGFloat currentLineWidth = block.lineWidth;  
-  for(TLDrawnTextFragment *fragment in textFragments) {
+  for(TLStyledTextFragment *fragment in textFragments) {
     TLDebugLog(@"fragment %@", fragment);
     NSArray *subfragments = [fragment subfragmentsRenderableOnLinesOfWidth:block.lineWidth firstLineWidth:currentLineWidth];
     TLDebugLog(@"subfragments %@", subfragments);
     NSUInteger numberOfSubfragments = [subfragments count];
     for(NSUInteger i = 0; i < numberOfSubfragments; i++) {
-      TLDrawnTextFragment *subfragment = [subfragments objectAtIndex:i];
+      TLStyledTextFragment *subfragment = [subfragments objectAtIndex:i];
       if(![subfragment isKindOfClass:[NSNull class]]) {
         [currentLine addObject:subfragment];
         currentLineWidth -= [subfragment width];
@@ -80,7 +80,7 @@
   TLDebugLog(@"lines %@", block.lines);
   for(NSArray *line in block.lines) {
     TLDebugLog(@"line %@", line);
-    TLDrawnTextFragment *lastFragment = [line lastObject];
+    TLStyledTextFragment *lastFragment = [line lastObject];
     lastFragment.text = [lastFragment.text stringByTrimmingSuffixCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
   }
   
@@ -89,7 +89,7 @@
 
 - (CGFloat)maxFontHeightInLine:(NSArray *)line {
   CGFloat maxFontHeight = 0.0f;
-  for(TLDrawnTextFragment *fragment in line) {
+  for(TLStyledTextFragment *fragment in line) {
     maxFontHeight = MAX(maxFontHeight, [fragment.style.font leading]);
   }
   return maxFontHeight;
@@ -109,7 +109,7 @@
     CGFloat maxFontHeight = [self maxFontHeightInLine:line];
     CGFloat runningXOffset = 0.0f;
     // first pass: lay out the line and calculate the total width
-    for(TLDrawnTextFragment *fragment in line) {
+    for(TLStyledTextFragment *fragment in line) {
       CGFloat fragmentWidth = [fragment width];
       fragment.renderRect = CGRectMake(point.x + runningXOffset,
                                        point.y + runningYOffset + OffsetToCenterFloatInFloat([fragment.style.font leading], maxFontHeight),
@@ -130,7 +130,7 @@
         textAlignmentXOffset = floorf(OffsetToCenterFloatInFloat(runningXOffset, self.lineWidth));
         break;
     }
-    for(TLDrawnTextFragment *fragment in line) {
+    for(TLStyledTextFragment *fragment in line) {
       fragment.renderRect = CGRectByAddingXOffset(fragment.renderRect, textAlignmentXOffset);
       [fragment render];
     }
@@ -138,10 +138,10 @@
   }
 }
 
-- (TLDrawnTextFragment *)fragmentAtPoint:(CGPoint)pointWithinTextBlock {
+- (TLStyledTextFragment *)fragmentAtPoint:(CGPoint)pointWithinTextBlock {
   // ick...do an exhaustive search
   for(NSArray *line in self.lines) {
-    for(TLDrawnTextFragment *fragment in line) {
+    for(TLStyledTextFragment *fragment in line) {
       if(CGRectContainsPoint(fragment.renderRect, pointWithinTextBlock)) {
         return fragment;
       }
@@ -150,13 +150,13 @@
   return nil;
 }
 
-- (NSArray *)siblingFragmentsForFragment:(TLDrawnTextFragment *)fragment {
-  TLDrawnTextFragment *originalFragment = [self originalFragmentForFragment:fragment];
+- (NSArray *)siblingFragmentsForFragment:(TLStyledTextFragment *)fragment {
+  TLStyledTextFragment *originalFragment = [self originalFragmentForFragment:fragment];
   NSArray *newFragments = [self.newFragmentsForOriginalFragment objectForKey:[NSValue valueWithPointer:originalFragment]];
   return newFragments;
 }
 
-- (TLDrawnTextFragment *)originalFragmentForFragment:(TLDrawnTextFragment *)fragment {
+- (TLStyledTextFragment *)originalFragmentForFragment:(TLStyledTextFragment *)fragment {
   return [self.originalFragmentForNewFragment objectForKey:[NSValue valueWithPointer:fragment]];
 }
 

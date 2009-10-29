@@ -1,5 +1,5 @@
 //
-//  TLDrawnTextStyle.h
+//  TLStyledTextStyle.h
 //  TLCommon
 //
 //  Created by Joshua Bleecher Snyder on 10/26/09.
@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface TLDrawnTextStyle : NSObject {
+@interface TLStyledTextStyle : NSObject {
 @private
   UIFont *font;
   UIColor *textColor;
@@ -16,7 +16,7 @@
   CGFloat backgroundCornerRadius;
 }
 
-+ (TLDrawnTextStyle *)style;
++ (TLStyledTextStyle *)style;
 
 @property(nonatomic, retain, readwrite) UIFont *font;
 @property(nonatomic, retain, readwrite) UIColor *textColor;

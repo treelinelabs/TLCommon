@@ -1,31 +1,31 @@
 //
-//  TLDrawnTextFragment.m
+//  TLStyledTextFragment.m
 //  TLCommon
 //
 //  Created by Joshua Bleecher Snyder on 10/26/09.
 //
 
-#import "TLDrawnTextFragment.h"
-#import "TLDrawnTextStyle.h"
+#import "TLStyledTextFragment.h"
+#import "TLStyledTextStyle.h"
 #import "CGContext_TLCommon.h"
 #import "NSString_TLCommon.h"
 
 #pragma mark -
 
-@interface TLDrawnTextFragment ()
+@interface TLStyledTextFragment ()
 
 @end
 
 
 #pragma mark -
 
-@implementation TLDrawnTextFragment
+@implementation TLStyledTextFragment
 
 @synthesize text;
 @synthesize style;
 @synthesize renderRect;
 
-+ (TLDrawnTextFragment *)fragment {
++ (TLStyledTextFragment *)fragment {
   return [[[self alloc] init] autorelease];
 }
 
@@ -74,7 +74,7 @@
         [fragments addObject:[NSNull null]];
       }
     } else {
-      TLDrawnTextFragment *newFragment = [TLDrawnTextFragment fragment];
+      TLStyledTextFragment *newFragment = [TLStyledTextFragment fragment];
       newFragment.style = self.style;
       newFragment.text = [subtext substringToIndex:prefixLength ];
       [fragments addObject:newFragment];

@@ -1,22 +1,22 @@
 //
-//  TLDrawnTextStyle.m
+//  TLStyledTextStyle.m
 //  TLCommon
 //
 //  Created by Joshua Bleecher Snyder on 10/26/09.
 //
 
-#import "TLDrawnTextStyle.h"
+#import "TLStyledTextStyle.h"
 
 #pragma mark -
 
-@implementation TLDrawnTextStyle
+@implementation TLStyledTextStyle
 
 @synthesize font;
 @synthesize textColor;
 @synthesize backgroundColor;
 @synthesize backgroundCornerRadius;
 
-+ (TLDrawnTextStyle *)style {
++ (TLStyledTextStyle *)style {
   return [[[self alloc] init] autorelease];
 }
 

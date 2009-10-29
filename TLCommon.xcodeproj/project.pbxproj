@@ -15,12 +15,12 @@
 		0313024C1055708A00189879 /* UIImage_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0313024A1055708A00189879 /* UIImage_TLCommon.h */; };
 		0313024D1055708A00189879 /* UIImage_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0313024B1055708A00189879 /* UIImage_TLCommon.m */; };
 		0313024F1055709700189879 /* TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0313024E1055709700189879 /* TLCommon.h */; };
-		03166A6F1096274200C628BB /* TLDrawnTextFragment.h in Headers */ = {isa = PBXBuildFile; fileRef = 03166A6D1096274200C628BB /* TLDrawnTextFragment.h */; };
-		03166A701096274200C628BB /* TLDrawnTextFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = 03166A6E1096274200C628BB /* TLDrawnTextFragment.m */; };
-		03166A731096277A00C628BB /* TLDrawnTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 03166A711096277A00C628BB /* TLDrawnTextStyle.h */; };
-		03166A741096277A00C628BB /* TLDrawnTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 03166A721096277A00C628BB /* TLDrawnTextStyle.m */; };
-		03166A77109628AB00C628BB /* TLDrawnTextBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 03166A75109628AB00C628BB /* TLDrawnTextBlock.h */; };
-		03166A78109628AB00C628BB /* TLDrawnTextBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 03166A76109628AB00C628BB /* TLDrawnTextBlock.m */; };
+		03166A6F1096274200C628BB /* TLStyledTextFragment.h in Headers */ = {isa = PBXBuildFile; fileRef = 03166A6D1096274200C628BB /* TLStyledTextFragment.h */; };
+		03166A701096274200C628BB /* TLStyledTextFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = 03166A6E1096274200C628BB /* TLStyledTextFragment.m */; };
+		03166A731096277A00C628BB /* TLStyledTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 03166A711096277A00C628BB /* TLStyledTextStyle.h */; };
+		03166A741096277A00C628BB /* TLStyledTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 03166A721096277A00C628BB /* TLStyledTextStyle.m */; };
+		03166A77109628AB00C628BB /* TLStyledTextBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 03166A75109628AB00C628BB /* TLStyledTextBlock.h */; };
+		03166A78109628AB00C628BB /* TLStyledTextBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 03166A76109628AB00C628BB /* TLStyledTextBlock.m */; };
 		03233F241084D2DF00743A22 /* NSMutableArray_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03233F221084D2DF00743A22 /* NSMutableArray_TLCommon.h */; };
 		03233F251084D2DF00743A22 /* NSMutableArray_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03233F231084D2DF00743A22 /* NSMutableArray_TLCommon.m */; };
 		033FBD821070F89800BD4D83 /* CGContext_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 033FBD801070F89800BD4D83 /* CGContext_TLCommon.h */; };
@@ -101,12 +101,12 @@
 		0313024A1055708A00189879 /* UIImage_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_TLCommon.h; sourceTree = "<group>"; };
 		0313024B1055708A00189879 /* UIImage_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_TLCommon.m; sourceTree = "<group>"; };
 		0313024E1055709700189879 /* TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCommon.h; sourceTree = "<group>"; };
-		03166A6D1096274200C628BB /* TLDrawnTextFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDrawnTextFragment.h; sourceTree = "<group>"; };
-		03166A6E1096274200C628BB /* TLDrawnTextFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDrawnTextFragment.m; sourceTree = "<group>"; };
-		03166A711096277A00C628BB /* TLDrawnTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDrawnTextStyle.h; sourceTree = "<group>"; };
-		03166A721096277A00C628BB /* TLDrawnTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDrawnTextStyle.m; sourceTree = "<group>"; };
-		03166A75109628AB00C628BB /* TLDrawnTextBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDrawnTextBlock.h; sourceTree = "<group>"; };
-		03166A76109628AB00C628BB /* TLDrawnTextBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDrawnTextBlock.m; sourceTree = "<group>"; };
+		03166A6D1096274200C628BB /* TLStyledTextFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLStyledTextFragment.h; sourceTree = "<group>"; };
+		03166A6E1096274200C628BB /* TLStyledTextFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLStyledTextFragment.m; sourceTree = "<group>"; };
+		03166A711096277A00C628BB /* TLStyledTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLStyledTextStyle.h; sourceTree = "<group>"; };
+		03166A721096277A00C628BB /* TLStyledTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLStyledTextStyle.m; sourceTree = "<group>"; };
+		03166A75109628AB00C628BB /* TLStyledTextBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLStyledTextBlock.h; sourceTree = "<group>"; };
+		03166A76109628AB00C628BB /* TLStyledTextBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLStyledTextBlock.m; sourceTree = "<group>"; };
 		03233F221084D2DF00743A22 /* NSMutableArray_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_TLCommon.h; sourceTree = "<group>"; };
 		03233F231084D2DF00743A22 /* NSMutableArray_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_TLCommon.m; sourceTree = "<group>"; };
 		033FBD801070F89800BD4D83 /* CGContext_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGContext_TLCommon.h; sourceTree = "<group>"; };
@@ -207,12 +207,12 @@
 		03166A6C109626C300C628BB /* Styled text drawing */ = {
 			isa = PBXGroup;
 			children = (
-				03166A6D1096274200C628BB /* TLDrawnTextFragment.h */,
-				03166A6E1096274200C628BB /* TLDrawnTextFragment.m */,
-				03166A711096277A00C628BB /* TLDrawnTextStyle.h */,
-				03166A721096277A00C628BB /* TLDrawnTextStyle.m */,
-				03166A75109628AB00C628BB /* TLDrawnTextBlock.h */,
-				03166A76109628AB00C628BB /* TLDrawnTextBlock.m */,
+				03166A6D1096274200C628BB /* TLStyledTextFragment.h */,
+				03166A6E1096274200C628BB /* TLStyledTextFragment.m */,
+				03166A711096277A00C628BB /* TLStyledTextStyle.h */,
+				03166A721096277A00C628BB /* TLStyledTextStyle.m */,
+				03166A75109628AB00C628BB /* TLStyledTextBlock.h */,
+				03166A76109628AB00C628BB /* TLStyledTextBlock.m */,
 			);
 			name = "Styled text drawing";
 			sourceTree = "<group>";
@@ -443,9 +443,9 @@
 				0395EC9D108932B600F6F0F8 /* NSMutableString_TLCommon.h in Headers */,
 				03509434108B756500DE1475 /* TLLoadingView.h in Headers */,
 				0354CF4210911EC400A24522 /* TLMacros.h in Headers */,
-				03166A6F1096274200C628BB /* TLDrawnTextFragment.h in Headers */,
-				03166A731096277A00C628BB /* TLDrawnTextStyle.h in Headers */,
-				03166A77109628AB00C628BB /* TLDrawnTextBlock.h in Headers */,
+				03166A6F1096274200C628BB /* TLStyledTextFragment.h in Headers */,
+				03166A731096277A00C628BB /* TLStyledTextStyle.h in Headers */,
+				03166A77109628AB00C628BB /* TLStyledTextBlock.h in Headers */,
 				03DA9B9310978AC3005A34B2 /* TLWebViewController.h in Headers */,
 				03DA9B9E10978E19005A34B2 /* UIWebView_TLCommon.h in Headers */,
 			);
@@ -526,9 +526,9 @@
 				0395E594108768A400F6F0F8 /* UITableViewCell_TLCommon.m in Sources */,
 				0395EC9E108932B600F6F0F8 /* NSMutableString_TLCommon.m in Sources */,
 				03509435108B756500DE1475 /* TLLoadingView.m in Sources */,
-				03166A701096274200C628BB /* TLDrawnTextFragment.m in Sources */,
-				03166A741096277A00C628BB /* TLDrawnTextStyle.m in Sources */,
-				03166A78109628AB00C628BB /* TLDrawnTextBlock.m in Sources */,
+				03166A701096274200C628BB /* TLStyledTextFragment.m in Sources */,
+				03166A741096277A00C628BB /* TLStyledTextStyle.m in Sources */,
+				03166A78109628AB00C628BB /* TLStyledTextBlock.m in Sources */,
 				03DA9B9410978AC3005A34B2 /* TLWebViewController.m in Sources */,
 				03DA9B9F10978E19005A34B2 /* UIWebView_TLCommon.m in Sources */,
 			);
