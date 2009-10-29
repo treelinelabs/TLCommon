@@ -79,6 +79,14 @@ static inline CGSize CGSizeByAddingWidth(CGSize originalSize, CGFloat extraWidth
   return CGSizeMake(originalSize.width + extraWidth, originalSize.height);
 }
 
+static inline CGPoint CGPointByAddingXOffset(CGPoint originalPoint, CGFloat xOffset) {
+  return CGPointMake(originalPoint.x + xOffset, originalPoint.y);
+}
+
+static inline CGPoint CGPointByAddingYOffset(CGPoint originalPoint, CGFloat yOffset) {
+  return CGPointMake(originalPoint.x, originalPoint.y + yOffset);
+}
+
 static inline CGFloat SquaredDistanceBetweenPoints(CGPoint p1, CGPoint p2) {
   CGFloat deltaX = p1.x - p2.x;
   CGFloat deltaY = p1.y - p2.y;
