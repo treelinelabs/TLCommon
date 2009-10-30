@@ -74,7 +74,6 @@
   }
   // pick up the very last line which would otherwise be forgotten
   [block.lines addObject:currentLine];
-  currentLine = [NSMutableArray array];
 
   // triming trailing whitespace on all lines
   TLDebugLog(@"lines %@", block.lines);

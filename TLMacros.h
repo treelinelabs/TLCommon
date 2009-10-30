@@ -4,3 +4,5 @@
 #else
 #define TLDebugLog(format, args...)
 #endif
+
+#define BOUND(min, val, max) MAX(min, MIN(max, val))
