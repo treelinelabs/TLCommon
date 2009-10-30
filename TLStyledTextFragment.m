@@ -23,6 +23,7 @@
 
 @synthesize text;
 @synthesize style;
+@synthesize userInfo;
 @synthesize renderRect;
 
 + (TLStyledTextFragment *)fragment {
@@ -76,7 +77,8 @@
     } else {
       TLStyledTextFragment *newFragment = [TLStyledTextFragment fragment];
       newFragment.style = self.style;
-      newFragment.text = [subtext substringToIndex:prefixLength ];
+      newFragment.text = [subtext substringToIndex:prefixLength];
+      newFragment.userInfo = self.userInfo;
       [fragments addObject:newFragment];
       subtext = [subtext substringFromIndex:prefixLength];
     }
@@ -87,7 +89,7 @@
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"<%@ %p: '%@', %@, %@>", NSStringFromClass([self class]), self, self.text, self.style, [NSValue valueWithCGRect:self.renderRect]];
+  return [NSString stringWithFormat:@"<%@ %p: '%@', %@, %@ -- %@>", NSStringFromClass([self class]), self, self.text, self.style, [NSValue valueWithCGRect:self.renderRect], self.userInfo];
 }
 
 - (void)dealloc {
@@ -96,6 +98,9 @@
   
   [style release];
   style = nil;
+
+  [userInfo release];
+  userInfo = nil;
   
   [super dealloc];
 }

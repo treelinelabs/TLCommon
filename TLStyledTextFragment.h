@@ -14,6 +14,8 @@
   NSString *text;
   TLStyledTextStyle *style;
   
+  id userInfo;
+  
   CGRect renderRect;
 }
 
@@ -26,6 +28,7 @@
 
 @property(nonatomic, retain, readwrite) NSString *text;
 @property(nonatomic, retain, readwrite) TLStyledTextStyle *style;
+@property(nonatomic, retain, readwrite) id userInfo;
 @property(nonatomic, assign, readwrite) CGRect renderRect;
 
 @end
