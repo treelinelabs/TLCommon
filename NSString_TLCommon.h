@@ -30,11 +30,4 @@
 
 - (NSUInteger)lengthOfLongestPrefixThatRendersOnOneLineOfWidth:(CGFloat)lineWidth usingFont:(UIFont *)font;
 
-// Returns an array of NSValues containing NSRanges corresponding to all components (demarcated
-// by characters from separators with the given prefix)
-// present as substrings of the receiver, using stringCompareOptions when analyzing prefixes.
-- (NSArray *)rangesOfComponentsPrefixed:(NSString *)prefix
-         whenSeparatedByCharactersInSet:(NSCharacterSet *)separators
-                                options:(NSStringCompareOptions)stringCompareOptions;
-
 @end

@@ -9,6 +9,8 @@
 #import "CGGeometry_TLCommon.h"
 #import <CommonCrypto/CommonDigest.h>
 
+static NSMutableCharacterSet *wordWrappingCharacterSet = nil;
+
 @implementation NSString (TLCommon)
 
 // Adapted from Three20
@@ -82,8 +84,11 @@
   CGFloat lineHeight = [font leading];
   CGSize unboundedTextSize = CGSizeMake(lineWidth, CGFLOAT_MAX);
   
-  NSMutableCharacterSet *wordWrappingCharacterSet = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
-  [wordWrappingCharacterSet addCharactersInString:@"-"];
+  if(!wordWrappingCharacterSet) {
+    wordWrappingCharacterSet = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
+    [wordWrappingCharacterSet addCharactersInString:@"-"];
+    [wordWrappingCharacterSet retain];
+  }
   
   NSUInteger min = 0;
 
@@ -122,34 +127,6 @@
       return divisionPoint;
     }
   }
-}
-
-- (NSArray *)rangesOfComponentsPrefixed:(NSString *)prefix
-         whenSeparatedByCharactersInSet:(NSCharacterSet *)separators
-                                options:(NSStringCompareOptions)stringCompareOptions {
-  NSMutableArray *wordRanges = [NSMutableArray array];
-  NSUInteger length = [self length];
-  BOOL doneFindingWords = NO;
-  NSUInteger indexOfLastCharacterOfLastFoundWord = 0;
-  while(!doneFindingWords) {
-    NSRange wordRange = [self rangeOfString:prefix
-                                    options:stringCompareOptions
-                                      range:NSMakeRange(indexOfLastCharacterOfLastFoundWord, length - indexOfLastCharacterOfLastFoundWord)];
-    // TODO: Check to make sure the scheme is at the beginning or prefixed w/ whitespace
-    if(wordRange.location != NSNotFound) {
-      // there's a word beginning at wordRange.location; now find its end
-      NSRange wordEndingWhiteSpaceRange = [self rangeOfCharacterFromSet:separators
-                                                                options:NSLiteralSearch
-                                                                  range:NSMakeRange(wordRange.location, length - wordRange.location)];
-      NSUInteger endOfWordIndex = (wordEndingWhiteSpaceRange.location == NSNotFound) ? length : wordEndingWhiteSpaceRange.location;
-      NSRange completeWordRange = NSMakeRange(wordRange.location, endOfWordIndex - wordRange.location);
-      [wordRanges addObject:[NSValue valueWithRange:completeWordRange]];
-      indexOfLastCharacterOfLastFoundWord = NSMaxRange(wordEndingWhiteSpaceRange);
-    } else {
-      doneFindingWords = YES;
-    }
-  }
-  return wordRanges;
 }
 
 @end
