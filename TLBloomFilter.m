@@ -46,6 +46,7 @@
 }
 
 - (id)initWithCapacity:(NSUInteger)numberOfEntries falsePositiveRate:(float)falsePositiveRate {
+  NSAssert(numberOfEntries > 0, @"TLBloomFilter initWithCapacity:falsePositiveRate: called with numberOfEntries == 0");
   if(self = [super init]) {
     self.length = [[self class] lengthToAchieveFalsePositiveRate:falsePositiveRate forCapacity:numberOfEntries];
     self.hashes = [[self class] numberOfHashesToMinimizeFalsePositivesForLength:self.length capacity:numberOfEntries];
@@ -55,6 +56,7 @@
 }
 
 - (id)initWithLength:(NSUInteger)numberOfBytes hashes:(NSUInteger)numberOfHashFunctions {
+  NSAssert(numberOfBytes > 0, @"TLBloomFilter initWithLength:hashes: called with numberOfBytes == 0");
   if(self = [super init]) {
     self.length = numberOfBytes;
     self.hashes = numberOfHashFunctions;
@@ -64,6 +66,7 @@
 }
 
 - (id)initWithData:(NSMutableData *)savedBloomFilterData hashes:(NSUInteger)numberOfHashFunctions {
+  NSAssert([savedBloomFilterData length] > 0, @"TLBloomFilter initWithData:hashes: called with savedBloomFilterData with length 0");
   if(self = [super init]) {
     self.length = [savedBloomFilterData length];
     self.hashes = numberOfHashFunctions;
@@ -83,10 +86,10 @@
   unsigned int firstHash = [dataRepresentingAnObject murmurHashNeutral2WithSeed:0x1234ABCD]; // seeds picked at random
   unsigned int secondHash = [dataRepresentingAnObject murmurHashNeutral2WithSeed:0x0A5A3F707];
   for(NSUInteger hashCount = 0; hashCount < self.hashes; hashCount++) {
-    unsigned int hash = firstHash + hashCount * secondHash;
+    unsigned int hash = firstHash + hashCount * secondHash; // note that we don't care about overflow, as long as it happens consistently
     unsigned int bitOffset = hash % (self.length * CHAR_BIT);
     unsigned int bytesOffset = bitOffset / CHAR_BIT;
-    unsigned short int intraByteOffset = bitOffset & (CHAR_BIT - 1);
+    unsigned short int intraByteOffset = bitOffset % CHAR_BIT;
     unsigned short int byteMask = 1 << intraByteOffset;
     if(insertData) {
       bytes[bytesOffset] |= byteMask;      

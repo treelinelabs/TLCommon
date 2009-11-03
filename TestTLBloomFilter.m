@@ -103,6 +103,11 @@
   STAssertEquals(verySmallLength, (NSUInteger)1, @"Wrong length: %i", verySmallLength);
 }
 
+- (void)testThatEmptyFiltersThrowExceptions {
+  STAssertThrows([[[TLBloomFilter alloc] initWithCapacity:0 falsePositiveRate:0.2f] autorelease], @"Empty length should throw exception");
+  STAssertThrows([[[TLBloomFilter alloc] initWithLength:0 hashes:10] autorelease], @"Empty length should throw exception");
+  STAssertThrows([[[TLBloomFilter alloc] initWithData:[NSMutableData data] hashes:10] autorelease], @"Empty length should throw exception");
+}
 
 #if TL_RUN_SLOW_TESTS
 
