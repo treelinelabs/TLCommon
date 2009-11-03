@@ -41,3 +41,4 @@
 #import "UIWebView_TLCommon.h"
 #import "TLWebViewController.h"
 #import "TLActionSheet.h"
+#import "TLBloomFilter.h"

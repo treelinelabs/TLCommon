@@ -88,11 +88,26 @@
 		03E142061061362E00D7D936 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E142051061362E00D7D936 /* CoreLocation.framework */; };
 		03F0EC2B109BB21000B938CA /* TLActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 03F0EC29109BB21000B938CA /* TLActionSheet.h */; };
 		03F0EC2C109BB21000B938CA /* TLActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F0EC2A109BB21000B938CA /* TLActionSheet.m */; };
+		03F0EF82109FAE0A00B938CA /* TLBloomFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F0EF80109FAE0A00B938CA /* TLBloomFilter.m */; };
+		03F0EF83109FAE0A00B938CA /* TLBloomFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 03F0EF81109FAE0A00B938CA /* TLBloomFilter.h */; };
+		03F0EFC3109FB72600B938CA /* TestTLBloomFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F0EFC2109FB72600B938CA /* TestTLBloomFilter.m */; };
+		03F0EFE5109FBA7F00B938CA /* TLBloomFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F0EF80109FAE0A00B938CA /* TLBloomFilter.m */; };
+		03F0EFFF109FBB0A00B938CA /* NSData_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 038349C21059375E00BFBBC7 /* NSData_TLCommon.m */; };
 		03FE415A10518C11003ACE50 /* UITabBarItem_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */; };
 		03FE415B10518C11003ACE50 /* UITabBarItem_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE415910518C11003ACE50 /* UITabBarItem_TLCommon.m */; };
 		AA747D9F0F9514B9006C5449 /* TLCommon_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TLCommon_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03F0EFD4109FB82D00B938CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03F0EFBB109FB6FA00B938CA;
+			remoteInfo = UnitTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		030606AF105A83EC00A3E14E /* UIApplication_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIApplication_TLCommon.h; sourceTree = "<group>"; };
@@ -177,6 +192,12 @@
 		03E142051061362E00D7D936 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		03F0EC29109BB21000B938CA /* TLActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLActionSheet.h; sourceTree = "<group>"; };
 		03F0EC2A109BB21000B938CA /* TLActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLActionSheet.m; sourceTree = "<group>"; };
+		03F0EF80109FAE0A00B938CA /* TLBloomFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBloomFilter.m; sourceTree = "<group>"; };
+		03F0EF81109FAE0A00B938CA /* TLBloomFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBloomFilter.h; sourceTree = "<group>"; };
+		03F0EFBC109FB6FA00B938CA /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03F0EFBD109FB6FA00B938CA /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
+		03F0EFC1109FB72600B938CA /* TestTLBloomFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTLBloomFilter.h; sourceTree = "<group>"; };
+		03F0EFC2109FB72600B938CA /* TestTLBloomFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTLBloomFilter.m; sourceTree = "<group>"; };
 		03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITabBarItem_TLCommon.h; sourceTree = "<group>"; };
 		03FE415910518C11003ACE50 /* UITabBarItem_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITabBarItem_TLCommon.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TLCommon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCommon_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -185,6 +206,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		03F0EFB9109FB6FA00B938CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC07C0554694100DB518D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +263,8 @@
 				03E0624C106A470F00875DD4 /* TLRand.m */,
 				0395E19C1086669C00F6F0F8 /* TLDrawnText.h */,
 				0395E19D1086669C00F6F0F8 /* TLDrawnText.m */,
+				03F0EF81109FAE0A00B938CA /* TLBloomFilter.h */,
+				03F0EF80109FAE0A00B938CA /* TLBloomFilter.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -268,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC07E0554694100DB518D /* libTLCommon.a */,
+				03F0EFBC109FB6FA00B938CA /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +321,15 @@
 				03DA9B9210978AC3005A34B2 /* TLWebViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		03F0EFB6109FB6C300B938CA /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				03F0EFC1109FB72600B938CA /* TestTLBloomFilter.h */,
+				03F0EFC2109FB72600B938CA /* TestTLBloomFilter.m */,
+			);
+			name = UnitTests;
 			sourceTree = "<group>";
 		};
 		03FE415610518BBC003ACE50 /* View extensions */ = {
@@ -366,7 +406,9 @@
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
+				03F0EFBD109FB6FA00B938CA /* UnitTests-Info.plist */,
 			);
+			comments = "Development target is to be used when developing the TLCommon library; it does things like run the slower unit tests and does extra logging.";
 			name = TLCommon;
 			sourceTree = "<group>";
 		};
@@ -383,6 +425,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				03F0EFB6109FB6C300B938CA /* UnitTests */,
 				03060785105AA74E00A3E14E /* Simple inline functions */,
 				034043531056F407004B4909 /* Protocols */,
 				034041C510569B80004B4909 /* Views */,
@@ -455,12 +498,31 @@
 				03DA9B9310978AC3005A34B2 /* TLWebViewController.h in Headers */,
 				03DA9B9E10978E19005A34B2 /* UIWebView_TLCommon.h in Headers */,
 				03F0EC2B109BB21000B938CA /* TLActionSheet.h in Headers */,
+				03F0EF83109FAE0A00B938CA /* TLBloomFilter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		03F0EFBB109FB6FA00B938CA /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03F0EFC0109FB6FB00B938CA /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				03F0EFB7109FB6FA00B938CA /* Resources */,
+				03F0EFB8109FB6FA00B938CA /* Sources */,
+				03F0EFB9109FB6FA00B938CA /* Frameworks */,
+				03F0EFBA109FB6FA00B938CA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = 03F0EFBC109FB6FA00B938CA /* UnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		D2AAC07D0554694100DB518D /* TLCommon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "TLCommon" */;
@@ -472,6 +534,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				03F0EFD5109FB82D00B938CA /* PBXTargetDependency */,
 			);
 			name = TLCommon;
 			productName = TLCommon;
@@ -492,11 +555,48 @@
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* TLCommon */,
+				03F0EFBB109FB6FA00B938CA /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		03F0EFB7109FB6FA00B938CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03F0EFBA109FB6FA00B938CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		03F0EFB8109FB6FA00B938CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03F0EFC3109FB72600B938CA /* TestTLBloomFilter.m in Sources */,
+				03F0EFFF109FBB0A00B938CA /* NSData_TLCommon.m in Sources */,
+				03F0EFE5109FBA7F00B938CA /* TLBloomFilter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC07B0554694100DB518D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,12 +639,152 @@
 				03DA9B9410978AC3005A34B2 /* TLWebViewController.m in Sources */,
 				03DA9B9F10978E19005A34B2 /* UIWebView_TLCommon.m in Sources */,
 				03F0EC2C109BB21000B938CA /* TLActionSheet.m in Sources */,
+				03F0EF82109FAE0A00B938CA /* TLBloomFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		03F0EFD5109FB82D00B938CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03F0EFBB109FB6FA00B938CA /* UnitTests */;
+			targetProxy = 03F0EFD4109FB82D00B938CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		034EF90710A067290021D494 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Development;
+		};
+		034EF90810A067290021D494 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/TLCommon.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TLCommon_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = TLCommon;
+			};
+			name = Development;
+		};
+		034EF90910A067290021D494 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = TLCommon_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"TL_DEVELOPMENT=1",
+					"TL_RUN_SLOW_TESTS=1",
+				);
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				SDKROOT = iphonesimulator3.0;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Development;
+		};
+		03F0EFBE109FB6FB00B938CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = TLCommon_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				SDKROOT = iphonesimulator3.0;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		03F0EFBF109FB6FB00B938CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREFIX_HEADER = TLCommon_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				SDKROOT = iphonesimulator3.0;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		1DEB921F08733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -607,10 +847,21 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		03F0EFC0109FB6FB00B938CA /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03F0EFBE109FB6FB00B938CA /* Debug */,
+				034EF90910A067290021D494 /* Development */,
+				03F0EFBF109FB6FB00B938CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "TLCommon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB921F08733DC00010E9CD /* Debug */,
+				034EF90810A067290021D494 /* Development */,
 				1DEB922008733DC00010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -620,6 +871,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
+				034EF90710A067290021D494 /* Development */,
 				1DEB922408733DC00010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

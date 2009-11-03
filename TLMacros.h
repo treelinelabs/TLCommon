@@ -5,4 +5,10 @@
 #define TLDebugLog(format, args...)
 #endif
 
+#ifdef TL_DEVELOPMENT
+#define TLDevLog(format, args...) NSLog(format, ## args)
+#else
+#define TLDevLog(format, args...)
+#endif
+
 #define BOUND(min, val, max) MAX(min, MIN(max, val))
