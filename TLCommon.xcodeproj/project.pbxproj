@@ -44,6 +44,9 @@
 		0340444610571719004B4909 /* NSDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340444410571719004B4909 /* NSDictionary_TLCommon.m */; };
 		0340445210571BE0004B4909 /* NSDate_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0340445010571BE0004B4909 /* NSDate_TLCommon.h */; };
 		0340445310571BE0004B4909 /* NSDate_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340445110571BE0004B4909 /* NSDate_TLCommon.m */; };
+		034E021510A210330021D494 /* TLTwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 034E01E810A2003D0021D494 /* TLTwitterClient.m */; };
+		034E0DDA10A9C4440021D494 /* TLActionSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034E0DD910A9C4440021D494 /* TLActionSheetController.m */; };
+		034E0DFD10A9CCAF0021D494 /* TLActionSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034E0DD910A9C4440021D494 /* TLActionSheetController.m */; };
 		03509434108B756500DE1475 /* TLLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03509432108B756500DE1475 /* TLLoadingView.h */; };
 		03509435108B756500DE1475 /* TLLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03509433108B756500DE1475 /* TLLoadingView.m */; };
 		0354CF4210911EC400A24522 /* TLMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0354CF4110911EC400A24522 /* TLMacros.h */; };
@@ -147,6 +150,10 @@
 		0340444410571719004B4909 /* NSDictionary_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_TLCommon.m; sourceTree = "<group>"; };
 		0340445010571BE0004B4909 /* NSDate_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_TLCommon.h; sourceTree = "<group>"; };
 		0340445110571BE0004B4909 /* NSDate_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_TLCommon.m; sourceTree = "<group>"; };
+		034E01E710A2003D0021D494 /* TLTwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTwitterClient.h; sourceTree = "<group>"; };
+		034E01E810A2003D0021D494 /* TLTwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTwitterClient.m; sourceTree = "<group>"; };
+		034E0DD810A9C4440021D494 /* TLActionSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLActionSheetController.h; sourceTree = "<group>"; };
+		034E0DD910A9C4440021D494 /* TLActionSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLActionSheetController.m; sourceTree = "<group>"; };
 		03509432108B756500DE1475 /* TLLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLLoadingView.h; sourceTree = "<group>"; };
 		03509433108B756500DE1475 /* TLLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLLoadingView.m; sourceTree = "<group>"; };
 		0354CF4110911EC400A24522 /* TLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLMacros.h; sourceTree = "<group>"; };
@@ -265,6 +272,8 @@
 				0395E19D1086669C00F6F0F8 /* TLDrawnText.m */,
 				03F0EF81109FAE0A00B938CA /* TLBloomFilter.h */,
 				03F0EF80109FAE0A00B938CA /* TLBloomFilter.m */,
+				034E01E710A2003D0021D494 /* TLTwitterClient.h */,
+				034E01E810A2003D0021D494 /* TLTwitterClient.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -319,6 +328,8 @@
 			children = (
 				03DA9B9110978AC3005A34B2 /* TLWebViewController.h */,
 				03DA9B9210978AC3005A34B2 /* TLWebViewController.m */,
+				034E0DD810A9C4440021D494 /* TLActionSheetController.h */,
+				034E0DD910A9C4440021D494 /* TLActionSheetController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -594,6 +605,7 @@
 				03F0EFC3109FB72600B938CA /* TestTLBloomFilter.m in Sources */,
 				03F0EFFF109FBB0A00B938CA /* NSData_TLCommon.m in Sources */,
 				03F0EFE5109FBA7F00B938CA /* TLBloomFilter.m in Sources */,
+				034E0DDA10A9C4440021D494 /* TLActionSheetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +613,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034E021510A210330021D494 /* TLTwitterClient.m in Sources */,
 				03D9DF19104BFEDA00B1BA77 /* UIViewController_TLCommon.m in Sources */,
+				034E0DFD10A9CCAF0021D494 /* TLActionSheetController.m in Sources */,
 				03FE415B10518C11003ACE50 /* UITabBarItem_TLCommon.m in Sources */,
 				0313024D1055708A00189879 /* UIImage_TLCommon.m in Sources */,
 				034040961055C375004B4909 /* TLSavedState.m in Sources */,
