@@ -97,13 +97,18 @@
       NSString *value = nil;
       if(equalsPosition.location == NSNotFound) {
         key = [key stringByURLDecodingAllCharacters];
-        value = @"";
       } else {
         key = [[component substringToIndex:equalsPosition.location] stringByURLDecodingAllCharacters];
         value = [[component substringFromIndex:NSMaxRange(equalsPosition)] stringByURLDecodingAllCharacters];
       }
 
-      [dict setObject:value forKey:key];
+      if(!value) {
+        value = @"";
+      }
+
+      if(key) {
+        [dict setObject:value forKey:key];        
+      }
     }
   }
   return dict;

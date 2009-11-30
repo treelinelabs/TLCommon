@@ -98,6 +98,9 @@
 		03F0EFE5109FBA7F00B938CA /* TLBloomFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F0EF80109FAE0A00B938CA /* TLBloomFilter.m */; };
 		03F0EFFF109FBB0A00B938CA /* NSData_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 038349C21059375E00BFBBC7 /* NSData_TLCommon.m */; };
 		03FD548110C45EA3001B3304 /* NSBundle_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FD542C10C45BBF001B3304 /* NSBundle_TLCommon.m */; };
+		03FD54D310C46849001B3304 /* TestNSDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FD54D210C46849001B3304 /* TestNSDictionary_TLCommon.m */; };
+		03FD550010C46D1A001B3304 /* NSDictionary_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0340444410571719004B4909 /* NSDictionary_TLCommon.m */; };
+		03FD550B10C46D64001B3304 /* NSString_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 034043591056F6B7004B4909 /* NSString_TLCommon.m */; };
 		03FE415A10518C11003ACE50 /* UITabBarItem_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */; };
 		03FE415B10518C11003ACE50 /* UITabBarItem_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE415910518C11003ACE50 /* UITabBarItem_TLCommon.m */; };
 		AA747D9F0F9514B9006C5449 /* TLCommon_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TLCommon_Prefix.pch */; };
@@ -211,6 +214,8 @@
 		03F0EFC2109FB72600B938CA /* TestTLBloomFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTLBloomFilter.m; sourceTree = "<group>"; };
 		03FD542B10C45BBF001B3304 /* NSBundle_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBundle_TLCommon.h; sourceTree = "<group>"; };
 		03FD542C10C45BBF001B3304 /* NSBundle_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBundle_TLCommon.m; sourceTree = "<group>"; };
+		03FD54D110C46849001B3304 /* TestNSDictionary_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestNSDictionary_TLCommon.h; sourceTree = "<group>"; };
+		03FD54D210C46849001B3304 /* TestNSDictionary_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNSDictionary_TLCommon.m; sourceTree = "<group>"; };
 		03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITabBarItem_TLCommon.h; sourceTree = "<group>"; };
 		03FE415910518C11003ACE50 /* UITabBarItem_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITabBarItem_TLCommon.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TLCommon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCommon_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -347,6 +352,8 @@
 			children = (
 				03F0EFC1109FB72600B938CA /* TestTLBloomFilter.h */,
 				03F0EFC2109FB72600B938CA /* TestTLBloomFilter.m */,
+				03FD54D110C46849001B3304 /* TestNSDictionary_TLCommon.h */,
+				03FD54D210C46849001B3304 /* TestNSDictionary_TLCommon.m */,
 			);
 			name = UnitTests;
 			sourceTree = "<group>";
@@ -612,10 +619,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FD550B10C46D64001B3304 /* NSString_TLCommon.m in Sources */,
+				03FD550010C46D1A001B3304 /* NSDictionary_TLCommon.m in Sources */,
 				03F0EFC3109FB72600B938CA /* TestTLBloomFilter.m in Sources */,
 				03F0EFFF109FBB0A00B938CA /* NSData_TLCommon.m in Sources */,
 				03F0EFE5109FBA7F00B938CA /* TLBloomFilter.m in Sources */,
 				034E0DDA10A9C4440021D494 /* TLActionSheetController.m in Sources */,
+				03FD54D310C46849001B3304 /* TestNSDictionary_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
