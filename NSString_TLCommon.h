@@ -14,6 +14,7 @@
 
 - (NSString *)md5;
 - (NSString *)stringByURLEncodingAllCharacters; // including &, %, ?, =, and other url "safe" characters
+- (NSString *)stringByURLDecodingAllCharacters;
 
 // returns the range of the receiver containing the string arrived at by trimming characters from the beginning
 - (NSRange)rangeOfSubstringByTrimmingPrefixCharactersInSet:(NSCharacterSet *)set;

@@ -14,4 +14,13 @@
   return [NSString stringWithFormat:@"%f", [now timeIntervalSince1970]];
 }
 
+// modified from http://svn.cocoasourcecode.com/MGTwitterEngine/MGTwitterEngine.m
+- (NSString *)HTTPString {
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	[dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+	[dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss ZZ"];
+  NSString *dateString = [dateFormatter stringFromDate:self];
+  return dateString;
+}
+
 @end

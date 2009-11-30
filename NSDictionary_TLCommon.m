@@ -45,7 +45,9 @@
       [queryString appendString:@"&"];
     }
   }
-  [queryString deleteCharactersInRange:NSMakeRange([queryString length] - 1, 1)]; // remove trailing &
+  if([queryString length] > 0) {
+    [queryString deleteCharactersInRange:NSMakeRange([queryString length] - 1, 1)]; // remove trailing &    
+  }
   return queryString;
 }
 
@@ -83,6 +85,28 @@
     obj = nil;
   }
   return obj;
+}
+
++ (NSDictionary *)dictionaryWithQueryString:(NSString *)queryString {
+  NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+  NSArray *components = [queryString componentsSeparatedByString:@"&"];
+  for(NSString *component in components) {
+    if([component length] > 0) {
+      NSRange equalsPosition = [component rangeOfString:@"="];
+      NSString *key = nil;
+      NSString *value = nil;
+      if(equalsPosition.location == NSNotFound) {
+        key = [key stringByURLDecodingAllCharacters];
+        value = @"";
+      } else {
+        key = [[component substringToIndex:equalsPosition.location] stringByURLDecodingAllCharacters];
+        value = [[component substringFromIndex:NSMaxRange(equalsPosition)] stringByURLDecodingAllCharacters];
+      }
+
+      [dict setObject:value forKey:key];
+    }
+  }
+  return dict;
 }
 
 @end

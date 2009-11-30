@@ -16,4 +16,11 @@
 // details at http://murmurhash.googlepages.com/
 - (unsigned int)murmurHashNeutral2WithSeed:(unsigned int)seed;
 
+- (NSString *)md5;
+- (NSData *)md5Data;
+
+- (NSString *)base64Encoding;
+- (NSString *)base64EncodingWithLineLength:(NSUInteger)lineLength;
+
+
 @end

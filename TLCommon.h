@@ -44,3 +44,5 @@
 #import "TLBloomFilter.h"
 #import "TLTwitterClient.h"
 #import "TLActionSheetController.h"
+#import "TLEditInPlaceTableViewCell.h"
+#import "NSBundle_TLCommon.h"

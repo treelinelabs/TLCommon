@@ -24,4 +24,6 @@
 // Returns anything but NSNull; returns nil instead of NSNull
 - (id)nonNullObjectForKey:(NSString *)key;
 
++ (NSDictionary *)dictionaryWithQueryString:(NSString *)queryString;
+
 @end

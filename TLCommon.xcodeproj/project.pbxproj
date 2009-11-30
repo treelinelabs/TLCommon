@@ -23,6 +23,7 @@
 		03166A78109628AB00C628BB /* TLStyledTextBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 03166A76109628AB00C628BB /* TLStyledTextBlock.m */; };
 		03233F241084D2DF00743A22 /* NSMutableArray_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03233F221084D2DF00743A22 /* NSMutableArray_TLCommon.h */; };
 		03233F251084D2DF00743A22 /* NSMutableArray_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03233F231084D2DF00743A22 /* NSMutableArray_TLCommon.m */; };
+		033208B710ADFD18005D4FD6 /* TLEditInPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0332087910ADF937005D4FD6 /* TLEditInPlaceTableViewCell.m */; };
 		033FBD821070F89800BD4D83 /* CGContext_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 033FBD801070F89800BD4D83 /* CGContext_TLCommon.h */; };
 		033FBD831070F89800BD4D83 /* CGContext_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 033FBD811070F89800BD4D83 /* CGContext_TLCommon.m */; };
 		034040951055C375004B4909 /* TLSavedState.h in Headers */ = {isa = PBXBuildFile; fileRef = 034040931055C375004B4909 /* TLSavedState.h */; };
@@ -96,6 +97,7 @@
 		03F0EFC3109FB72600B938CA /* TestTLBloomFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F0EFC2109FB72600B938CA /* TestTLBloomFilter.m */; };
 		03F0EFE5109FBA7F00B938CA /* TLBloomFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F0EF80109FAE0A00B938CA /* TLBloomFilter.m */; };
 		03F0EFFF109FBB0A00B938CA /* NSData_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 038349C21059375E00BFBBC7 /* NSData_TLCommon.m */; };
+		03FD548110C45EA3001B3304 /* NSBundle_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FD542C10C45BBF001B3304 /* NSBundle_TLCommon.m */; };
 		03FE415A10518C11003ACE50 /* UITabBarItem_TLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */; };
 		03FE415B10518C11003ACE50 /* UITabBarItem_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE415910518C11003ACE50 /* UITabBarItem_TLCommon.m */; };
 		AA747D9F0F9514B9006C5449 /* TLCommon_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TLCommon_Prefix.pch */; };
@@ -129,6 +131,8 @@
 		03166A76109628AB00C628BB /* TLStyledTextBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLStyledTextBlock.m; sourceTree = "<group>"; };
 		03233F221084D2DF00743A22 /* NSMutableArray_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_TLCommon.h; sourceTree = "<group>"; };
 		03233F231084D2DF00743A22 /* NSMutableArray_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_TLCommon.m; sourceTree = "<group>"; };
+		0332087810ADF937005D4FD6 /* TLEditInPlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLEditInPlaceTableViewCell.h; sourceTree = "<group>"; };
+		0332087910ADF937005D4FD6 /* TLEditInPlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLEditInPlaceTableViewCell.m; sourceTree = "<group>"; };
 		033FBD801070F89800BD4D83 /* CGContext_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGContext_TLCommon.h; sourceTree = "<group>"; };
 		033FBD811070F89800BD4D83 /* CGContext_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGContext_TLCommon.m; sourceTree = "<group>"; };
 		034040931055C375004B4909 /* TLSavedState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSavedState.h; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 		03F0EFBD109FB6FA00B938CA /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		03F0EFC1109FB72600B938CA /* TestTLBloomFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTLBloomFilter.h; sourceTree = "<group>"; };
 		03F0EFC2109FB72600B938CA /* TestTLBloomFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTLBloomFilter.m; sourceTree = "<group>"; };
+		03FD542B10C45BBF001B3304 /* NSBundle_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBundle_TLCommon.h; sourceTree = "<group>"; };
+		03FD542C10C45BBF001B3304 /* NSBundle_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBundle_TLCommon.m; sourceTree = "<group>"; };
 		03FE415810518C11003ACE50 /* UITabBarItem_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITabBarItem_TLCommon.h; sourceTree = "<group>"; };
 		03FE415910518C11003ACE50 /* UITabBarItem_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITabBarItem_TLCommon.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TLCommon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLCommon_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -315,6 +321,8 @@
 		03509431108B754600DE1475 /* Table view cells */ = {
 			isa = PBXGroup;
 			children = (
+				0332087810ADF937005D4FD6 /* TLEditInPlaceTableViewCell.h */,
+				0332087910ADF937005D4FD6 /* TLEditInPlaceTableViewCell.m */,
 				037C7C35107D83E50009B2FE /* TLTableViewCell.h */,
 				037C7C36107D83E50009B2FE /* TLTableViewCell.m */,
 				034041C610569BAA004B4909 /* TLCustomDrawnTableViewCell.h */,
@@ -397,6 +405,8 @@
 				03233F231084D2DF00743A22 /* NSMutableArray_TLCommon.m */,
 				0395EC9B108932B600F6F0F8 /* NSMutableString_TLCommon.h */,
 				0395EC9C108932B600F6F0F8 /* NSMutableString_TLCommon.m */,
+				03FD542B10C45BBF001B3304 /* NSBundle_TLCommon.h */,
+				03FD542C10C45BBF001B3304 /* NSBundle_TLCommon.m */,
 			);
 			name = "Model extensions";
 			sourceTree = "<group>";
@@ -613,6 +623,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033208B710ADFD18005D4FD6 /* TLEditInPlaceTableViewCell.m in Sources */,
 				034E021510A210330021D494 /* TLTwitterClient.m in Sources */,
 				03D9DF19104BFEDA00B1BA77 /* UIViewController_TLCommon.m in Sources */,
 				034E0DFD10A9CCAF0021D494 /* TLActionSheetController.m in Sources */,
@@ -654,6 +665,7 @@
 				03DA9B9F10978E19005A34B2 /* UIWebView_TLCommon.m in Sources */,
 				03F0EC2C109BB21000B938CA /* TLActionSheet.m in Sources */,
 				03F0EF82109FAE0A00B938CA /* TLBloomFilter.m in Sources */,
+				03FD548110C45EA3001B3304 /* NSBundle_TLCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

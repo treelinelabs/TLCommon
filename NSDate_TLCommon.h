@@ -11,5 +11,6 @@
 @interface NSDate (TLCommon)
 
 + (NSString *)unixTimestamp; // No 2037 failures for us!
+- (NSString *)HTTPString; // RFC 822 / 1123 http date formatted string
 
 @end

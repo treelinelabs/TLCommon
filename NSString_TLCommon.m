@@ -39,6 +39,12 @@ static NSMutableCharacterSet *wordWrappingCharacterSet = nil;
 }
 
 
+- (NSString *)stringByURLDecodingAllCharacters {
+  NSString *decodedString = (NSString *)CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)self, (CFStringRef)@"");
+  [decodedString autorelease];
+  return decodedString;
+}
+
 - (NSRange)rangeOfSubstringByTrimmingPrefixCharactersInSet:(NSCharacterSet *)set {
   NSCharacterSet *untrimmedCharacterSet = [set invertedSet];
   NSRange nonTrimmedCharacterRange = [self rangeOfCharacterFromSet:untrimmedCharacterSet
