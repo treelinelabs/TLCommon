@@ -49,7 +49,13 @@
     [self.style.textColor setFill];
   }
 
-  [self.text drawInRect:self.renderRect withFont:self.style.font];
+  CGSize renderedTextSize = [self.text drawInRect:self.renderRect withFont:self.style.font];
+  if(self.style.underlined) {
+    UIRectFill(CGRectMake(self.renderRect.origin.x,
+                          CGRectGetMaxY(self.renderRect) - 1.0f,
+                          renderedTextSize.width,
+                          1.0f));    
+  }
   
   CGContextRestoreGState(context);
 }

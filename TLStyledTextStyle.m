@@ -15,6 +15,7 @@
 @synthesize textColor;
 @synthesize backgroundColor;
 @synthesize backgroundCornerRadius;
+@synthesize underlined;
 
 + (TLStyledTextStyle *)style {
   return [[[self alloc] init] autorelease];

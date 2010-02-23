@@ -14,6 +14,7 @@
   UIColor *textColor;
   UIColor *backgroundColor;
   CGFloat backgroundCornerRadius;
+  BOOL underlined;
 }
 
 + (TLStyledTextStyle *)style;
@@ -22,5 +23,6 @@
 @property(nonatomic, retain, readwrite) UIColor *textColor;
 @property(nonatomic, retain, readwrite) UIColor *backgroundColor;
 @property(nonatomic, assign, readwrite) CGFloat backgroundCornerRadius;
+@property(nonatomic, assign, readwrite) BOOL underlined;
 
 @end
