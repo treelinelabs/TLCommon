@@ -16,7 +16,11 @@
 }
 
 - (BOOL)isLocationZero {
+#if __IPHONE_3_2
+  return ([self distanceFromLocation:[[self class] locationZero]] < kZeroComparisonEpsilon);
+#else
   return ([self getDistanceFrom:[[self class] locationZero]] < kZeroComparisonEpsilon);
+#endif
 }
 
 + (CLLocation *)locationWithLatitude:(CLLocationDegrees)lat longitude:(CLLocationDegrees)lng {
